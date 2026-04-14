@@ -1,7 +1,9 @@
 baseURL = "https://maggionidev.github.io/"
 title = "Gabriel Maggioni"
-paginate = 5
 theme = "PaperMod"
+
+[pagination]
+pagerSize = 10
 
 enableRobotsTXT = true
 buildDrafts = false
