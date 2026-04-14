@@ -17,14 +17,29 @@ pagerSize = 10
     respectDoNotTrack = true
 
 languageCode = "pt-br"
-defaultContentLanguageInSubdir = true
-defaultContentLanguage = "br"
+defaultContentLanguage = "pt-br"
+defaultContentLanguageInSubdir = false
 
 [languages]
-  [languages.br]
+  [languages.pt-br]
     languageName = "Português"
     weight = 1
-    contentDir = "content/br"
+    contentDir = "content/pt-br"
+    [languages.pt-br.params]
+      description = "Programação, Blender, Unity e devlogs..."
+      [languages.pt-br.params.homeInfoParams]
+        Title = "Olá! 👋"
+        Content = "Bem vindo ao meu blog!"
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    contentDir = "content/en"
+    [languages.en.params]
+      description = "Programming, Blender, Unity and devlogs..."
+      [languages.en.params.homeInfoParams]
+        Title = "Hi there! 👋"
+        Content = "Welcome to my blog!"
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -94,10 +109,6 @@ buildExpired = false
     [[params.profileMode.buttons]]
       name = "Tags"
       url = "tags"
-
-  [params.homeInfoParams]
-    Title = "Olá! \U0001F44B"
-    Content = "Bem vindo ao meu blog!"
 
   [[params.socialIcons]]
     name = "youtube"

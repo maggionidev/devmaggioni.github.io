@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Home on Gabriel Maggioni</title>
+    <title>Gabriel Maggioni</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in Home on Gabriel Maggioni</description>
+    <description>Recent content on Gabriel Maggioni</description>
     <image>
       <title>Gabriel Maggioni</title>
       <url>http://localhost:1313/og-image.png</url>
       <link>http://localhost:1313/og-image.png</link>
     </image>
     <generator>Hugo</generator>
-    <language>br</language>
-    <lastBuildDate>Mon, 13 Apr 2026 21:00:00 -0300</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 Apr 2026 19:06:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>⚡ Principais Comandos do Hugo (Guia Rápido)</title>
-      <link>http://localhost:1313/posts/comandos-hugo/</link>
-      <pubDate>Mon, 13 Apr 2026 21:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/posts/comandos-hugo/</guid>
-      <description>Lista prática dos comandos mais usados do Hugo para desenvolvimento e deploy.</description>
-    </item>
-    <item>
-      <title>🚀 Meu Primeiro Post com Hugo &#43; PaperMod</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Mon, 13 Apr 2026 19:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>Guia completo para começar com Hugo usando o tema PaperMod.</description>
+      <title>Post En</title>
+      <link>http://localhost:1313/posts/post-en/</link>
+      <pubDate>Tue, 14 Apr 2026 19:06:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/post-en/</guid>
+      <description>&lt;p&gt;English&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,47 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>http://localhost:1313/posts/comandos-hugo/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cli/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/comandos/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/dev/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/guia/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-04-13T21:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/my-first-post/</loc>
-    <lastmod>2026-04-13T19:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/blog/</loc>
-    <lastmod>2026-04-13T19:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/papermod/</loc>
-    <lastmod>2026-04-13T19:00:00-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/teste/</loc>
-    <lastmod>2026-04-13T19:00:00-03:00</lastmod>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/pt-br/sitemap.xml</loc>
+    
+      <lastmod>2026-04-14T19:06:00-03:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    
+      <lastmod>2026-04-14T19:06:00-03:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>
