@@ -5,6 +5,11 @@ theme = "PaperMod"
 [pagination]
 pagerSize = 10
 
+[services]
+  [services.disqus]
+    shortname = 'maggionidev'
+
+
 defaultContentLanguage = "br"
 defaultContentLanguageInSubdir = true
 
@@ -40,6 +45,7 @@ buildExpired = false
   DateFormat = "02 Jan 2006"
   defaultTheme = "auto"
   disableThemeToggle = false
+  comments = true
 
   ShowReadingTime = true
   ShowShareButtons = true
@@ -53,7 +59,6 @@ buildExpired = false
   UseHugoToc = true
   disableSpecial1stPost = false
   disableScrollToTop = false
-  comments = false
   hidemeta = false
   hideSummary = false
   showtoc = false
