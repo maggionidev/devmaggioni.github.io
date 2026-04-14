@@ -8,20 +8,18 @@ pagerSize = 10
 [services]
   [services.disqus]
     shortname = 'maggionidev'
+  [services.googleAnalytics]
+    id = 'G-3EJS7QXCTZ'
 
-
-defaultContentLanguage = "br"
+languageCode = "pt-br"
 defaultContentLanguageInSubdir = true
+defaultContentLanguage = "br"
 
-# [languages]
-#  [languages.br]
-#    languageName = "Português"
-#    weight = 1
-#    contentDir = "content/br"
-#  [languages.en]
-#    languageName = "English"
-#    weight = 2
-#    contentDir = "content/en"
+[languages]
+  [languages.br]
+    languageName = "Português"
+    weight = 1
+    contentDir = "content/br"
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -39,13 +37,14 @@ buildExpired = false
 [params]
   env = "production"
   title = "Gabriel Maggioni"
-  description = "Blog Pessoal"
-  keywords = ["Blog", "Portfolio", "Tecnologia", "Blender", "Programação"]
+  description = "Programming, Blender, Unity and devlogs from my personal projects."
+  keywords = ["programação", "desenvolvimento de software", "desenvolvimento de jogos", "unity", "blender", "gamedev", "devlog", "projetos pessoais", "tecnologia", "programming", "software development", "game development", "coding", "3d modeling", "indie dev"]
   author = "Gabriel Maggioni"
   DateFormat = "02 Jan 2006"
   defaultTheme = "auto"
   disableThemeToggle = false
   comments = true
+  images = ["og-image.png"]
 
   ShowReadingTime = true
   ShowShareButtons = true
