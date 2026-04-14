@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on </title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Apr 2026 19:48:24 -0300</lastBuildDate>
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aprenda a gerar uma chave SSH e conectar sua máquina ao GitHub de forma segura</title>
+      <link>//localhost:1313/posts/como-conectar-ssh-no-github/</link>
+      <pubDate>Mon, 13 Apr 2026 19:48:24 -0300</pubDate>
+      <guid>//localhost:1313/posts/como-conectar-ssh-no-github/</guid>
+      <description>&lt;h2 id=&#34;-introdução&#34;&gt;🔐 Introdução&lt;/h2&gt;
+&lt;p&gt;Usar SSH com o GitHub permite que você se conecte sem precisar digitar usuário e senha toda vez.&lt;/p&gt;
+&lt;p&gt;Neste guia, você vai aprender como gerar uma chave SSH e configurar na sua conta.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-1-gerar-chave-ssh&#34;&gt;⚙️ 1. Gerar chave SSH&lt;/h2&gt;
+&lt;p&gt;Abra o terminal e execute:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh-keygen -t ed25519 -C &amp;#34;seuemail@email.com&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Quando pedir o local, pressione Enter para usar o padrão:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;C:\Users\seu-user\.ssh\id_ed25519
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-2-iniciar-o-agente-ssh&#34;&gt;🔑 2. Iniciar o agente SSH&lt;/h2&gt;
+&lt;p&gt;No Windows (PowerShell):&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Start-Service ssh-agent
+ssh-add $env:USERPROFILE\.ssh\id_ed25519
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-3-copiar-a-chave-pública&#34;&gt;📋 3. Copiar a chave pública&lt;/h2&gt;
+&lt;p&gt;Execute:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
