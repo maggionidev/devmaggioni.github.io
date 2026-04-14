@@ -106,7 +106,7 @@ buildExpired = false
     hiddenInSingle = false
 
   [params.editPost]
-    URL = "https://github.com/maggionidev/maggionidev.github.io/tree/main/content/br"
+    URL = "https://maggionidev.github.io/tree/main/content/br"
     Text = "Encontrou um erro? Sujira alterações!"
     appendFilePath = true
 
