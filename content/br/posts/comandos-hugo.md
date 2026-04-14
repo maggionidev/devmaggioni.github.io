@@ -1,5 +1,6 @@
 
 +++
+
 title = "⚡ Principais Comandos do Hugo (Guia Rápido)"
 date = 2026-04-13T21:00:00-03:00
 tags = ["hugo", "cli", "comandos", "dev"]
@@ -14,6 +15,7 @@ ShowWordCount = true
 showToc = true
 TocOpen = false
 searchHidden = false
+comments = true
 
 +++
 
