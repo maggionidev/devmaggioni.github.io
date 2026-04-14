@@ -1,5 +1,4 @@
 baseURL = "https://maggioni.dev/"
-title = "Gabriel Maggioni"
 theme = "PaperMod"
 
 [pagination]
@@ -21,25 +20,33 @@ defaultContentLanguage = "pt-br"
 defaultContentLanguageInSubdir = false
 
 [languages]
-  [languages.pt-br]
-    languageName = "Português"
-    weight = 1
-    contentDir = "content/pt-br"
-    [languages.pt-br.params]
-      description = "Programação, Blender, Unity e devlogs..."
-      [languages.pt-br.params.homeInfoParams]
-        Title = "Olá! 👋"
-        Content = "Bem vindo ao meu blog!"
+[languages.pt-br]
+  languageName = "Português"
+  weight = 1
+  contentDir = "content/pt-br"
+  title = "(PT) Gabriel Maggioni"  # ✅ AQUI
 
-  [languages.en]
-    languageName = "English"
-    weight = 2
-    contentDir = "content/en"
-    [languages.en.params]
-      description = "Programming, Blender, Unity and devlogs..."
-      [languages.en.params.homeInfoParams]
-        Title = "Hi there! 👋"
-        Content = "Welcome to my blog!"
+  [languages.pt-br.params]
+    description = "Programação, Blender, Unity e DevLogs..."
+
+    [languages.pt-br.params.homeInfoParams]
+      Title = "Olá! 👋"
+      Content = "Bem vindo ao meu blog!"
+ 
+
+[languages.en]
+  languageName = "English"
+  weight = 2
+  contentDir = "content/en"
+  title = "(EN) Gabriel Maggioni"  # ✅ AQUI
+
+  [languages.en.params]
+    description = "Programming, Blender, Unity and DevLogs..."
+
+    [languages.en.params.homeInfoParams]
+      Title = "Hi there! 👋"
+      Content = "Welcome to my blog!"
+ 
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -56,8 +63,6 @@ buildExpired = false
 
 [params]
   env = "production"
-  title = "Gabriel Maggioni"
-  description = "Programming, Blender, Unity and devlogs from my personal projects."
   keywords = ["programação", "desenvolvimento de software", "desenvolvimento de jogos", "unity", "blender", "gamedev", "devlog", "projetos pessoais", "tecnologia", "programming", "software development", "game development", "coding", "3d modeling", "indie dev"]
   author = "Gabriel Maggioni"
   DateFormat = "02 Jan 2006"
