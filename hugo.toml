@@ -11,6 +11,11 @@ pagerSize = 10
   [services.googleAnalytics]
     id = 'G-3EJS7QXCTZ'
 
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+    respectDoNotTrack = true
+
 languageCode = "pt-br"
 defaultContentLanguageInSubdir = true
 defaultContentLanguage = "br"
