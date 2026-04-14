@@ -6,8 +6,15 @@
     <description>Recent content on Gabriel Maggioni</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2026 19:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 21:00:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>⚡ Principais Comandos do Hugo (Guia Rápido)</title>
+      <link>http://localhost:1313/br/posts/comandos-hugo/</link>
+      <pubDate>Mon, 13 Apr 2026 21:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/br/posts/comandos-hugo/</guid>
+      <description>Lista prática dos comandos mais usados do Hugo para desenvolvimento e deploy.</description>
+    </item>
     <item>
       <title>🚀 Meu Primeiro Post com Hugo &#43; PaperMod</title>
       <link>http://localhost:1313/br/posts/my-first-post/</link>

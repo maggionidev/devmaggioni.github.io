@@ -6,27 +6,41 @@
     <description>Recent content in Tags on Gabriel Maggioni</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2026 19:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 21:00:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog</title>
-      <link>http://localhost:1313/tags/blog/</link>
-      <pubDate>Mon, 13 Apr 2026 19:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/blog/</guid>
+      <title>Cli</title>
+      <link>http://localhost:1313/tags/cli/</link>
+      <pubDate>Mon, 13 Apr 2026 21:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comandos</title>
+      <link>http://localhost:1313/tags/comandos/</link>
+      <pubDate>Mon, 13 Apr 2026 21:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/comandos/</guid>
       <description></description>
     </item>
     <item>
       <title>Dev</title>
       <link>http://localhost:1313/tags/dev/</link>
-      <pubDate>Mon, 13 Apr 2026 19:00:00 -0300</pubDate>
+      <pubDate>Mon, 13 Apr 2026 21:00:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/dev/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
       <link>http://localhost:1313/tags/hugo/</link>
-      <pubDate>Mon, 13 Apr 2026 19:00:00 -0300</pubDate>
+      <pubDate>Mon, 13 Apr 2026 21:00:00 -0300</pubDate>
       <guid>http://localhost:1313/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog</title>
+      <link>http://localhost:1313/tags/blog/</link>
+      <pubDate>Mon, 13 Apr 2026 19:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/blog/</guid>
       <description></description>
     </item>
     <item>

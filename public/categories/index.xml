@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Gabriel Maggioni</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2026 19:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 21:00:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guia</title>
+      <link>http://localhost:1313/categories/guia/</link>
+      <pubDate>Mon, 13 Apr 2026 21:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/categories/guia/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Teste</title>
       <link>http://localhost:1313/categories/teste/</link>
