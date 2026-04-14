@@ -91,12 +91,12 @@ buildExpired = false
     name = "github"
     url = "https://github.com/maggionidev"
 
-  [params.analytics.google]
-    SiteVerificationTag = "XYZabc"
-  [params.analytics.bing]
-    SiteVerificationTag = "XYZabc"
-  [params.analytics.yandex]
-    SiteVerificationTag = "XYZabc"
+# [params.analytics.google]
+#    SiteVerificationTag = "XYZabc"
+#  [params.analytics.bing]
+#    SiteVerificationTag = "XYZabc"
+#  [params.analytics.yandex]
+#    SiteVerificationTag = "XYZabc"
 
   [params.cover]
     hidden = false
