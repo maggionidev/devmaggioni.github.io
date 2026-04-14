@@ -24,7 +24,7 @@ buildExpired = false
   description = "Blog Pessoal"
   keywords = ["Blog", "Portfolio", "Tecnologia", "Blender", "Programação"]
   author = "Gabriel Maggioni"
-  DateFormat = "09/01/2026"
+  DateFormat = "02 Jan 2006"
   defaultTheme = "auto"
   disableThemeToggle = false
 
