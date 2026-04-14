@@ -1,4 +1,4 @@
-baseURL = "https://maggioni.github.io/"
+baseURL = "https://maggionidev.github.io/"
 title = "Gabriel Maggioni"
 paginate = 5
 theme = "PaperMod"
@@ -100,7 +100,7 @@ buildExpired = false
     hiddenInSingle = false
 
   [params.editPost]
-    URL = "https://github.com/maggionidev/maggioni.github.io/tree/main/content/br"
+    URL = "https://github.com/maggionidev/maggionidev.github.io/tree/main/content/br"
     Text = "Encontrou um erro? Sujira alterações!"
     appendFilePath = true
 
