@@ -5,6 +5,19 @@ theme = "PaperMod"
 [pagination]
 pagerSize = 10
 
+defaultContentLanguage = "br"
+defaultContentLanguageInSubdir = true
+
+# [languages]
+#  [languages.br]
+#    languageName = "Português"
+#    weight = 1
+#    contentDir = "content/br"
+#  [languages.en]
+#    languageName = "English"
+#    weight = 2
+#    contentDir = "content/en"
+
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
