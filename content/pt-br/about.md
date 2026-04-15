@@ -1,4 +1,5 @@
 +++
+
 title = "Sobre Gabriel Maggioni (maggionidev) | Desenvolvedor Unity, Blender e Programação"
 date = 2026-04-14
 draft = false
@@ -7,9 +8,10 @@ description = "Conheça Gabriel Maggioni, desenvolvedor focado em Unity (URP), B
 keywords = ["Gabriel Maggioni", "Unity URP", "desenvolvimento de jogos", "game dev Brasil", "Blender 3D", "programação", "devlogs", "Unity tutorial"]
 showReadingTime = false
 showBreadCrumbs = true
+
 +++
 
-<img src="/images/avatar.jpg" alt="Gabriel Maggioni desenvolvedor Unity e Blender" width="120" style="border-radius: 50%;" />
+<img src="/images/avatar.png" alt="Gabriel Maggioni desenvolvedor Unity e Blender" width="120" style="border-radius: 50%;" />
 
 # Quem é Gabriel Maggioni?
 
