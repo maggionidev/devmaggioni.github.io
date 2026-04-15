@@ -1,35 +1,54 @@
 +++
-title = "Sobre"
+title = "Sobre Gabriel Maggioni (maggionidev) | Desenvolvedor Unity, Blender e Programação"
 date = 2026-04-14
 draft = false
 comments = false
-description = "Sobre Gabriel Maggioni:"
+description = "Conheça Gabriel Maggioni, desenvolvedor focado em Unity (URP), Blender e programação. Devlogs, projetos e conteúdo sobre desenvolvimento de jogos."
+keywords = ["Gabriel Maggioni", "Unity URP", "desenvolvimento de jogos", "game dev Brasil", "Blender 3D", "programação", "devlogs", "Unity tutorial"]
 showReadingTime = false
 showBreadCrumbs = true
 +++
 
-<img src="/images/avatar.jpg" alt="Gabriel Maggioni" width="120" style="border-radius: 50%;" />
+<img src="/images/avatar.jpg" alt="Gabriel Maggioni desenvolvedor Unity e Blender" width="120" style="border-radius: 50%;" />
 
-Olá! 👋
+# Quem é Gabriel Maggioni?
 
-Meu nome é Gabriel Maggioni.
+Olá 👋
 
-Sou desenvolvedor e compartilho aqui conteúdos sobre:
+Meu nome é **Gabriel Maggioni**, sou desenvolvedor focado em **criação de jogos com Unity (URP)** e produção de conteúdo sobre desenvolvimento.
 
-- 💻 Programação
-- 🎮 Unity
-- 🎨 Blender
-- 🛠️ Projetos e devlogs
+Aqui no blog eu compartilho o que estou aprendendo no dia a dia.
 
----
+## O que você vai encontrar aqui
 
-## 🌐 Minhas redes (@maggionidev)
+Grande parte dos posts gira em torno de:
 
-- Youtube: https://youtube.com/@maggionidev
-- TikTok: https://tiktok.com/maggioni.dev
-- Instagram: https://instagram.com/maggionidev
-- X/Twitter: https://x.com/@maggionidev
+- 💻 Programação aplicada a jogos  
+- 🎮 Desenvolvimento na Unity (especialmente URP)  
+- 🎨 Modelagem e workflow com Blender  
+- 🛠️ Devlogs reais de projetos em andamento  
 
----
+Se você também está estudando **game dev**, principalmente no contexto indie, talvez esse conteúdo te ajude a evitar alguns atalhos errados… ou pelo menos sofrer menos neles.
 
-Este blog é onde documento minha evolução e aprendizados!
+## Meu foco atual
+
+Atualmente estou desenvolvendo projetos próprios e documentando tudo aqui no blog, incluindo decisões técnicas, erros e soluções.
+
+A ideia não é só mostrar resultado bonito, mas o processo completo de desenvolvimento de jogos.
+
+## 🌐 Onde me encontrar
+
+Se quiser acompanhar mais de perto ou ver conteúdo em outros formatos:
+
+- YouTube: https://youtube.com/@maggionidev  
+- TikTok: https://tiktok.com/maggioni.dev  
+- Instagram: https://instagram.com/maggionidev  
+- X (Twitter): https://x.com/maggionidev  
+
+## Sobre este blog
+
+Este site foi criado com **Hugo + PaperMod**, focado em performance, SEO e conteúdo direto ao ponto.
+
+Aqui funciona quase como um diário técnico público, onde documento minha evolução como desenvolvedor de jogos.
+
+Se você chegou até aqui pelo Google… provavelmente estamos estudando coisas parecidas 🙂
