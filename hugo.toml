@@ -24,7 +24,6 @@ defaultContentLanguageInSubdir = true
   languageName = "Português (Brasil)"
 
   weight = 1 
-  contentDir = "content/pt-br"
   title = "Gabriel Maggioni" 
 
   [languages.pt-BR.params]
