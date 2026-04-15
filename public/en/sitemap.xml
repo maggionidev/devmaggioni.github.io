@@ -6,7 +6,7 @@
     <lastmod>2026-04-14T19:54:12-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
+                hreflang="pt-BR"
                 href="http://localhost:1313/pt-br/"
                 />
     <xhtml:link
@@ -19,7 +19,7 @@
     <lastmod>2026-04-14T19:54:12-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
+                hreflang="pt-BR"
                 href="http://localhost:1313/pt-br/categories/"
                 />
     <xhtml:link
@@ -32,7 +32,7 @@
     <lastmod>2026-04-14T19:54:12-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
+                hreflang="pt-BR"
                 href="http://localhost:1313/pt-br/posts/hello/"
                 />
     <xhtml:link
@@ -45,7 +45,7 @@
     <lastmod>2026-04-14T19:54:12-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
+                hreflang="pt-BR"
                 href="http://localhost:1313/pt-br/tags/hello-world/"
                 />
     <xhtml:link
@@ -58,7 +58,7 @@
     <lastmod>2026-04-14T19:54:12-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
+                hreflang="pt-BR"
                 href="http://localhost:1313/pt-br/posts/"
                 />
     <xhtml:link
@@ -71,7 +71,7 @@
     <lastmod>2026-04-14T19:54:12-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
+                hreflang="pt-BR"
                 href="http://localhost:1313/pt-br/tags/"
                 />
     <xhtml:link
@@ -84,13 +84,25 @@
     <lastmod>2026-04-14T19:54:12-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
+                hreflang="pt-BR"
                 href="http://localhost:1313/pt-br/categories/teste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/categories/teste/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/search/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-BR"
+                href="http://localhost:1313/pt-br/search/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/search/"
                 />
   </url>
 </urlset>

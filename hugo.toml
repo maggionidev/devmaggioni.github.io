@@ -15,38 +15,25 @@ pagerSize = 10
     disable = false
     respectDoNotTrack = true
 
-languageCode = "pt-br"
-defaultContentLanguage = "pt-br"
-defaultContentLanguageInSubdir = false
+defaultContentLanguage = "pt-BR"
+defaultContentLanguageInSubdir = true
 
 [languages]
-[languages.pt-br]
-  languageName = "Português"
-  weight = 1
-  contentDir = "content/pt-br"
-  title = "(PT) Gabriel Maggioni"  # ✅ AQUI
+[languages.pt-BR]
+  languageCode = "pt-BR"
+  languageName = "Português (Brasil)"
 
-  [languages.pt-br.params]
+  weight = 1 
+  contentDir = "content/pt-br"
+  title = "Gabriel Maggioni" 
+
+  [languages.pt-BR.params]
     description = "Programação, Blender, Unity e DevLogs..."
 
-    [languages.pt-br.params.homeInfoParams]
+    [languages.pt-BR.params.homeInfoParams]
       Title = "Olá! 👋"
       Content = "Bem vindo ao meu blog!"
- 
 
-[languages.en]
-  languageName = "English"
-  weight = 2
-  contentDir = "content/en"
-  title = "(EN) Gabriel Maggioni"  # ✅ AQUI
-
-  [languages.en.params]
-    description = "Programming, Blender, Unity and DevLogs..."
-
-    [languages.en.params.homeInfoParams]
-      Title = "Hi there! 👋"
-      Content = "Welcome to my blog!"
- 
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -100,20 +87,17 @@ buildExpired = false
     iconHeight = 45
 
   [params.profileMode]
-    enabled = false
+    enabled = true
     title = "Gabriel Maggioni"
-    subtitle = "Bem vindo ao meu site!"
+    subtitle = "Olá 👋 aqui falo sobre Unity, Blender e Código!"
     imageUrl = "/apple-touch-icon.png"
     imageWidth = 120
     imageHeight = 120
     imageTitle = "my image"
 
     [[params.profileMode.buttons]]
-      name = "Posts"
+      name = "Ver Posts"
       url = "posts"
-    [[params.profileMode.buttons]]
-      name = "Tags"
-      url = "tags"
 
   [[params.socialIcons]]
     name = "youtube"
@@ -159,22 +143,28 @@ buildExpired = false
     keys = ["title", "permalink", "summary", "content"]
 
 [[menu.main]]
-  identifier = "categories"
-  name = "categories"
-  url = "/categories/"
+  identifier = "search"
+  name = "🔍 Buscar"
+  url = "search/"
   weight = 10
 
 [[menu.main]]
-  identifier = "tags"
-  name = "tags"
-  url = "/tags/"
+  identifier = "categories"
+  name = "📚 Assuntos"
+  url = "/categories/"
   weight = 20
 
 [[menu.main]]
-  identifier = "search"
-  name = "buscar"
-  url = "/search/"
+  identifier = "tags"
+  name = "🏷️ Tags"
+  url = "/tags/"
   weight = 30
+
+[[menu.main]]
+  identifier = "about"
+  name = "👨‍💻 Sobre"
+  url = "/about/"
+  weight = 40
 
 pygmentsUseClasses = true
 
