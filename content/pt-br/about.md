@@ -1,6 +1,6 @@
 +++
 
-title = "Sobre Gabriel Maggioni (maggionidev) | Desenvolvedor Unity, Blender e Programação"
+title = "Gabriel Maggioni | Desenvolvedor Unity, Blender e Programação"
 date = 2026-04-14
 draft = false
 comments = false
@@ -10,8 +10,6 @@ showReadingTime = false
 showBreadCrumbs = true
 
 +++
-
-<img src="/images/avatar.png" alt="Gabriel Maggioni desenvolvedor Unity e Blender" width="120" style="border-radius: 50%;" />
 
 # Quem é Gabriel Maggioni?
 
