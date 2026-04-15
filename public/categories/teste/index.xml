@@ -11,14 +11,14 @@
     </image>
     <generator>Hugo</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 14 Apr 2026 19:54:12 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 20:23:12 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/teste/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello PT</title>
-      <link>http://localhost:1313/posts/hello/</link>
-      <pubDate>Mon, 13 Apr 2026 19:48:12 -0300</pubDate>
-      <guid>http://localhost:1313/posts/hello/</guid>
-      <description>Meu primeiro post.</description>
+      <title>Tudo oque você precisa saber sobre Git e Github</title>
+      <link>http://localhost:1313/posts/commands-for-git-and-github/</link>
+      <pubDate>Wed, 15 Apr 2026 20:23:12 -0300</pubDate>
+      <guid>http://localhost:1313/posts/commands-for-git-and-github/</guid>
+      <description>Aprenda os comandos necessários de git e github</description>
     </item>
   </channel>
 </rss>
