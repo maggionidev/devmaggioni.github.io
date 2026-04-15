@@ -22,13 +22,16 @@ defaultContentLanguageInSubdir = true
 [languages.pt-BR]
   languageCode = "pt-BR"
   languageName = "Português (Brasil)"
-
   weight = 1 
   contentDir = "content/pt-br"
   title = "Gabriel Maggioni" 
 
   [languages.pt-BR.params]
     description = "Programação, Blender, Unity e DevLogs..."
+  [languages.pt-BR.params.editPost]
+    URL = "https://github.com/maggionidev/maggionidev.github.io/tree/main/content/pt-br"
+    Text = " ✏️ Encontrou um erro? Sujira alterações!"
+    appendFilePath = true
 
     [languages.pt-BR.params.homeInfoParams]
       Title = "Olá! 👋"
@@ -126,11 +129,6 @@ buildExpired = false
     hidden = false
     hiddenInList = true
     hiddenInSingle = false
-
-  [params.editPost]
-    URL = "https://github.com/maggionidev/maggionidev.github.io/tree/main/content/"
-    Text = " ✏️ Encontrou um erro? Sujira alterações!"
-    appendFilePath = true
 
   [params.fuseOpts]
     isCaseSensitive = false
