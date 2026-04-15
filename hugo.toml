@@ -143,26 +143,32 @@ buildExpired = false
     keys = ["title", "permalink", "summary", "content"]
 
 [[menu.main]]
-  identifier = "search"
-  name = "🔍 Buscar"
-  url = "search/"
+  identifier = "posts"
+  name = "posts"
+  url = "posts/"
   weight = 10
 
 [[menu.main]]
-  identifier = "categories"
-  name = "📚 Assuntos"
-  url = "/categories/"
+  identifier = "search"
+  name = "🔍 search"
+  url = "search/"
   weight = 20
 
 [[menu.main]]
-  identifier = "tags"
-  name = "🏷️ Tags"
-  url = "/tags/"
+  identifier = "categories"
+  name = "categories"
+  url = "/categories/"
   weight = 30
+
+# [[menu.main]]
+#  identifier = "tags"
+#  name = "🏷️ Tags"
+#  url = "/tags/"
+#  weight = 30
 
 [[menu.main]]
   identifier = "about"
-  name = "👨‍💻 Sobre"
+  name = "about me"
   url = "/about/"
   weight = 40
 
