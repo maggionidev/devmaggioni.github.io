@@ -147,10 +147,10 @@ buildExpired = false
   url = "posts/"
   weight = 10
 
-[[menu.main]]
+[[languages.pt-BR.menu.main]]
   identifier = "search"
   name = "[ search ]"
-  url = "search/"
+  url = "/pt-br/search/"
   weight = 20
 
 [[menu.main]]
