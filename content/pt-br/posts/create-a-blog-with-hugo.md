@@ -443,9 +443,9 @@ Shortcodes são componentes reutilizáveis dentro dos posts. Crie em `layouts/sh
 
 Uso no Markdown:
 ```markdown
-{{< aviso tipo="atenção" >}}
+{{</* aviso tipo="atenção" */>}}
 Isso é muito importante!
-{{< /aviso >}}
+{{</* /aviso */>}}
 ```
 
 ### Variáveis úteis nos templates
