@@ -1,5 +1,5 @@
 +++
-title = 'Tudo que você precisa saber sobre Hugo — Crie e gerencie seu blog'
+title = 'Tudo que você precisa saber sobre Hugo - Crie e gerencie seu blog'
 description = "Guia completo para criar, configurar e publicar um blog com o Hugo"
 summary = "Aprenda a instalar o Hugo, criar seu blog, instalar temas, personalizar e publicar do zero"
 author = "Gabriel Maggioni"
@@ -11,7 +11,7 @@ showToc = true
 TocOpen = false
 +++
 
-# Hugo — Guia Completo para Criar e Gerenciar seu Blog
+# Hugo - Guia Completo para Criar e Gerenciar seu Blog
 
 Nesse post, iremos abordar os seguintes temas:
 
@@ -29,7 +29,7 @@ Nesse post, iremos abordar os seguintes temas:
 
 ## O que é Hugo e por que usá-lo?
 
-**Hugo** é um gerador de sites estáticos escrito em Go. Ele pega seus arquivos Markdown e transforma em um site HTML completo em milissegundos — sem banco de dados, sem servidor PHP, sem complexidade.
+**Hugo** é um gerador de sites estáticos escrito em Go. Ele pega seus arquivos Markdown e transforma em um site HTML completo em milissegundos - sem banco de dados, sem servidor PHP, sem complexidade.
 
 **Vantagens:**
 - ⚡ Extremamente rápido (builds em milissegundos)
@@ -71,7 +71,7 @@ Pelo **Winget**:
 winget install Hugo.Hugo.Extended
 ```
 
-> ⚠️ Prefira sempre a versão **extended** — ela suporta SCSS/SASS, necessário para a maioria dos temas modernos.
+> ⚠️ Prefira sempre a versão **extended** - ela suporta SCSS/SASS, necessário para a maioria dos temas modernos.
 
 ### Verificando a instalação
 ```bash
@@ -114,7 +114,7 @@ meu-blog/
 
 | Pasta | O que você vai mexer |
 |---|---|
-| `content/` | Sempre — seus posts ficam aqui |
+| `content/` | Sempre - seus posts ficam aqui |
 | `static/` | Para adicionar imagens e arquivos |
 | `layouts/` | Para customizar o tema |
 | `hugo.toml` | Para configurar o site |
@@ -126,7 +126,7 @@ meu-blog/
 
 ### Onde encontrar temas
 
-- [themes.gohugo.io](https://themes.gohugo.io) — catálogo oficial com centenas de opções
+- [themes.gohugo.io](https://themes.gohugo.io) - catálogo oficial com centenas de opções
 
 ### Instalando via Git Submodule (recomendado)
 
@@ -170,7 +170,7 @@ theme = "PaperMod"
 
 ---
 
-## Configuração principal — hugo.toml
+## Configuração principal - hugo.toml
 
 O arquivo `hugo.toml` controla tudo do seu site. Exemplo completo:
 
@@ -323,7 +323,7 @@ hugo server -p 8080  # Porta customizada
 hugo server --bind 0.0.0.0  # Acessível na rede local
 ```
 
-O servidor tem **live reload** — qualquer alteração no conteúdo ou tema atualiza o navegador automaticamente.
+O servidor tem **live reload** - qualquer alteração no conteúdo ou tema atualiza o navegador automaticamente.
 
 ### Build do site
 
@@ -552,7 +552,7 @@ jobs:
 HUGO_VERSION = 0.145.0
 ```
 
-Pronto — a cada `git push`, o Netlify faz o deploy automaticamente.
+Pronto - a cada `git push`, o Netlify faz o deploy automaticamente.
 
 ---
 
