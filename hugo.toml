@@ -142,25 +142,25 @@ buildExpired = false
 
 [[menu.main]]
   identifier = "posts"
-  name = "[ posts ]"
+  name = "posts"
   url = "posts/"
   weight = 10
 
 [[menu.main]]
   identifier = "search"
-  name = "[ search ]"
+  name = "search"
   url = "/search/"
   weight = 20
 
 [[menu.main]]
   identifier = "categories"
-  name = "[ categories -"
+  name = "categories"
   url = "/categories/"
   weight = 30
  
 [[menu.main]]
   identifier = "tags"
-  name = " tags ]"
+  name = "tags"
   url = "/tags/"
   weight = 40
 # [[menu.main]]
@@ -171,7 +171,7 @@ buildExpired = false
 
 [[menu.main]]
   identifier = "about"
-  name = "[ about me ]"
+  name = "about me"
   url = "/about/"
   weight = 50
 
