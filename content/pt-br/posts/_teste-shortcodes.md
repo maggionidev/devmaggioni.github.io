@@ -2,7 +2,7 @@
 # ========================
 # 🧾 BASICO
 # ========================
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
+title = 'Testando shortcodes'
 description = "Descrição do post (SEO)"
 summary = "Resumo curto que aparece em listagens"
 author = "Gabriel Maggioni"
@@ -10,10 +10,10 @@ author = "Gabriel Maggioni"
 
 draft = true
 
-date = '{{ .Date }}'
-#lastmod = '{{ .Date }}'
-#publishDate = '{{ .Date }}'
-#expiryDate = '{{ .Date }}'
+date = '2026-04-17T20:52:59-03:00'
+#lastmod = '2026-04-17T20:52:59-03:00'
+#publishDate = '2026-04-17T20:52:59-03:00'
+#expiryDate = '2026-04-17T20:52:59-03:00'
 
 # ========================
 # 🔗 URL / SLUG
@@ -62,12 +62,12 @@ TocOpen = false
 # ========================
 # 🔎 SEARCH
 # ========================
-#searchHidden = false
+searchHidden = true
 
 # ========================
 # 💬 COMENTÁRIOS
 # ========================
-#comments = true
+comments = false
 
 # ========================
 # ✏️ EDIT LINK (GitHub)
@@ -88,15 +88,103 @@ TocOpen = false
 # ========================
 #weight = 1
 
-# ========================
-# 🌐 MULTILINGUA
-# ========================
-#lang = "pt-br"
-
-# ========================
-# ⚠️ CONTROLE AVANÇADO
-# ========================
-#layout = "post"
-#type = "posts"
-
 +++
+
+
+## Testando shortcodes
+
+---
+
+### Figure
+
+{{< figure src="/images/hello-world.png"
+    alt="Imagem de exemplo"
+    caption="Legenda aqui"
+    title="Título da imagem"
+    align="center"
+    width="300"
+    link="https://google.com"
+    target="_blank"
+ >}}
+
+ ---
+
+### Collapse
+
+{{< details summary="Clique para ver mais" >}}
+Conteúdo escondido aqui dentro 👀
+{{< /details >}}
+
+---
+
+### InTextImg
+Imagem no meio {{< InTextImg url="/images/hello-world.png" alt="GitHub" >}} do texto.
+
+---
+
+### rawhtml
+
+{{< rawhtml >}}
+<h1  style="color: red; font-size: 32px">Html inline</h1>
+{{< /rawhtml >}}
+
+---
+
+### video
+
+{{< video src="/videos/demo.mp4" >}}
+
+---
+
+### audio
+
+{{< audio src="/audios/demo.mp3" >}}
+
+---
+
+### badge
+
+{{< badge 
+  text="drive"
+  color="blue"
+  logo="googledrive"
+  logoColor="white"
+    link="https://drive.google.com/"
+>}}
+
+{{< badge 
+  text="mega"
+  color="red"
+  logo="mega"
+  logoColor="white"
+  link="https://mega.nz"
+>}}
+
+{{< badge 
+  text="python"
+  color="blue"
+  logo="python"
+  logoColor="white"
+>}}
+
+{{< badge 
+  text="go"
+  color="blue"
+  logo="go"
+  logoColor="white"
+>}}
+
+---
+
+clique nesse botão {{< button 
+  text="Botão 1" 
+  link="https://google.com" 
+  target="_blank"
+  color="#16a34a" 
+>}}
+
+e nesse também {{< button 
+  text="Botão 2" 
+  link="#" 
+  color="red" 
+>}}

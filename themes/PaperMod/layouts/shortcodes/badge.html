@@ -1,0 +1,28 @@
+{{- $text := .Get "text" | default "badge" -}}
+{{- $color := .Get "color" | default "blue" -}}
+{{- $logo := .Get "logo" -}}
+{{- $logoColor := .Get "logoColor" | default "white" -}}
+{{- $style := .Get "style" | default "for-the-badge" -}}
+{{- $link := .Get "link" -}}
+
+{{- $encodedText := $text | urlquery -}}
+
+{{- $url := printf "https://img.shields.io/badge/%s-%s?style=%s" $encodedText $color $style -}}
+
+{{- with $logo }}
+  {{- $url = printf "%s&logo=%s" $url . -}}
+{{- end }}
+
+{{- with $logoColor }}
+  {{- $url = printf "%s&logoColor=%s" $url . -}}
+{{- end }}
+
+{{- if $link }}
+<a href="{{ $link }}" target="_blank" rel="noopener noreferrer">
+{{- end }}
+
+<img src="{{ $url }}" alt="{{ $text }}" />
+
+{{- if $link }}
+</a>
+{{- end }}

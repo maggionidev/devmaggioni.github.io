@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 16 Apr 2026 09:31:00 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 20:52:59 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testando shortcodes</title>
+      <link>http://localhost:1313/posts/_teste-shortcodes/</link>
+      <pubDate>Fri, 17 Apr 2026 20:52:59 -0300</pubDate>
+      <guid>http://localhost:1313/posts/_teste-shortcodes/</guid>
+      <description>Descrição do post (SEO)</description>
+    </item>
     <item>
       <title>Tudo que você precisa saber sobre Hugo - Crie e gerencie seu blog</title>
       <link>http://localhost:1313/posts/create-a-blog-with-hugo/</link>

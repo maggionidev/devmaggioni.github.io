@@ -1,0 +1,26 @@
+{{- $text := .Get "text" | default "Clique aqui" -}}
+{{- $link := .Get "link" | default "#" -}}
+{{- $target := .Get "target" | default "_self" -}}
+{{- $rel := cond (eq $target "_blank") "noopener noreferrer" "" -}}
+{{- $color := .Get "color" | default "#2563eb" -}}
+{{- $textColor := .Get "textColor" | default "#ffffff" -}}
+
+<a 
+  href="{{ $link }}" 
+  target="{{ $target }}" 
+  rel="{{ $rel }}"
+  class="custom-button"
+  style="
+    display:inline-block;
+    padding:3px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-in
+    font-weight:500;
+    background:{{ $color }};
+    color:{{ $textColor }};
+    transition:0.2s ease;
+  "
+>
+  {{ $text }}
+</a>

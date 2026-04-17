@@ -31,3 +31,7 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
   
   }
 }
+
+.custom-button:hover {
+  transform: translateY(-1px);
+}
