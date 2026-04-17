@@ -8,6 +8,7 @@ description = "Conheça Gabriel Maggioni, desenvolvedor focado em Unity (URP), B
 keywords = ["Gabriel Maggioni", "Unity URP", "desenvolvimento de jogos", "game dev Brasil", "Blender 3D", "programação", "devlogs", "Unity tutorial"]
 showReadingTime = false
 showBreadCrumbs = true
+searchHidden = true
 
 +++
 
