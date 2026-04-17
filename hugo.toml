@@ -154,10 +154,15 @@ buildExpired = false
 
 [[menu.main]]
   identifier = "categories"
-  name = "[ categories ]"
+  name = "[ categories -"
   url = "/categories/"
   weight = 30
-
+ 
+[[menu.main]]
+  identifier = "tags"
+  name = " tags ]"
+  url = "/tags/"
+  weight = 40
 # [[menu.main]]
 #  identifier = "tags"
 #  name = "🏷️ Tags"
@@ -168,7 +173,7 @@ buildExpired = false
   identifier = "about"
   name = "[ about me ]"
   url = "/about/"
-  weight = 40
+  weight = 50
 
 pygmentsUseClasses = true
 
