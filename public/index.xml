@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 15 Apr 2026 20:23:12 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 09:31:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tudo que você precisa saber sobre Hugo - Crie e gerencie seu blog</title>
+      <link>http://localhost:1313/posts/create-a-blog-with-hugo/</link>
+      <pubDate>Thu, 16 Apr 2026 09:31:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/create-a-blog-with-hugo/</guid>
+      <description>Guia completo para criar, configurar e publicar um blog com o Hugo</description>
+    </item>
     <item>
       <title>Tudo oque você precisa saber sobre Git e Github</title>
       <link>http://localhost:1313/posts/commands-for-git-and-github/</link>

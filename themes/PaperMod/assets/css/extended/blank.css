@@ -6,3 +6,28 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 #disqus_thread {
   margin-top: 150px;
 }
+
+
+
+@media (max-width: 768px) {
+  .header-nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo,
+  .menu {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .logo {
+    justify-content: center;
+    transform: scale(0.8);
+  
+  }
+}

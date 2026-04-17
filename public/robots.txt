@@ -3,6 +3,5 @@ Allow: /
 
 Disallow: /search/
 Disallow: /tags/
-Disallow: /categories/
 
 Sitemap: https://maggioni.dev/sitemap.xml
