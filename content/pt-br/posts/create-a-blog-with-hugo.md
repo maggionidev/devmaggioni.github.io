@@ -7,6 +7,7 @@ draft = false
 date = '2026-04-16T09:31:00-03:00'
 keywords = ["hugo", "blog", "site estático", "gohugo", "tema", "deploy"]
 categories = ["desenvolvimento"]
+tags = ["hugo", "blog", "go"]
 showToc = true
 TocOpen = false
 +++

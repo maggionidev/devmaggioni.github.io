@@ -2,7 +2,7 @@
 # ========================
 # 🧾 BASICO
 # ========================
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
+title = 'How to Format Your Pc'
 description = "Descrição do post (SEO)"
 summary = "Resumo curto que aparece em listagens"
 author = "Gabriel Maggioni"
@@ -10,10 +10,10 @@ author = "Gabriel Maggioni"
 
 draft = true
 
-date = '{{ .Date }}'
-#lastmod = '{{ .Date }}'
-#publishDate = '{{ .Date }}'
-#expiryDate = '{{ .Date }}'
+date = '2026-04-18T13:29:12-03:00'
+#lastmod = '2026-04-18T13:29:12-03:00'
+#publishDate = '2026-04-18T13:29:12-03:00'
+#expiryDate = '2026-04-18T13:29:12-03:00'
 
 # ========================
 # 🔗 URL / SLUG

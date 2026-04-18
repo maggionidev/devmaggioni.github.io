@@ -5,6 +5,7 @@ summary = "Aprenda os comandos necessários de git e github"
 author = "Gabriel Maggioni"
 draft = false
 date = '2026-04-15T20:23:12-03:00'
+tags = ["git", "github", "dev"]
 keywords = ["git", "github", "controle de versão", "ssh", "programação"]
 categories = ["desenvolvimento"]
 showToc = true

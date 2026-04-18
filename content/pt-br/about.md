@@ -9,6 +9,7 @@ keywords = ["Gabriel Maggioni", "Unity URP", "desenvolvimento de jogos", "game d
 showReadingTime = false
 showBreadCrumbs = true
 searchHidden = true
+showToc = false
 
 +++
 
