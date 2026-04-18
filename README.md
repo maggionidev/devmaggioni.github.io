@@ -1,165 +1,174 @@
 # Hugo + PaperMod
 
-Documentação do projeto para desenvolvimento, criação de conteúdo e customização do tema.
+Documentação do meu blog pessoal feito com Hugo e usando o tema PaperMod.
 
 ---
 
 ## Sumário
 
-- [Requisitos](#requisitos)
-- [Instalação e uso local](#instalação-e-uso-local)
-- [Criando posts](#criando-posts)
-- [Archetypes](#archetypes)
-- [Customizando o CSS](#customizando-o-css)
-- [Shortcodes](#shortcodes)
-- [Partials](#partials)
+* [Requisitos](#requisitos)
+* [Instalação e uso local](#instalação-e-uso-local)
+* [Criando posts](#criando-posts)
+* [Archetypes](#archetypes)
+* [Customização (sem alterar o tema)](#customização-sem-alterar-o-tema)
+* [Shortcodes](#shortcodes)
+* [Partials](#partials)
+* [Estrutura do projeto](#estrutura-do-projeto)
 
 ---
 
 ## Requisitos
 
-- [Hugo Extended](https://gohugo.io/installation/) v0.112 ou superior (a versão **Extended** é obrigatória para compilar SCSS)
-- Git
+* Hugo **Extended** v0.112 ou superior
+* Git
+
+> ⚠️ A versão *Extended* é obrigatória para compilar SCSS
 
 ---
 
 ## Instalação e uso local
 
 ```bash
-# Clone o repositório
 git clone https://github.com/maggionidev/maggionidev.github.io.git maggionidev-blog
 cd maggionidev-blog
 
-# Inicie o servidor de desenvolvimento
 hugo server -D
 ```
 
-O site estará disponível em `http://localhost:1313`.
+Acesse:
+`http://localhost:1313`
 
-O flag `-D` inclui rascunhos (`draft: true`) na visualização local. Para buildar o site para produção:
+### Flags importantes
+
+* `-D` → inclui drafts (`draft = true`)
+* `--minify` → build otimizado para produção
 
 ```bash
 hugo --minify
 ```
 
-Os arquivos gerados ficam na pasta `public/`.
+Saída: `public/`
 
 ---
 
 ## Criando posts
 
-Todo o conteúdo em português fica em:
+Conteúdo em português:
 
 ```
 content/pt-br/posts/
 ```
 
-### Via CLI (recomendado)
+### Via CLI
 
 ```bash
-hugo new pt-br/posts/meu-novo-post.md
+hugo new content/pt-br/posts/meu-novo-post.md
 ```
 
-O Hugo vai usar o archetype correspondente para gerar o arquivo com o front matter já preenchido.
-
-### Estrutura do front matter
-
-```yaml
 ---
-title: "Título do Post"
-date: 2024-01-15T10:00:00-03:00
-draft: false
-description: "Descrição curta do post para SEO e cards de listagem."
-tags: ["tag1", "tag2"]
-categories: ["categoria"]
-cover:
-  image: "caminho/para/imagem.jpg"
-  alt: "Descrição da imagem de capa"
-  caption: "Legenda opcional"
----
+
+## Front matter (TOML padrão do projeto)
+
+Este projeto usa **TOML**, não YAML.
+
+```toml
++++
+title = "Título do Post"
+date = 2024-01-15T10:00:00-03:00
+draft = false
+description = "Descrição curta do post"
+tags = ["tag1", "tag2"]
+categories = ["categoria"]
+
+[cover]
+image = "images/capa.jpg"
+alt = "Descrição da imagem"
+caption = "Legenda opcional"
++++
 ```
 
 ### Boas práticas
 
-- Deixe `draft: true` enquanto o post não estiver pronto para publicar
-- Prefira slugs em minúsculas e com hífens: `meu-post-sobre-algo.md`
-- Imagens do post ficam melhor em `static/images/` ou junto ao conteúdo em [Page Bundles](https://gohugo.io/content-management/page-bundles/)
+* Use `draft = true` enquanto escreve
+* Use slugs simples:
+
+  ```
+  meu-post-sobre-algo.md
+  ```
+* Prefira:
+
+  * `static/images/`
+  * ou Page Bundles
 
 ---
 
 ## Archetypes
 
-A pasta `archetypes/` define os **templates de front matter** usados quando você roda `hugo new`. Ela evita retrabalho ao criar conteúdo novo.
+Evita retrabalho ao criar conteúdo.
 
 ```
 archetypes/
-├── default.md          # Usado quando não há archetype específico
-└── posts.md            # Usado para hugo new pt-br/posts/...
+├── default.md
+└── posts.md
 ```
 
-### Exemplo de `archetypes/posts.md`
+### Exemplo (`archetypes/posts.md`)
 
 ```markdown
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
-description: ""
-tags: []
-categories: []
-cover:
-  image: ""
-  alt: ""
----
++++
+title = "{{ replace .Name "-" " " | title }}"
+date = {{ .Date }}
+draft = true
+description = ""
+tags = []
+categories = []
+
+[cover]
+image = ""
+alt = ""
++++
 
 Escreva o conteúdo aqui.
 ```
 
-Quando você rodar `hugo new pt-br/posts/nome-do-post.md`, esse template é aplicado automaticamente, com o título gerado a partir do nome do arquivo.
+---
+
+## Customização (sem alterar o tema)
+
+> ❗ Regra do projeto: **NUNCA editar arquivos dentro de `themes/`**
+
+O Hugo permite sobrescrever tudo pela raiz.
 
 ---
 
-## Customizando o CSS
+### CSS customizado
 
-O PaperMod oferece um ponto de extensão oficial para CSS sem precisar modificar os arquivos do tema diretamente. Qualquer arquivo dentro de:
-
-```
-themes/PaperMod/assets/css/extended/
-```
-
-é automaticamente incluído pelo tema na compilação final. Isso garante que suas customizações sobrevivam a atualizações do tema.
-
-### Como usar
-
-Crie quantos arquivos `.css` quiser dentro dessa pasta:
+Use:
 
 ```
-themes/PaperMod/assets/css/extended/
-├── custom.css          # Estilos gerais
-├── typography.css      # Ajustes de tipografia
-└── dark-mode.css       # Overrides do modo escuro
+assets/css/extended/
 ```
 
-> **Dica:** se você preferir não tocar nos arquivos do submódulo do tema, crie a mesma estrutura na raiz do projeto — o Hugo vai dar preferência aos arquivos locais:
->
-> ```
-> assets/css/extended/custom.css
-> ```
+Exemplo:
 
-### Exemplo de `custom.css`
+```
+assets/css/extended/
+├── custom.css
+├── typography.css
+└── dark-mode.css
+```
+
+### Exemplo
 
 ```css
-/* Ajuste de largura máxima do conteúdo */
 .post-content {
   max-width: 740px;
 }
 
-/* Fonte personalizada */
 body {
   font-family: "Inter", sans-serif;
 }
 
-/* Override de cor de destaque */
 a {
   color: #e05c2e;
 }
@@ -169,29 +178,29 @@ a {
 
 ## Shortcodes
 
-Shortcodes são **componentes reutilizáveis** que você usa dentro do Markdown dos posts. Ficam em:
+Local:
 
 ```
 layouts/shortcodes/
 ```
 
-### Usando um shortcode no post
+### Uso
 
-```
-{{< nome-do-shortcode parametro="valor" >}}
+```md
+{{< nome parametro="valor" >}}
 ```
 
-Ou com conteúdo interno:
+Com conteúdo:
 
-```
+```md
 {{< callout tipo="aviso" >}}
-Este é o conteúdo do callout.
+Texto aqui
 {{< /callout >}}
 ```
 
-### Exemplo: shortcode de callout
+---
 
-**`layouts/shortcodes/callout.html`**
+### Exemplo: Callout
 
 ```html
 <div class="callout callout-{{ .Get "tipo" | default "info" }}">
@@ -199,17 +208,9 @@ Este é o conteúdo do callout.
 </div>
 ```
 
-**Uso no post:**
+---
 
-```
-{{< callout tipo="aviso" >}}
-Atenção: este recurso está em beta.
-{{< /callout >}}
-```
-
-### Exemplo: shortcode de vídeo do YouTube com lazy load
-
-**`layouts/shortcodes/youtube-lite.html`**
+### Exemplo: YouTube
 
 ```html
 <div class="video-wrapper">
@@ -221,108 +222,102 @@ Atenção: este recurso está em beta.
 </div>
 ```
 
-**Uso:**
+Uso:
 
+```md
+{{< youtube-lite "ID_DO_VIDEO" >}}
 ```
-{{< youtube-lite "dQw4w9WgXcQ" >}}
-```
-
-### Shortcodes nativos do Hugo úteis
-
-| Shortcode | Uso |
-|---|---|
-| `{{< figure src="..." alt="..." >}}` | Imagem com legenda |
-| `{{< gist usuario id >}}` | Embed de Gist do GitHub |
-| `{{< highlight go >}}` | Bloco de código com syntax highlight |
 
 ---
 
 ## Partials
 
-Partials são **fragmentos de template HTML** reutilizáveis, usados para construir o layout das páginas. Ficam em:
+Local:
 
 ```
 layouts/partials/
 ```
 
-O PaperMod já inclui suas próprias partials. Para sobrescrever ou estender uma delas, basta criar um arquivo com o **mesmo nome e caminho** na pasta `layouts/partials/` do seu projeto, sem tocar nos arquivos do tema.
+---
 
-### Estrutura comum
+### Regra importante
 
-```
-layouts/partials/
-├── head.html           # Tags <head>, meta tags, scripts
-├── header.html         # Cabeçalho do site
-├── footer.html         # Rodapé
-├── comments.html       # Sistema de comentários
-└── extend_head.html    # Injeção extra no <head> (suportada pelo PaperMod)
-```
+Para modificar o tema:
 
-### Sobrescrevendo uma partial do PaperMod
+* **copie o arquivo**
+* **cole na raiz**
+* **edite lá**
 
-Quer modificar o rodapé sem editar o tema? Copie o arquivo original e edite a cópia:
+Exemplo:
 
 ```bash
 cp themes/PaperMod/layouts/partials/footer.html layouts/partials/footer.html
 ```
 
-Agora edite `layouts/partials/footer.html` à vontade. O Hugo sempre vai preferir os arquivos do seu projeto aos do tema.
+---
 
-### Partial `extend_head.html`
+### Estrutura comum
 
-O PaperMod expõe essa partial especificamente para injeções no `<head>` sem override completo. Útil para fontes, scripts de analytics, meta tags extras:
-
-**`layouts/partials/extend_head.html`**
-
-```html
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- Plausible Analytics -->
-<script defer data-domain="seusite.com.br" src="https://plausible.io/js/script.js"></script>
+```
+layouts/partials/
+├── head.html
+├── header.html
+├── footer.html
+├── comments.html
+└── extend_head.html
 ```
 
-### Criando uma partial do zero
+---
 
-**`layouts/partials/author-bio.html`**
+### extend_head.html (recomendado)
+
+Para adicionar scripts sem override completo:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<script defer data-domain="seusite.com.br"
+  src="https://plausible.io/js/script.js">
+</script>
+```
+
+---
+
+### Criando partial
 
 ```html
 <div class="author-bio">
-  <img src="{{ .Params.author_avatar }}" alt="Foto do autor">
+  <img src="{{ .Params.author_avatar }}">
   <p>{{ .Params.author_bio }}</p>
 </div>
 ```
 
-Para usar em um template de página:
+Uso:
 
-```html
+```go
 {{ partial "author-bio.html" . }}
 ```
 
 ---
 
-## Estrutura geral do projeto
+## Estrutura do projeto
 
 ```
 .
-├── archetypes/              # Templates de front matter
+├── archetypes/
 ├── assets/
 │   └── css/
-│       └── extended/        # CSS customizado (alternativa sem tocar no tema)
+│       └── extended/
 ├── content/
 │   └── pt-br/
-│       └── posts/           # Posts em português
+│       └── posts/
 ├── layouts/
-│   ├── partials/            # Partials customizadas ou sobrescritas
-│   └── shortcodes/          # Shortcodes do projeto
-├── static/                  # Arquivos estáticos (imagens, favicons, etc.)
+│   ├── partials/
+│   └── shortcodes/
+├── static/
 ├── themes/
-│   └── PaperMod/
-│       └── assets/
-│           └── css/
-│               └── extended/ # CSS customizado direto no tema
-├── config.yml               # Configuração principal do Hugo
+│   └── PaperMod/   # NÃO editar diretamente
+├── config.yml
 └── README.md
 ```
 
@@ -330,7 +325,7 @@ Para usar em um template de página:
 
 ## Links úteis
 
-- [Documentação do Hugo](https://gohugo.io/documentation/)
-- [Repositório do PaperMod](https://github.com/adityatelange/hugo-PaperMod)
-- [Wiki do PaperMod](https://github.com/adityatelange/hugo-PaperMod/wiki)
-- [Shortcodes nativos do Hugo](https://gohugo.io/content-management/shortcodes/)
+* [https://gohugo.io/documentation/](https://gohugo.io/documentation/)
+* [https://github.com/adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
+* [https://github.com/adityatelange/hugo-PaperMod/wiki](https://github.com/adityatelange/hugo-PaperMod/wiki)
+* [https://gohugo.io/content-management/shortcodes/](https://gohugo.io/content-management/shortcodes/)
