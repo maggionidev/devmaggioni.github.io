@@ -1,0 +1,49 @@
+.pagination .next,
+.pagination .prev {
+  all: unset;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  background: #f5f5f5;
+  color: #333;
+
+  transition: all 0.2s ease;
+}
+
+/* esconde o símbolo */
+.pagination .next,
+.pagination .prev {
+  font-size: 0;
+}
+
+/* adiciona texto */
+.pagination .next::before {
+  content: "Next →";
+  font-size: 14px;
+}
+
+.pagination .prev::before {
+  content: "← Prev";
+  font-size: 14px;
+}
+
+.pagination a:hover {
+  background: #e0e0e0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
