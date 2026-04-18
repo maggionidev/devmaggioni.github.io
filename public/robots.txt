@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /search/
-Disallow: /tags/
-
-Sitemap: https://maggioni.dev/sitemap.xml
