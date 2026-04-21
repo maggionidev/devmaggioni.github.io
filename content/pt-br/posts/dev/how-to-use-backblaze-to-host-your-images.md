@@ -6,6 +6,8 @@ title = 'Hospedagem de Imagens com Backblaze B2 e Cloudflare: CDN Gratuito'
 description = "Aprenda a configurar CDN gratuito para imagens usando Backblaze B2 e Cloudflare. Guia passo a passo com Transform Rules, CNAME e SSL para blogs estáticos."
 summary = "Descubra como hospedar os assets do seu blog estático com custo quase zero, usando o subdomínio do seu próprio domínio e cache de borda global."
 author = "Gabriel Maggioni"
+tags=["backblaze", "cloudflare", "dns", "domain configuration"]
+categories=["dev", "dns"]
 
 draft = false
 
