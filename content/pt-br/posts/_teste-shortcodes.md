@@ -97,7 +97,7 @@ comments = false
 
 ### Figure
 
-{{< figure src="/images/hello-world.png"
+{{< figure src="https://media.maggioni.dev/hello-world.png"
     alt="Imagem de exemplo"
     caption="Legenda aqui"
     title="Título da imagem"
@@ -118,7 +118,7 @@ Conteúdo escondido aqui dentro 👀
 ---
 
 ### InTextImg
-Imagem no meio {{< InTextImg url="/images/hello-world.png" alt="GitHub" >}} do texto.
+Imagem no meio {{< InTextImg url="https://media.maggioni.dev/hello-world.png" alt="GitHub" >}} do texto.
 
 ---
 

@@ -7,7 +7,7 @@ draft = false
 date = '2026-04-15T20:23:12-03:00'
 tags = ["git", "github", "dev"]
 keywords = ["git", "github", "controle de versão", "ssh", "programação"]
-categories = ["desenvolvimento"]
+categories = ["dev"]
 showToc = true
 TocOpen = false
 +++
