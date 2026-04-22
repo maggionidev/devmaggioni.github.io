@@ -109,6 +109,15 @@ comments = false
 
  ---
 
+### Warning
+
+ {{< warning 
+  title="Leia esse post até o final!" 
+  text="Ao fim desse post lhe darei 2 dicas super importantes, de como manter seu bucket seguro e previnir que acabe gerando custos desnecessários no seu blackbaze!"
+>}}
+
+---
+
 ### Collapse
 
 {{< details summary="Clique para ver mais" >}}

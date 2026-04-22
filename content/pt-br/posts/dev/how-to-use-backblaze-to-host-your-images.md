@@ -7,11 +7,12 @@ description = "Aprenda a configurar CDN gratuito para imagens usando Backblaze B
 summary = "Descubra como hospedar os assets do seu blog estático com custo quase zero, usando o subdomínio do seu próprio domínio e cache de borda global."
 author = "Gabriel Maggioni"
 tags=["backblaze", "cloudflare", "dns", "domain configuration"]
-categories=["dev", "dns"]
+categories=["dev", "cdn"]
 
 draft = false
 
 date = '2026-04-21T11:30:23-03:00'
+lastmod = '2026-04-22T19:30:00-03:00'
 
 +++
 
@@ -19,9 +20,15 @@ Se você tem um blog estático no GitHub Pages, em algum momento você vai esbar
 
 Essa foi exatamente a pergunta que me fiz quando comecei a montar o `maggioni.dev`. A resposta que encontrei foi combinar o **Backblaze B2** com o **Cloudflare**. Nesse post vou te mostrar exatamente como configurar isso do zero.
 
-Eu simplesmente faço upload dos meus arquivos no Backblaze, e posso usar o link da media para embedar em meus posts, como por exemplo: {{< link href="https://media.maggioni.dev/hello-world.png">}}.
+Eu simplesmente faço upload dos meus arquivos no Backblaze, e posso usar o link dos meus arquivos para colocar em meus posts, como por exemplo:
+{{< link href="https://media.maggioni.dev/hello-world.png">}}.
 
 Muito legal, e fica com cara profissional.
+
+{{< warning 
+  title="Leia esse post até o final!" 
+  text="Ao fim desse post lhe darei 2 dicas super importantes, de como manter seu bucket seguro e previnir que acabe gerando custos desnecessários no seu backblaze!"
+>}}
 
 ---
 
@@ -184,8 +191,6 @@ exemplo real:
 
 {{< link href="https://media.maggioni.dev/hello-world.png" >}}
 
-
-
 Se a imagem apareceu, funcionou. Nos seus posts do Hugo, agora você usa esse subdomínio direto:
 
 ```markdown
@@ -196,30 +201,54 @@ Se a imagem apareceu, funcionou. Nos seus posts do Hugo, agora você usa esse su
 
 ---
 
-## Dica opcional: Cache e performance extra 
+## Dica opcional #1: Cache e performance extra 
 
 Por padrão, o Cloudflare já cacheia arquivos de imagem com base na extensão. Se quiser controle maior, vá em **Caching → Cache Rules** e crie uma regra específica pro subdomínio `media.seusite.com` com um TTL longo, algo como 1 mês.
 
 Imagem estática não muda. Faz sentido cachear bastante.
 
+No Cloudflare, encontre as `Cache Rules`;
+
+Crie uma nova regra de cache:
+
+- **Nome da regra:** cache-media-images;
+- **Se as solicitações recebidas coincidirem…:** Personalizar expressão do filtro;
+- **no criador de expressão** cole: `http.host eq "media.seusite.com"`;
+- **Então...Elegibilidade de cache:** Qualificado para cache;
+- **TTL da borda > Ignore o cabeçalho de controle de cache e use este TTL:** coloque 1 mês;
+- **Navegador TTL: Substitua a origem e use este TTL:** coloque 1 mês
+
+clique em **salvar/implantar**;
+
 ---
 
+## Dica opcional #2: Deixar seu bucket privado 
 
-### Cache Rules
+Tudo oque a gente configurou até agora... funciona muito bem...
+No entanto, existe um problema de segurança nisso tudo:
 
-Nome da regra: cache-media-images;
+- quando você envia um arquivo pro seu bucket b2 público, ele vai gerar uma URL semelhante à essa:
+`https://f005.backblazeb2.com/file/maggioni-blog-assets/hello-world.png`;
 
-Se as solicitações recebidas coincidirem…: Personalizar expressão do filtro;
+Ocorre que, ao deixar seu bucket público, qualquer pessoa pode acessar esse link. Ou usar a sua imagem que está no blackbaze em outro lugar, rede social, outro blog, etc...
 
-no criador de expressão cole: http.host eq "media.seusite.com";
+**E é aí que mora o perigo:** Se a requição bater direto no b2, invés do nosso CDN que configuramos na cloudflare, isso **vai te gerar custos.**
 
-Então...Elegibilidade de cache: Qualificado para cache;
+Se lembra que, no ínicio desse post eu mencionei a **Bandwidth Alliance**? Certo, a Bandwidth Alliance faz com que não importa quantas pessoas acessem aos seus arquivos, você não paga pelo tráfego, apenas pelo armazenamento (10gb gratuitos depois vai cobrando a mais se extrapolar). Isso só é possível se a requição bater no nosso Cloudflare primeiro:
 
-TTL da borda: Ignore o cabeçalho de controle de cache e use este TTL > coloque 1 mês;
+- `https://media.maggioni.dev/hello-world.png` - ✔️ Tráfego grátis garantido
+- `https://f005.backblazeb2.com/file/maggioni-blog-assets/hello-world.png` - ❌ Se cair direto na b2, vai gerar custos
 
-Navegador TTL: Substitua a origem e use este TTL > coloque 1 mês
+"Mas não é apenas eu divulgar o meu link media.meusite.com e esconder o link direto da backblaze?" - Sim... e não.
 
-clique em salvar/implantar;
+Até funciona, um usuário comum vai usar o seu subdomínio e não vai nem saber da existência da backblaze. No entanto, um bug em seu site, ou até mesmo um ataque hacker, pode descobrir a backblaze por trás do seu subdomínio (nem é tão difícil assim na verdade, só inspecionar o código da página) e fazer requisições infinitas, o que vai derrubar a sua conexão, e se seu cartão estiver ativo, vai ficar cobrando sem parar...
+
+"Ok Gabriel, então é só eu ir lá no meu bucket e mudar o botão pra privado?" - Não hehehehe;
+Se você fizer isso, vai simplesmente parar de funcionar;
+
+**Será necessário uma configuração adicional para resolver essa situação**.
+Caso tenha interesse em seguir o tutorial, sinta-se a vontade para ler meu próximo post:
+[deixando seu backblaze b2 mais seguro - e sem riscos de perder grana](/posts/dev/securing-a-backblaze-b2-bucket-using-cloudflare-workers)
 
 ---
 
