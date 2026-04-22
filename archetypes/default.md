@@ -10,6 +10,9 @@ keywords = []
 author = "Gabriel Maggioni"
 draft = true
 date = '{{ .Date }}'
+#lastmod = '{{ .Date }}'
+#publishDate = '{{ .Date }}'
+#expiryDate = '{{ .Date }}'
 
 showToc = true
 TocOpen = false
