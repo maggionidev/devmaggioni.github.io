@@ -30,7 +30,7 @@ defaultContentLanguageInSubdir = true
     description = "Programação, Blender, Unity e DevLogs..."
   [languages.pt-BR.params.editPost]
     URL = "https://github.com/maggionidev/maggionidev.github.io/tree/main/content/pt-br"
-    Text = " ✏️ Encontrou um erro? Sujira alterações!"
+    Text = " ✏️ Encontrou um erro? Sugerir alterações!"
     appendFilePath = true
 
     [languages.pt-BR.params.homeInfoParams]
