@@ -1,0 +1,30 @@
+.warning-box {
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: rgba(255, 193, 7, 0.08);
+    border: 1px solid rgba(255, 193, 7, 0.25);
+    margin: 20px 0;
+  }
+  
+  .warning-icon {
+    font-size: 20px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  
+  .warning-content {
+    flex: 1;
+  }
+  
+  .warning-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #ffb300;
+  }
+  
+  .warning-text {
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
