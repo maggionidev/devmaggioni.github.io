@@ -111,7 +111,7 @@ Download windows 11
 
 (role a página até a seção "Baixar imagem de disco (ISO) do Windows 11 para dispositivos x64" > Baixar agora > selecionar idioma > confirmar > 64-bits baixar)
 
-![print da página da microsoft](https://media.maggioni.dev/posts/windows/bootable-pendrive-windows/2026-04-18_13-07.jpg)
+![print da página da microsoft](https://assets.maggioni.dev/posts/windows/bootable-pendrive-windows/2026-04-18_13-07.jpg)
 
 ---
 
@@ -135,7 +135,7 @@ Após baixar o rufus, execute o `.exe` que você baixou;
 Selecione essas opções na janela do Rufus, apontando para o seu pendrive:
 (Cuidado para não selecionar a partição errada! Pois ela será formatada!)
 
-![print da página da microsoft](https://media.maggioni.dev/posts/windows/bootable-pendrive-windows/2026-04-18_13-182.jpg)
+![print da página da microsoft](https://assets.maggioni.dev/posts/windows/bootable-pendrive-windows/2026-04-18_13-182.jpg)
 
 clique em "Iniciar" e aguarde o processo terminar.
 

@@ -83,6 +83,14 @@ O usuário nunca fala direto com o B2.
 
 ---
 
+## Aviso importante: Desabilite a função de reescrita de URL na Cloudflare
+
+ {{< warning 
+  title="Se você seguiu meu tutorial anterior, provalvelmente habilitou a custum rule de reescrita de URL, na cloudflare. Não precisaremos mais dela, desative!" 
+>}}
+
+---
+
 **Instalando o Wrangler**
 
 ```bash
