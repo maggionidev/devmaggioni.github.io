@@ -260,4 +260,4 @@ Pra um blog estático no GitHub Pages, é difícil achar solução melhor.
 
 ---
 
-=> [crie um blog estático com hugo!](https://maggioni.dev/posts/create-a-blog-with-hugo/)
+=> [crie um blog estático com hugo!](posts/dev/create-a-blog-with-hugo/)
