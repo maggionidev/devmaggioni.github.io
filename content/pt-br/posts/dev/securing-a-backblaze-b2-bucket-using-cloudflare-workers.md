@@ -53,7 +53,7 @@ A arquitetura correta:
 
 Depois da configuração, o fluxo fica assim:
 
-Usuário → media.seudominio.com → Cloudflare Worker → Backblaze (privado)
+Usuário → assets.seudominio.com → Cloudflare Worker → Backblaze (privado)
 
 O usuário nunca fala direto com o B2.
 
@@ -228,7 +228,7 @@ deve aparecer algo como:
 ok, isso é definitivamente bom;
 Agora acesse pelo seu subdomínio:
 
-`media.seusite.com/hello-world.png`;
+`assets.seusite.com/hello-world.png`;
 
 deve aparecer uma linda imagem de hello world;
 

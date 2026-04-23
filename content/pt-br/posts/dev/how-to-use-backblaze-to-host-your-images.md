@@ -21,7 +21,7 @@ Se você tem um blog estático no GitHub Pages, em algum momento você vai esbar
 Essa foi exatamente a pergunta que me fiz quando comecei a montar o `maggioni.dev`. A resposta que encontrei foi combinar o **Backblaze B2** com o **Cloudflare**. Nesse post vou te mostrar exatamente como configurar isso do zero.
 
 Eu simplesmente faço upload dos meus arquivos no Backblaze, e posso usar o link dos meus arquivos para colocar em meus posts, como por exemplo:
-{{< link href="https://media.maggioni.dev/hello-world.png">}}.
+{{< link href="https://assets.maggioni.dev/hello-world.png">}}.
 
 Muito legal, e fica com cara profissional.
 
@@ -56,11 +56,17 @@ Você paga só pelo armazenamento. Não importa quantas pessoas acessem suas fot
 
 **3. URLs Profissionais e Limpas**
 
-Com as Transform Rules que vamos configurar, você não vai expor URLs genéricas tipo `f005.backblazeb2.com/...`. Suas imagens ficam servidas pelo seu próprio subdomínio, como `media.maggioni.dev`. Melhor pro SEO, melhor pra confiança do leitor.
+Com as Transform Rules que vamos configurar, você não vai expor URLs genéricas tipo `f005.backblazeb2.com/...`. Suas imagens ficam servidas pelo seu próprio subdomínio, como `assets.maggioni.dev`. Melhor pro SEO, melhor pra confiança do leitor.
 
 **4. Desempenho Global com Edge Caching**
 
 Ao colocar o Cloudflare na frente do B2, as imagens ficam cacheadas nos servidores de borda da Cloudflare ao redor do mundo. Um leitor em Portugal baixa a imagem de um servidor em Lisboa, não dos EUA. A diferença no tempo de carregamento (LCP) é considerável.
+
+---
+
+## Requisitos
+
+- Possui um domínio
 
 ---
 
@@ -134,7 +140,7 @@ No painel da Cloudflare, vá em **DNS → Registros → Add Novo Registro**.
 | Target | f000.backblazeb2.com (o endpoint que você copiou) |
 | Proxy status | Proxied (ícone laranja ativado) |
 
-Salva. Agora `media.seusite.com` aponta pro Backblaze, mas ainda precisamos dizer *qual* bucket ele deve servir.
+Salva. Agora `assets.seusite.com` aponta pro Backblaze, mas ainda precisamos dizer *qual* bucket ele deve servir.
 
 ### Criar a Transform Rule
 
@@ -150,7 +156,7 @@ preencha o filtro:
 
 Selecione "Personalizar expressão do filtro"
 
-Vai abrir um input para você preencher, selecione campo como "Nome do host", e Operador como "é igual a", e em valor, adicione "media.seusite.com"
+Vai abrir um input para você preencher, selecione campo como "Nome do host", e Operador como "é igual a", e em valor, adicione "assets.seusite.com"
 
 - **Depois… Regravar em...:**
 
@@ -165,7 +171,7 @@ Deixe marcado "preservar";
 
 Salve. Clique em Implantar.
 
-O que isso faz na prática: uma requisição pra `https://media.seusite.com/foto.jpg` vira `https://f000.backblazeb2.com/file/nome-do-seu-bucket/foto.jpg` antes de chegar no Backblaze. Transparente pra quem acessa, seguro pra você.
+O que isso faz na prática: uma requisição pra `https://assets.seusite.com/foto.jpg` vira `https://f000.backblazeb2.com/file/nome-do-seu-bucket/foto.jpg` antes de chegar no Backblaze. Transparente pra quem acessa, seguro pra você.
 
 ---
 
@@ -184,26 +190,26 @@ Vai em **SSL/TLS → Visão Geral → Configurar → Custom SSL/TLS**, seleciona
 Acesse no navegador:
 
 ```
-https://media.seusite.com/nome-da-imagem.jpg
+https://assets.seusite.com/nome-da-imagem.jpg
 ```
 
 exemplo real:
 
-{{< link href="https://media.maggioni.dev/hello-world.png" >}}
+{{< link href="https://assets.maggioni.dev/hello-world.png" >}}
 
 Se a imagem apareceu, funcionou. Nos seus posts do Hugo, agora você usa esse subdomínio direto:
 
 ```markdown
-![Descrição da imagem](https://media.seusite.com/nome-da-imagem.jpg)
+![Descrição da imagem](https://assets.seusite.com/nome-da-imagem.jpg)
 ```
 
-![Descrição da imagem](https://media.maggioni.dev/hello-world.png)
+![Descrição da imagem](https://assets.maggioni.dev/hello-world.png)
 
 ---
 
 ## Dica opcional #1: Cache e performance extra 
 
-Por padrão, o Cloudflare já cacheia arquivos de imagem com base na extensão. Se quiser controle maior, vá em **Caching → Cache Rules** e crie uma regra específica pro subdomínio `media.seusite.com` com um TTL longo, algo como 1 mês.
+Por padrão, o Cloudflare já cacheia arquivos de imagem com base na extensão. Se quiser controle maior, vá em **Caching → Cache Rules** e crie uma regra específica pro subdomínio `assets.seusite.com` com um TTL longo, algo como 1 mês.
 
 Imagem estática não muda. Faz sentido cachear bastante.
 
@@ -213,7 +219,7 @@ Crie uma nova regra de cache:
 
 - **Nome da regra:** cache-media-images;
 - **Se as solicitações recebidas coincidirem…:** Personalizar expressão do filtro;
-- **no criador de expressão** cole: `http.host eq "media.seusite.com"`;
+- **no criador de expressão** cole: `http.host eq "assets.seusite.com"`;
 - **Então...Elegibilidade de cache:** Qualificado para cache;
 - **TTL da borda > Ignore o cabeçalho de controle de cache e use este TTL:** coloque 1 mês;
 - **Navegador TTL: Substitua a origem e use este TTL:** coloque 1 mês
@@ -236,10 +242,10 @@ Ocorre que, ao deixar seu bucket público, qualquer pessoa pode acessar esse lin
 
 Se lembra que, no ínicio desse post eu mencionei a **Bandwidth Alliance**? Certo, a Bandwidth Alliance faz com que não importa quantas pessoas acessem aos seus arquivos, você não paga pelo tráfego, apenas pelo armazenamento (10gb gratuitos depois vai cobrando a mais se extrapolar). Isso só é possível se a requição bater no nosso Cloudflare primeiro:
 
-- `https://media.maggioni.dev/hello-world.png` - ✔️ Tráfego grátis garantido
+- `https://assets.maggioni.dev/hello-world.png` - ✔️ Tráfego grátis garantido
 - `https://f005.backblazeb2.com/file/maggioni-blog-assets/hello-world.png` - ❌ Se cair direto na b2, vai gerar custos
 
-"Mas não é apenas eu divulgar o meu link media.meusite.com e esconder o link direto da backblaze?" - Sim... e não.
+"Mas não é apenas eu divulgar o meu link assets.meusite.com e esconder o link direto da backblaze?" - Sim... e não.
 
 Até funciona, um usuário comum vai usar o seu subdomínio e não vai nem saber da existência da backblaze. No entanto, um bug em seu site, ou até mesmo um ataque hacker, pode descobrir a backblaze por trás do seu subdomínio (nem é tão difícil assim na verdade, só inspecionar o código da página) e fazer requisições infinitas, o que vai derrubar a sua conexão, e se seu cartão estiver ativo, vai ficar cobrando sem parar...
 
