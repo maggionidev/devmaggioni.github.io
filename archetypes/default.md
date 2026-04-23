@@ -8,7 +8,6 @@ categories = []
 keywords = []
 
 author = "Gabriel Maggioni"
-draft = true
 date = '{{ .Date }}'
 #lastmod = '{{ .Date }}'
 #publishDate = '{{ .Date }}'
@@ -17,4 +16,5 @@ date = '{{ .Date }}'
 showToc = true
 TocOpen = false
 
+draft = true
 +++
