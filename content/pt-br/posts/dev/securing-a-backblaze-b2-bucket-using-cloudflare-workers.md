@@ -74,6 +74,7 @@ O usuário nunca fala direto com o B2.
 - Conta + Domínio na {{< link href="https://www.cloudflare.com/pt-br/">}}
 - {{< link href="https://nodejs.org/pt-br" text="Node.js">}} instalado
 - {{< link href="https://git-scm.com/install/windows" text="Git">}} instalado
+- Visual Studio Code ou outra IDE
 
  {{< warning 
   title="Sente-se perdido?" 
@@ -119,7 +120,7 @@ No {{< link href="https://secure.backblaze.com/app_keys.htm" text="B2">}}:
 "Add a new application key":
 
 - acesso: Read Only
-- escolha sem bucket
+- escolha seu bucket
 - sem prefixo (deixe vazio)
 
 **Anote no seu bloco de notas:**
