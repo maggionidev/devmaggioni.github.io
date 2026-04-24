@@ -27,7 +27,7 @@ date = '2026-04-18T12:42:32-03:00'
 # ========================
 tags = ["windows", "boot", "formatação"]
 categories = ["windows"]
-keywords = ["windows", "pendrive", "pendrive bootável", "boot"]
+keywords = ["windows", "pendrive", "pendrive bootável", "formatar"]
 
 # ========================
 # 🔍 SEO / SOCIAL
@@ -144,6 +144,6 @@ clique em "Iniciar" e aguarde o processo terminar.
 E... pronto! Você já tem um pendrive bootável e pode estar o usando para formatar seu pc!
 Esse post o foco é criar o pendrive. 
 
-Eu abordo de forma completa o processo de formatação [aqui](https://maggioni.dev/posts/windows/how-to-format-your-pc)
+Eu abordo de forma completa o processo de formatação [aqui](posts/windows/how-to-format-your-pc-with-windows)
 
 ---
