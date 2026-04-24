@@ -299,7 +299,7 @@ Seu pendrive bootável deve se parecer com isso:
 
 ---
 
-## Capítulo 4: Enfim, a formatação!
+## Capítulo 3: Enfim, a formatação!
 
 Reinicie o computador e entre na BIOS. Na maioria das placas, é só pressionar uma tecla assim que a tela aparecer: **F2** nas placas ASUS, **Del**, **F10** ou **Esc** em outras marcas. Se não souber qual é a da sua, uma busca rápida no Google resolve.
 
