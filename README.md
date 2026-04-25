@@ -36,6 +36,9 @@ cd maggionidev-blog
 hugo server -D
 ```
 
+obs: git remote set-url origin git@github.com:SEU_USUARIO/SEU_REPO.git
+para usar ssh
+
 Acesse:
 `http://localhost:1313`
 
