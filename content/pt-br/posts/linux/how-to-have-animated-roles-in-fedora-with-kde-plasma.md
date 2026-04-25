@@ -24,9 +24,9 @@ draft = false
 
 Até o momento, não existe uma solução nativa do **Wallpaper Engine** para Linux. Os desenvolvedores já sinalizaram que não pretendem portar o software devido à fragmentação dos ambientes de desktop (GNOME, KDE, XFCE, etc.).
 
-Embora existam projetos não oficiais que tentam integrar o conteúdo do Workshop da Steam, muitos são instáveis ou complexos de configurar. No meu caso, utilizando **Fedora 40+ (KDE Plasma + Wayland)**, o popular *Hidamari* apresentou falhas críticas: o vídeo ficava sobreposto aos ícones, impedindo qualquer interação com a área de trabalho.
+Embora existam projetos não oficiais que tentam integrar o conteúdo do Workshop da Steam, muitos são instáveis ou complexos de configurar. No meu caso, utilizando **Fedora 42 (KDE Plasma + Wayland)**, o popular *Hidamari* apresentou falhas críticas: o vídeo ficava sobreposto aos ícones, impedindo qualquer interação com a área de trabalho.
 
-A solução definitiva que encontrei — estável e leve — é o plugin **Smart Video Wallpaper Reborn**.
+A solução definitiva que encontrei - estável e leve - é o plugin **Smart Video Wallpaper Reborn**.
 
 ---
 
