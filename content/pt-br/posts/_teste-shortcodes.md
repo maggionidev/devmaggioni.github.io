@@ -95,6 +95,9 @@ comments = false
 
 ---
 
+
+{{< asset file="windows/how-to-format-your-pc-with-windows/2026-04-23_21-30213014.jpeg" alt="Minhas fotos personalizadas" caption="Minhas fotos personalizadas" >}}
+
 ### Figure
 
 {{< figure src="https://media.maggioni.dev/hello-world.png"

@@ -3,7 +3,7 @@
 title = 'Como ter papéis de parede animados no Fedora 43 com KDE Plasma'
 description = "Aprenda a como ter papéis de parede animados no KDE Plasma do Fedora"
 summary = "Aprenda a como ter papéis de parede animados no KDE Plasma do Fedora"
-tags = ["linux", "kde plasma", "fedora", "wayland"]
+tags = ["linux", "fedora", "kde plasma", "wayland"]
 categories = ["linux"]
 keywords = ["linux", "kde", "kde plasma", "fedora", "wayland"]
 
