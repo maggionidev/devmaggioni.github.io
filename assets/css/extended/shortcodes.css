@@ -1,4 +1,18 @@
-.warning-box {
+/*
+This is just a placeholder blank stylesheet so as to support adding custom styles budled with theme's default styles
+
+Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
+*/
+  
+.custom-button {
+  margin-bottom: 14px;
+  }
+  
+  .custom-button:hover {
+      transform: translateY(-1px);
+  }
+  
+  .warning-box {
     display: flex;
     gap: 12px;
     padding: 14px 16px;
