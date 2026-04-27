@@ -1,7 +1,7 @@
 
 +++
 
-title = 'Como formatar e montar automaticamente um HD no Fedora KDE"
+title = "Como formatar e montar automaticamente um HD no Fedora KDE"
 summary = "Guia prático para formatar um HD e configurar montagem automática no Fedora KDE usando ext4 e fstab" 
 tags = ["linux", "fedora", "kde plasma", "mount"] 
 categories = ["linux"]
