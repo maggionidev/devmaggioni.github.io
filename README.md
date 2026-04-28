@@ -30,10 +30,17 @@ Documentação do meu blog pessoal feito com Hugo e usando o tema PaperMod.
 
 ```bash
 git clone https://github.com/maggionidev/maggionidev.github.io.git maggionidev-blog
-git submodule update --init --recursive
+git submodule update --remote --merge
 cd maggionidev-blog
 
 hugo server -D
+```
+
+Instalando o papermod (apenas se necessário, já está instalado)
+```bash
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+git submodule update --init --recursive # needed when you reclone your repo (submodules may not get cloned automatically)
+
 ```
 
 obs: git remote set-url origin git@github.com:SEU_USUARIO/SEU_REPO.git
