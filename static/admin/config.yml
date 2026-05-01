@@ -17,8 +17,8 @@ collections:
     slug: "{{slug}}"
     fields: &default_fields
       - { label: "Título", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Descrição (SEO)", name: "description", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", required: false  }
+      - { label: "Descrição (SEO)", name: "description", widget: "string",  required: false  }
       - { label: "Resumo", name: "summary", widget: "string", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Categorias", name: "categories", widget: "list", required: false }
