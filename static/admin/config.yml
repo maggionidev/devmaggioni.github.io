@@ -2,78 +2,53 @@ backend:
   name: github
   repo: maggionidev/maggionidev.github.io
   branch: main
-  site_url: https://maggioni.dev
-  site_id: maggioni.dev
+  usePKCE: true
 
-local_backend: false
+site_url: https://maggioni.dev
 
-media_folder: "static/images"
-public_folder: "/images"
+media_folder: static/images
+public_folder: /images
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "content/pt-br/posts"
+
+  - name: posts_dev
+    label: Posts Dev
+    folder: content/pt-br/posts/dev
     create: true
-
-    slug: "{{fields.folder}}/{{fields.slug}}"
-
-    fields:
-
+    slug: "{{slug}}"
+    fields: &post_fields
       - { label: "Título", name: "title", widget: "string" }
-
       - { label: "Slug", name: "slug", widget: "string" }
-
-      - label: "Pasta"
-        name: "folder"
-        widget: "select"
-        default: "dev"
-        options:
-            - { label: "Dev", value: "dev" }
-            - { label: "Linux", value: "linux" }
-            - { label: "Windows", value: "windows" }
-            - { label: "Blender", value: "blender" }
-
       - { label: "Descrição (SEO)", name: "description", widget: "string" }
-
       - { label: "Resumo", name: "summary", widget: "string", required: false }
-
       - { label: "Tags", name: "tags", widget: "list", required: false }
-
-      - {
-          label: "Categorias",
-          name: "categories",
-          widget: "list",
-          required: false,
-        }
-
+      - { label: "Categorias", name: "categories", widget: "list", required: false }
       - { label: "Keywords", name: "keywords", widget: "list", required: false }
-
-      - {
-          label: "Autor",
-          name: "author",
-          widget: "string",
-          default: "Gabriel Maggioni",
-        }
-
+      - { label: "Autor", name: "author", widget: "string", default: "Gabriel Maggioni" }
       - { label: "Data", name: "date", widget: "datetime" }
-
       - { label: "Atualizado em", name: "lastmod", widget: "datetime", required: false }
-
-      - {
-          label: "Mostrar TOC",
-          name: "showToc",
-          widget: "boolean",
-          default: true,
-        }
-
-      - {
-          label: "TOC aberto",
-          name: "TocOpen",
-          widget: "boolean",
-          default: false,
-        }
-
+      - { label: "Mostrar TOC", name: "showToc", widget: "boolean", default: true }
+      - { label: "TOC aberto", name: "TocOpen", widget: "boolean", default: false }
       - { label: "Rascunho", name: "draft", widget: "boolean", default: true }
-
       - { label: "Conteúdo", name: "body", widget: "markdown" }
+
+  - name: posts_linux
+    label: Posts Linux
+    folder: content/pt-br/posts/linux
+    create: true
+    slug: "{{slug}}"
+    fields: *post_fields
+
+  - name: posts_windows
+    label: Posts Windows
+    folder: content/pt-br/posts/windows
+    create: true
+    slug: "{{slug}}"
+    fields: *post_fields
+
+  - name: posts_blender
+    label: Posts Blender
+    folder: content/pt-br/posts/blender
+    create: true
+    slug: "{{slug}}"
+    fields: *post_fields
