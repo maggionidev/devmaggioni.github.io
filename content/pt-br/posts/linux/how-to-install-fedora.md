@@ -1,27 +1,25 @@
-+++
-
-title = "Como instalar uma distro Linux"
-description = "Guia completo para instalar o Fedora Linux: aprenda a criar um pendrive bootável com suporte a múltiplas ISOs usando o Ventoy, configurar a BIOS/UEFI e realizar a instalação passo a passo até a primeira inicialização."
-summary = "Guia para instalar o Fedora Linux: aprenda a criar um pendrive bootável com suporte a múltiplas ISOs usando o Ventoy, configurar a BIOS/UEFI e realizar a instalação passo a passo até a primeira inicialização."
-tags = ["fedora", "linux", "formatação"]
-categories = ["linux"]
-
-author = "Gabriel Maggioni"
-date = '2026-04-26T12:03:21-03:00'
-#lastmod = '2026-04-26T12:03:21-03:00'
-#publishDate = '2026-04-26T12:03:21-03:00'
-#expiryDate = '2026-04-26T12:03:21-03:00'
-
-showToc = true
-TocOpen = false
-
-draft = false
-
-+++
+---
+title: Como instalar uma distro Linux (Fedora KDE)
+slug: ''
+description: 'Guia completo para instalar o Fedora Linux: aprenda a criar um pendrive bootável com suporte a múltiplas ISOs usando o Ventoy, configurar a BIOS/UEFI e realizar a instalação passo a passo até a primeira inicialização.'
+summary: 'Guia para instalar o Fedora Linux: aprenda a criar um pendrive bootável com suporte a múltiplas ISOs usando o Ventoy, configurar a BIOS/UEFI e realizar a instalação passo a passo até a primeira inicialização.'
+tags:
+  - fedora
+  - linux
+  - formatação
+categories:
+  - linux
+author: Gabriel Maggioni
+date: 2026-04-26T12:03:00
+lastmod: ''
+showToc: true
+TocOpen: false
+draft: false
+---
 
 > **O que você vai aprender neste guia:** Criar um pendrive bootável inteligente (que aceita várias ISOs de uma vez), configurar a BIOS/UEFI para dar boot pelo pendrive, instalar o Fedora Linux e dar os primeiros passos no novo sistema. Do zero ao desktop funcional.
 
----
+***
 
 ## Requisitos
 
@@ -33,7 +31,7 @@ Antes de colocar a mão na massa, separe o seguinte:
 - **Cerca de 30–60 minutos** de tempo livre
 - **Backup dos seus dados** - se for instalar no seu HD principal, faça backup antes!
 
----
+***
 
 ## Parte 1 - Baixando a ISO do Fedora
 
@@ -61,7 +59,7 @@ O arquivo vai se chamar algo parecido com `Fedora KDE Plasma Desktop 43.iso`.
 sha256sum caminho-do-arquivo/nome-do-arquivo.iso
 ```
 
----
+***
 
 ## Parte 2 - Criando o Pendrive Bootável com Ventoy
 
@@ -83,14 +81,13 @@ O **Ventoy** funciona de forma diferente:
 
 #### No Windows:
 
-1. Acesse **[ventoy.net](https://www.ventoy.net/en/download.html)** e baixe a versão para seu sistema operacional
+1. Acesse [**ventoy.net**](https://www.ventoy.net/en/download.html) e baixe a versão para seu sistema operacional
 2. Extraia o arquivo ZIP
 3. Execute o **`Ventoy2Disk`** como **Administrador**
 4. Em **"Device"**, selecione o seu pendrive (cuidado para não selecionar o HD errado!)
 5. Clique em **"Install"**
 6. Confirme o aviso - **o pendrive será formatado**
 7. Aguarde a conclusão
-
 
 > ⚠️ **ATENÇÃO:** Instalar no HD errado vai apagar seus dados! Tenha certeza que está selecionando o pendrive no menu
 
@@ -102,7 +99,7 @@ Após instalar o Ventoy, o pendrive vai aparecer com uma partição chamada **"V
 2. **Copie e cole** o arquivo `.iso` do Fedora diretamente para o pendrive
 3. Pronto! Você pode copiar quantas ISOs quiser (desde que caibam no espaço disponível! Inclusive isos do windows)
 
-```
+```plain
 📁 Pendrive (Ventoy)
 ├── Fedora43.iso
 ├── ubuntu-24.04.2-desktop-amd64.iso        ← pode ter várias!
@@ -110,7 +107,7 @@ Após instalar o Ventoy, o pendrive vai aparecer com uma partição chamada **"V
 └── SystemRescue-11.00-amd64.iso
 ```
 
----
+***
 
 ## Parte 3 - Configurando a BIOS/UEFI para Dar Boot pelo Pendrive
 
@@ -127,7 +124,7 @@ Esta é a etapa que mais assusta os iniciantes, mas é mais simples do que parec
 Conecte o pendrive e **reinicie o computador**. Logo no início, antes do sistema carregar, você precisa pressionar uma tecla específica. A tecla varia conforme o fabricante:
 
 | Fabricante / Produto | Tecla para BIOS | Tecla para Boot Menu |
-|----------------------|-----------------|----------------------|
+| --- | --- | --- |
 | **Dell** | F2 | F12 |
 | **HP** | F10 ou Esc | F9 |
 | **Lenovo** | F1 ou F2 | F12 |
@@ -167,25 +164,28 @@ Em vez de entrar na BIOS, use a tecla do **Boot Menu** (tabela acima). Vai apare
 Algumas configurações podem impedir o boot pelo pendrive. Verifique:
 
 **Secure Boot:**
+
 - Localização: geralmente em "Security" ou "Boot"
 - Para o Fedora, pode **deixar ativado** - o Fedora suporta Secure Boot nativamente
 - Se tiver problemas, desative temporariamente para instalar
 
 **Fast Boot / Fast Startup:**
+
 - Localização: "Boot" ou "Advanced"
 - **Desative** durante a instalação - pode interferir na detecção do pendrive
 
 **CSM (Compatibility Support Module):**
+
 - Se aparecer, mantenha **desativado** para PCs modernos (UEFI puro)
 - Ative apenas se o seu PC for muito antigo e precisar de suporte BIOS legado
 
----
+***
 
 ## Parte 4 - Iniciando pelo Pendrive e o Menu do Ventoy
 
 Após configurar a BIOS e reiniciar com o pendrive conectado, você verá a **tela do Ventoy**:
 
-```
+```plain
 ┌─────────────────────────────────────────────┐
 │                   VENTOY                    │
 ├─────────────────────────────────────────────┤
@@ -203,24 +203,26 @@ Após configurar a BIOS e reiniciar com o pendrive conectado, você verá a **te
 
 Aguarde alguns segundos enquanto o sistema carrega da ISO…
 
----
+***
 
 ## Parte 5 - Instalando o Fedora
 
 ### A Tela de Boas-vindas (Live Environment)
 
 O Fedora vai iniciar em modo **Live** - ou seja, você está rodando o sistema diretamente do pendrive, sem instalar nada no HD. Isso é ótimo para:
+
 - Testar se o Fedora funciona bem no seu hardware
 - Verificar se Wi-Fi, áudio e vídeo estão funcionando
 - Explorar o sistema antes de decidir instalar
 
 Você verá uma janela de boas-vindas com duas opções:
+
 - **"Try Fedora"** - usa o sistema sem instalar
 - **"Install to Hard Drive"** - inicia a instalação
 
 Clique em **"Install to Hard Drive"** para começar.
 
----
+***
 
 ### O Instalador Anaconda
 
@@ -234,13 +236,13 @@ Na primeira tela, selecione seu idioma:
 2. Na lista da direita, escolha **"Português (Brasil)"**
 3. Clique em **"Continuar"**
 
----
+***
 
 #### Passo 2 - Resumo da Instalação
 
 Você verá a tela principal com vários itens para configurar. Vamos por partes:
 
----
+***
 
 #### 🌍 Localização - Hora e Data
 
@@ -250,7 +252,7 @@ Você verá a tela principal com vários itens para configurar. Vamos por partes
 4. Ative **"Horário de Rede"** se estiver conectado - o sistema vai sincronizar automaticamente
 5. Clique em **"Concluído"** (canto superior esquerdo)
 
----
+***
 
 #### ⌨️ Localização - Teclado
 
@@ -260,7 +262,7 @@ Você verá a tela principal com vários itens para configurar. Vamos por partes
 4. Use o campo de teste na parte inferior para verificar se as teclas batem (teste o ç, ã, etc.)
 5. Clique em **"Concluído"**
 
----
+***
 
 #### 💾 Sistema - Destino de Instalação (A Parte Mais Importante!)
 
@@ -271,6 +273,7 @@ Esta é a etapa mais crítica. Aqui você define **onde** o Fedora será instala
 3. Em **"Configuração de Armazenamento"**, escolha:
 
 **Opção A - Automático (recomendado para iniciantes):**
+
 - Selecione **"Automático"**
 - O instalador vai criar as partições necessárias sozinho
 - ⚠️ Selecione se você quer manter o sistema antigo ou manter instalado junto com o novo. Se o disco tiver outros sistemas, leia com atenção o que será apagado
@@ -279,25 +282,29 @@ Esta é a etapa mais crítica. Aqui você define **onde** o Fedora será instala
 
 4. Clique em **"Concluído"** e confirme as mudanças
 
----
+***
 
 #### 🔒 Configuração de Usuário
 
 **Root (Administrador do Sistema):**
+
 1. Clique em **"Senha de Root"**
 2. Você pode criar uma senha de root, ou deixar **desativado** (recomendado - use sudo em vez disso)
 3. Clique em **"Concluído"**
 
 **Criar sua conta de usuário:**
+
 1. Clique em **"Criação de Usuário"**
 2. Preencha:
-   - **Nome completo:** Seu nome
-   - **Nome de usuário:** nome sem espaços e em minúsculas (ex: `joao`)
-   - **Senha:** Use uma senha forte!
+
+- **Nome completo:** Seu nome
+- **Nome de usuário:** nome sem espaços e em minúsculas (ex: `joao`)
+- **Senha:** Use uma senha forte!
+
 3. Marque a opção **"Tornar este usuário administrador"** (permite usar sudo)
 4. Clique em **"Concluído"**
 
----
+***
 
 #### ✅ Iniciando a Instalação
 
@@ -306,6 +313,7 @@ Com tudo configurado (sem nenhum ícone de aviso ⚠️ na tela de resumo), cliq
 **"Iniciar Instalação"**
 
 O processo vai começar. Você verá a barra de progresso realizando várias etapas:
+
 - Preparar partições
 - Instalar o sistema base
 - Instalar pacotes e aplicativos
@@ -314,7 +322,7 @@ O processo vai começar. Você verá a barra de progresso realizando várias eta
 
 **Tempo estimado: 10 a 25 minutos** (depende da velocidade do pendrive e do HD).
 
----
+***
 
 #### 🔄 Reiniciando
 
@@ -325,7 +333,7 @@ Quando a instalação terminar:
 3. Clique em **"Reiniciar o Sistema"**
 4. **Retire o pendrive** quando o sistema começar a desligar
 
----
+***
 
 ## Parte 6 - Primeira Inicialização do Fedora
 
@@ -342,6 +350,7 @@ Na primeira vez, o Fedora vai te guiar por um assistente de configuração:
 É bem básico, basta ler e continuar;
 
 - **⚠️ Cuidado! Vai aparecer um botão bem discreto chamado "habilitar pacotes de terceiros" ou algo parecido! Marque essa opção, se não ficará meio limitado usar o sistema sem isso**
+
 > Se você saiu da interface e não viu ou não habilitou, pode executar isso no terminal (nome Konsole):
 
 ```bash
@@ -354,7 +363,7 @@ sudo dnf install \
 https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
----
+***
 
 ## Parte 7 - Primeiras Coisas a Fazer no Fedora
 
@@ -379,6 +388,7 @@ Eu gosto de rodar alguns scripts para deixar meu sistema top, com um único cliq
 > ⚠️ Esse script é para usuários de AMD, se você tem NVIDIA veja a seção abaixo antes de rodar — está tudo separado por comentários
 
 {{< details summary="Clique para ver o script (AMD)" >}}
+
 ```sh
 # 1. Otimizar o DNF (Downloads mais rápidos)
 echo "⚡ Otimizando o DNF..."
@@ -423,9 +433,10 @@ sudo dnf autoremove -y
 
 echo "✅ Tudo pronto! Reinicie o PC para aplicar todas as mudanças de Kernel e Drivers."
 ```
+
 {{< /details >}}
 
----
+***
 
 ### 2. Usuários de NVIDIA — Drivers Proprietários
 
@@ -468,6 +479,7 @@ sudo dnf install nvidia-vaapi-driver -y
 Prefere fazer tudo de uma vez? Mesmo esquema do script AMD — salve como `.sh` e execute:
 
 {{< details summary="Clique para ver o script (NVIDIA)" >}}
+
 ```sh
 # 1. Otimizar o DNF
 echo "⚡ Otimizando o DNF..."
@@ -523,6 +535,7 @@ sudo dnf autoremove -y
 
 echo "✅ Tudo pronto! Reinicie o PC para usar o driver NVIDIA."
 ```
+
 {{< /details >}}
 
 #### Verificando se o driver está ativo após o reboot
@@ -537,14 +550,14 @@ lspci -k | grep -A 3 "VGA"
 
 Se `nvidia-smi` mostrar o modelo da sua placa e a versão do driver, está tudo certo. 🎉
 
----
+***
 
 Reinicie o sistema para aplicar todas as alterações.
 
 Basicamente, é isso;
 O que você precisa fazer agora é personalizar o seu sistema, e instalar seus apps. Isso é algo meio pessoal, cada pessoa tem seu gosto, no entanto planejo fazer um [post futuro sobre personalização no Fedora](/posts/linux/customizing-fedora)
 
----
+***
 
 ## Resolução de Problemas Comuns
 
@@ -558,6 +571,7 @@ O que você precisa fazer agora é personalizar o seu sistema, e instalar seus a
 ### A tela ficou preta após selecionar a ISO
 
 Pode ser problema com driver de vídeo. 
+
 - Na tela do Ventoy, pressione `e` para editar os parâmetros de boot.
 - Adicione `nomodeset` ao final da linha que começa com linux
 - Pressione F10 para continuar o boot
@@ -598,7 +612,7 @@ sudo dracut --force
 sudo reboot
 ```
 
----
+***
 
 ## Resumo visual do processo:
 
@@ -632,11 +646,11 @@ sudo reboot
 [14] Atualizar sistema + RPM Fusion + drivers (AMD ou NVIDIA)
 ```
 
----
+***
 
 ## Conteúdos relevantes
 
 - [Deixando o Fedora Bonito! (personalização)](/posts/linux/customizing-fedora)
 - [Apps essenciais para Linux](/posts/linux/apps-essentials)
 
----
+***
