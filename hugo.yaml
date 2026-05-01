@@ -1,8 +1,16 @@
 baseURL: 'https://maggioni.dev/'
 theme: PaperMod
 
+defaultContentLanguage: pt-BR
+defaultContentLanguageInSubdir: true
+
 pagination:
   pagerSize: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
 
 services:
   disqus:
@@ -14,10 +22,9 @@ privacy:
   googleAnalytics:
     disable: false
     respectDoNotTrack: true
-    defaultContentLanguage: pt-BR
-    defaultContentLanguageInSubdir: true
 
 languages:
+
   pt-BR:
     locale: pt-BR
     label: Português (Brasil)
@@ -26,22 +33,63 @@ languages:
     title: Gabriel Maggioni
 
     params:
+      profileMode:
+        enabled: true
+        title: Gabriel Maggioni
+        subtitle: "Olá 👋 Aqui falo sobre Unity, Blender e Código!"
+        imageUrl: /apple-touch-icon.webp
+        imageWidth: 120
+        imageHeight: 120
+        imageTitle: my image
+
+        buttons:
+          - name: Ver Posts
+            url: posts
+
       description: 'Programação, Blender, Unity e DevLogs...'
 
       editPost:
         URL: >-
           https://github.com/maggionidev/maggionidev.github.io/tree/main/content/pt-br
-        Text: ' ✏️ Encontrou um erro? Sugira alterações!'
+        Text: '✏️ Encontrou um erro? Sugira alterações!'
         appendFilePath: true
 
       homeInfoParams:
-        Title: "Olá! \U0001F44B"
+        Title: "Olá! 👋"
         Content: Bem vindo ao meu blog!
 
-        enableRobotsTXT: true
-        buildDrafts: false
-        buildFuture: false
-        buildExpired: false
+  en:
+    locale: en
+    label: English
+    weight: 2
+    contentDir: content/en
+    title: Gabriel Maggioni
+
+    params:
+      profileMode:
+        enabled: true
+        title: Gabriel Maggioni
+        subtitle: "Hi there 👋 here I talk about Unity, Blender and Code!"
+        imageUrl: /apple-touch-icon.webp
+        imageWidth: 120
+        imageHeight: 120
+        imageTitle: my image
+
+        buttons:
+          - name: View Posts
+            url: posts
+
+      description: 'Programming, Blender, Unity and DevLogs...'
+
+      editPost:
+        URL: >-
+          https://github.com/maggionidev/maggionidev.github.io/tree/main/content/en
+        Text: '✏️ Found an issue? Suggest changes!'
+        appendFilePath: true
+
+      homeInfoParams:
+        Title: "Hi there 👋"
+        Content: Welcome to my blog!
 
 caches:
   images:
@@ -53,6 +101,15 @@ minify:
 
 params:
   env: production
+
+  author: Gabriel Maggioni
+  DateFormat: 02/01/2006
+  ShowLastMod: true
+  LastModFormat: 02/01/2006
+
+  defaultTheme: auto
+  disableThemeToggle: false
+  comments: true
 
   keywords:
     - programação
@@ -71,18 +128,17 @@ params:
     - 3d modeling
     - indie dev
 
-  author: Gabriel Maggioni
-  DateFormat: 02 Jan 2006
-
-  defaultTheme: auto
-  disableThemeToggle: false
-  comments: true
-
   images:
     - og-image.webp
 
   ShowReadingTime: true
   ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
 
   ShareButtons:
     - whatsapp
@@ -90,13 +146,6 @@ params:
     - reddit
     - telegram
     - linkedin
-
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
 
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -116,19 +165,6 @@ params:
     text: Home
     icon: /apple-touch-icon.webp
     iconHeight: 45
-
-  profileMode:
-    enabled: true
-    title: Gabriel Maggioni
-    subtitle: "Olá \U0001F44B aqui falo sobre Unity, Blender e Código!"
-    imageUrl: /apple-touch-icon.webp
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
-
-    buttons:
-      - name: Ver Posts
-        url: posts
 
   socialIcons:
     - name: youtube
@@ -155,7 +191,6 @@ params:
     threshold: 0.1
     minMatchCharLength: 0
     limit: 10
-
     keys:
       - title
       - permalink
@@ -188,8 +223,6 @@ menu:
       name: about me
       url: /about/
       weight: 50
-
-      pygmentsUseClasses: true
 
 markup:
   highlight:
