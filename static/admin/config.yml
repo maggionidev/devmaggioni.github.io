@@ -1,21 +1,36 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: maggionidev/maggionidev.github.io
 
 local_backend: true
 
 media_folder: "static/images"
 public_folder: "/images"
+publish_mode: editorial_workflow
 
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "content/posts"
+    folder: "content/pt-br/posts"
     create: true
 
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{fields.folder}}/{{fields.slug}}"
 
     fields:
+
       - { label: "Título", name: "title", widget: "string" }
+
+      - { label: "Slug", name: "slug", widget: "string" }
+
+      - label: "Pasta"
+        name: "folder"
+        widget: "select"
+        default: "dev"
+        options:
+            - { label: "Dev", value: "dev" }
+            - { label: "Linux", value: "linux" }
+            - { label: "Windows", value: "windows" }
+            - { label: "Blender", value: "blender" }
 
       - { label: "Descrição (SEO)", name: "description", widget: "string" }
 
@@ -40,6 +55,8 @@ collections:
         }
 
       - { label: "Data", name: "date", widget: "datetime" }
+
+      - { label: "Atualizado em", name: "lastmod", widget: "datetime", required: false }
 
       - {
           label: "Mostrar TOC",
