@@ -1,23 +1,30 @@
-+++
-
-title = 'Como proteger um bucket Backblaze B2 usando Cloudflare Workers (sem custo inesperado)'
-description = "Aprenda a proteger um bucket Backblaze B2 usando Cloudflare Workers, tornando-o privado,  e servindo imagens com cache sem custo inesperado."
-summary = "Guia prático garantindo que imagens sejam servidas apenas pelo seu domínio com custo controlado."
-tags=["backblaze", "cloudflare", "dns", "domain configuration"]
-categories=["dev", "cdn"]
-keywords = ["backblaze b2", "cloudflare workers", "bucket privado", "cdn imagens", "wrangler deploy", "hugo static site"]
-
-author = "Gabriel Maggioni"
-draft = false
-date = '2026-04-22T19:54:10-03:00'
-#lastmod = '2026-04-22T19:54:10-03:00'
-#publishDate = '2026-04-22T19:54:10-03:00'
-#expiryDate = '2026-04-22T19:54:10-03:00'
-
-showToc = true
-TocOpen = false
-
-+++
+---
+title: Como proteger um bucket Backblaze B2 usando Cloudflare Workers (sem custo inesperado)
+slug: securing-a-backblaze-b2-bucket-using-cloudflare-workers
+description: Aprenda a proteger um bucket Backblaze B2 usando Cloudflare Workers, tornando-o privado,  e servindo imagens com cache sem custo inesperado.
+summary: Guia prático garantindo que imagens sejam servidas apenas pelo seu domínio com custo controlado.
+tags:
+  - backblaze
+  - cloudflare
+  - dns
+  - domain configuration
+categories:
+  - dev
+  - cdn
+keywords:
+  - backblaze b2
+  - cloudflare workers
+  - bucket privado
+  - cdn imagens
+  - wrangler deploy
+  - hugo static site
+author: Gabriel Maggioni
+date: 2026-04-22T19:54:00
+lastmod: ''
+showToc: true
+TocOpen: false
+draft: false
+---
 
 ## Introdução
 
@@ -31,7 +38,7 @@ O problema aparece quando alguém começa a acessar esses links direto. Pode ser
 
 A solução não é só esconder o bucket. É forçar todo o tráfego a passar por um proxy controlado com cache. Foi exatamente isso que implementei usando Cloudflare Workers.
 
----
+***
 
 ## O problema real
 
@@ -47,7 +54,7 @@ Isso significa:
 - custo direto no B2
 - perda total de controle
 
----
+***
 
 A arquitetura correta:
 
@@ -57,16 +64,17 @@ Usuário → assets.seudominio.com → Cloudflare Worker → Backblaze (privado)
 
 O usuário nunca fala direto com o B2.
 
----
+***
 
 **O que vamos fazer**
+
 1. Criar um Worker como proxy
 2. Assinar requests para um bucket privado
 3. Servir tudo via domínio próprio
 4. Cachear no edge da Cloudflare
 5. Bloquear acesso direto ao B2
 
----
+***
 
 ## Pré requisitos
 
@@ -81,7 +89,7 @@ O usuário nunca fala direto com o B2.
   text="Leia meu post anterior: [Hospedagem de Imagens com Backblaze B2 e Cloudflare: CDN Gratuito](posts/dev/how-to-use-backblaze-to-host-your-images/) "
 >}}
 
----
+***
 
 ## Aviso importante: Desabilite a função de reescrita de URL na Cloudflare
 
@@ -89,7 +97,7 @@ O usuário nunca fala direto com o B2.
   title="Se você seguiu meu tutorial anterior, provalvelmente habilitou a custum rule de reescrita de URL, na cloudflare. Não precisaremos mais dela, desative!" 
 >}}
 
----
+***
 
 **Instalando o Wrangler**
 
@@ -103,7 +111,7 @@ Login:
 wrangler login
 ```
 
----
+***
 
 ## Usando o template oficial
 
@@ -119,7 +127,7 @@ npm i
 
 Abra essa pasta com `code .` ou navegue até ela pelo vscode, vamos precisar editar alguns códigos.
 
----
+***
 
 **Criando a Application Key**
 
@@ -136,7 +144,7 @@ No {{< link href="https://secure.backblaze.com/app_keys.htm" text="B2">}}:
 - Key ID
 - Application Key (só aparece uma vez depois some, anote!)
 
----
+***
 
 ## Configurando o Worker
 
@@ -159,7 +167,7 @@ wrangler secret put B2_APPLICATION_KEY
 
 Vai lhe perguntar o valor. Cole a sua Application Key (lembra que eu mandei anotar no bloco de notas?!)
 
----
+***
 
 ## Vamos fazer um teste
 
@@ -170,7 +178,7 @@ Se não existir, crie-a;
 
 edite a var:
 
-```
+```plain
 B2_APPLICATION_KEY = "sua key aqui"
 ```
 
@@ -191,7 +199,7 @@ Teste no browser:
 Se funcionar aqui, pode respirar fundo, metade do caminho!
 Se não funcionou... provavelmente você configurou algo errado ou pulou etapas.
 
----
+***
 
 ## Deploy (atenção aqui)
 
@@ -199,7 +207,13 @@ Se não funcionou... provavelmente você configurou algo errado ou pulou etapas.
 wrangler deploy
 ```
 
----
+detalhe: vá no cloudflare, em Rotas de Workers > Adicionar rota;
+Rota: assets.seusite.com
+Em Worker selecione o worker que você criou;
+
+Assim sempre que você acessar aquela rota vai ativar o worker;
+
+***
 
 ## Calma calma lá - última configuração
 
@@ -215,7 +229,7 @@ Defina "Balde de informações" ou "Bucket infos" como `{"cache-control":"public
 
 Clique em salvar;
 
----
+***
 
 ## Agora, o teste definitivo;
 
@@ -241,7 +255,7 @@ Agora acesse pelo seu subdomínio:
 
 deve aparecer uma linda imagem de hello world;
 
----
+***
 
 ## Resumo
 
@@ -251,4 +265,4 @@ A partir de agora, seus arquivos só poderão ser acessados com segurança pelo 
 
 De nada!
 
----
+***
