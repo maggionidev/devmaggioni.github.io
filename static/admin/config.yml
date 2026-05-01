@@ -2,6 +2,8 @@ backend:
   name: github
   repo: maggionidev/maggionidev.github.io
   branch: main
+  site_url: https://maggioni.dev
+  site_id: maggioni.dev
 
 local_backend: false
 
