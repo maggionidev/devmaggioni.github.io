@@ -2,13 +2,11 @@ backend:
   name: github
   repo: maggionidev/maggionidev.github.io
   branch: main
-  base_url: https://api.github.com
 
 local_backend: false
 
 media_folder: "static/images"
 public_folder: "/images"
-publish_mode: editorial_workflow
 
 collections:
   - name: "posts"
