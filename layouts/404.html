@@ -1,0 +1,74 @@
+{{- define "main" }}
+
+<style>
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.not-found-wrap {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+}
+
+.not-found-img {
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto 20px;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.25s ease;
+}
+
+.not-found-img:hover {
+  transform: scale(1.04);
+}
+
+.not-found-title {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.not-found-text {
+  font-size: 17px;
+  color: var(--secondary);
+  margin-bottom: 25px;
+}
+
+.not-found-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--theme);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.not-found-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+</style>
+
+<div class="not-found-wrap">
+  <img src="https://assets.maggioni.dev/ezgif-390dc182e8d108e8.gif" alt="404" class="not-found-img">
+
+  <div class="not-found-title">404</div>
+
+  <div class="not-found-text">
+    essa página não existe... ou você entrou onde não devia
+  </div>
+
+  <a href="/" class="not-found-btn">
+    voltar
+  </a>
+</div>
+
+{{- end }}
