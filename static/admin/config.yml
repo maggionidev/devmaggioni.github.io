@@ -10,13 +10,12 @@ media_folder: static/images
 public_folder: /images
 
 collections:
-
-  - name: posts_dev
-    label: Posts Dev
+  - name: posts_pt_dev
+    label: "🇧🇷 Posts Dev (PT-BR)"
     folder: content/pt-br/posts/dev
     create: true
     slug: "{{slug}}"
-    fields: &post_fields
+    fields: &default_fields
       - { label: "Título", name: "title", widget: "string" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Descrição (SEO)", name: "description", widget: "string" }
@@ -32,23 +31,24 @@ collections:
       - { label: "Rascunho", name: "draft", widget: "boolean", default: true }
       - { label: "Conteúdo", name: "body", widget: "markdown" }
 
-  - name: posts_linux
-    label: Posts Linux
+  - name: posts_pt_linux
+    label: "🇧🇷 Posts Linux (PT-BR)"
     folder: content/pt-br/posts/linux
     create: true
     slug: "{{slug}}"
-    fields: *post_fields
+    fields: *default_fields
 
-  - name: posts_windows
-    label: Posts Windows
+  - name: posts_pt_windows
+    label: "🇧🇷 Posts Windows (PT-BR)"
     folder: content/pt-br/posts/windows
     create: true
     slug: "{{slug}}"
-    fields: *post_fields
+    fields: *default_fields
 
-  - name: posts_blender
-    label: Posts Blender
+  - name: posts_pt_blender
+    label: "🇧🇷 Posts Blender (PT-BR)"
     folder: content/pt-br/posts/blender
     create: true
     slug: "{{slug}}"
-    fields: *post_fields
+    fields: *default_fields
+
