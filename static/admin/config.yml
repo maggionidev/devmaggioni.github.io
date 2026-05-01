@@ -1,6 +1,9 @@
 backend:
   name: github
   repo: maggionidev/maggionidev.github.io
+  branch: main
+  auth_type: implicit
+  app_id: Ov23li9yfF4DVlUOzIrb
 
 local_backend: false
 
