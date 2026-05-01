@@ -36,7 +36,14 @@ languages:
       profileMode:
         enabled: true
         title: Gabriel Maggioni
-        subtitle: "Olá 👋 Aqui falo sobre Unity, Blender e Código!"
+
+        subtitle: |
+          Olá, Bem vindo ao meu blog 👋 
+
+          Aqui você encontra conteúdos sobre Programação
+
+          Mas também sobre Unity, Blender, e jogos!
+
         imageUrl: /apple-touch-icon.webp
         imageWidth: 120
         imageHeight: 120
@@ -69,7 +76,14 @@ languages:
       profileMode:
         enabled: true
         title: Gabriel Maggioni
-        subtitle: "Hi there 👋 here I talk about Unity, Blender and Code!"
+
+        subtitle: |
+          Hello, Welcome to my blog 👋 
+
+          Here you can find content about Programming
+
+          But also about Unity, Blender, and games!
+
         imageUrl: /apple-touch-icon.webp
         imageWidth: 120
         imageHeight: 120
