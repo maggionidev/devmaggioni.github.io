@@ -1,5 +1,5 @@
 ---
-title: Como formatar e montar automaticamente um HD no Fedora KDE
+title: Como formatar e montar automaticamente um HD no Linux
 slug: ''
 description: ''
 summary: Guia prático para formatar um HD e configurar montagem automática no Fedora KDE usando ext4 e fstab
