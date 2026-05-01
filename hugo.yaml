@@ -1,0 +1,202 @@
+baseURL: 'https://maggioni.dev/'
+theme: PaperMod
+
+pagination:
+  pagerSize: 5
+
+services:
+  disqus:
+    shortname: maggionidev
+  googleAnalytics:
+    id: G-3EJS7QXCTZ
+
+privacy:
+  googleAnalytics:
+    disable: false
+    respectDoNotTrack: true
+    defaultContentLanguage: pt-BR
+    defaultContentLanguageInSubdir: true
+
+languages:
+  pt-BR:
+    locale: pt-BR
+    label: Português (Brasil)
+    weight: 1
+    contentDir: content/pt-br
+    title: Gabriel Maggioni
+
+    params:
+      description: 'Programação, Blender, Unity e DevLogs...'
+
+      editPost:
+        URL: >-
+          https://github.com/maggionidev/maggionidev.github.io/tree/main/content/pt-br
+        Text: ' ✏️ Encontrou um erro? Sugira alterações!'
+        appendFilePath: true
+
+      homeInfoParams:
+        Title: "Olá! \U0001F44B"
+        Content: Bem vindo ao meu blog!
+
+        enableRobotsTXT: true
+        buildDrafts: false
+        buildFuture: false
+        buildExpired: false
+
+caches:
+  images:
+    dir: ':cacheDir/images'
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+
+  keywords:
+    - programação
+    - desenvolvimento de software
+    - desenvolvimento de jogos
+    - unity
+    - blender
+    - gamedev
+    - devlog
+    - projetos pessoais
+    - tecnologia
+    - programming
+    - software development
+    - game development
+    - coding
+    - 3d modeling
+    - indie dev
+
+  author: Gabriel Maggioni
+  DateFormat: 02 Jan 2006
+
+  defaultTheme: auto
+  disableThemeToggle: false
+  comments: true
+
+  images:
+    - og-image.webp
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+
+  ShareButtons:
+    - whatsapp
+    - x
+    - reddit
+    - telegram
+    - linkedin
+
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  hidemeta: false
+  hideSummary: false
+
+  showtoc: true
+  tocopen: false
+
+  assets:
+    favicon: /favicon.ico
+    favicon16x16: /favicon-16x16.webp
+    favicon32x32: /favicon-32x32.webp
+    apple_touch_icon: /apple-touch-icon.webp
+
+  label:
+    text: Home
+    icon: /apple-touch-icon.webp
+    iconHeight: 45
+
+  profileMode:
+    enabled: true
+    title: Gabriel Maggioni
+    subtitle: "Olá \U0001F44B aqui falo sobre Unity, Blender e Código!"
+    imageUrl: /apple-touch-icon.webp
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+
+    buttons:
+      - name: Ver Posts
+        url: posts
+
+  socialIcons:
+    - name: youtube
+      url: 'https://youtube.com/@maggionidev'
+    - name: tiktok
+      url: 'https://tiktok.com/@maggionidev'
+    - name: instagram
+      url: 'https://instagram.com/maggionidev'
+    - name: x
+      url: 'https://x.com/maggionidev'
+    - name: github
+      url: 'https://github.com/maggionidev'
+
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.1
+    minMatchCharLength: 0
+    limit: 10
+
+    keys:
+      - title
+      - permalink
+      - summary
+      - content
+
+menu:
+  main:
+    - identifier: posts
+      name: posts
+      url: posts/
+      weight: 10
+
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 20
+
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 30
+
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 40
+
+    - identifier: about
+      name: about me
+      url: /about/
+      weight: 50
+
+      pygmentsUseClasses: true
+
+markup:
+  highlight:
+    noClasses: false
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
