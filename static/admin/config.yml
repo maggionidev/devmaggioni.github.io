@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+
+local_backend: true
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+
+      - { label: "Descrição (SEO)", name: "description", widget: "string" }
+
+      - { label: "Resumo", name: "summary", widget: "string", required: false }
+
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
+      - {
+          label: "Categorias",
+          name: "categories",
+          widget: "list",
+          required: false,
+        }
+
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+
+      - {
+          label: "Autor",
+          name: "author",
+          widget: "string",
+          default: "Gabriel Maggioni",
+        }
+
+      - { label: "Data", name: "date", widget: "datetime" }
+
+      - {
+          label: "Mostrar TOC",
+          name: "showToc",
+          widget: "boolean",
+          default: true,
+        }
+
+      - {
+          label: "TOC aberto",
+          name: "TocOpen",
+          widget: "boolean",
+          default: false,
+        }
+
+      - { label: "Rascunho", name: "draft", widget: "boolean", default: true }
+
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
