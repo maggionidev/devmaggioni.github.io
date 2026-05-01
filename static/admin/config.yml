@@ -2,7 +2,7 @@ backend:
   name: github
   repo: maggionidev/maggionidev.github.io
 
-local_backend: true
+local_backend: false
 
 media_folder: "static/images"
 public_folder: "/images"
