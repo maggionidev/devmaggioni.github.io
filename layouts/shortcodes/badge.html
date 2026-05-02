@@ -18,11 +18,15 @@
 {{- end }}
 
 {{- if $link }}
-<a href="{{ $link }}" target="_blank" rel="noopener noreferrer">
+<a href="{{ $link }}" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-right:10px;">
+{{- else }}
+<span style="display:inline-block; margin-right: 5px;">
 {{- end }}
 
-<img src="{{ $url }}" alt="{{ $text }}" />
+<img src="{{ $url }}" alt="{{ $text }}" style="display:block; border:2px solid white; border-radius:10px;" />
 
 {{- if $link }}
 </a>
+{{- else }}
+</span>
 {{- end }}

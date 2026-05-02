@@ -3,20 +3,22 @@
 title: Posts
 keywords:
   - Blog
-  - Programação
+  - dev
   - Blender
   - Unity
   - DevLogs
-  - Desenvolvimento
-  - Tecnologia
+  - Tech
 
 ---
 
-> Posts mais recentes! 🚀
+>       For now i haven't translated anything into english...
 
-Nesta seção você encontra todos os posts do blog, do mais recente ao mais antigo;
+> you can take a look at the [pt-br content](/pt-br/posts)!
 
-Se você está procurando por algum conteúdo específico, pode estar filtrando por uma dessas opções:
+In this section you will find all the blog posts, from the latest to the oldest;
+
+If you're looking for specific content, you might be filtering by one of these options:
+
 
 {{< badge 
   text="Linux"
@@ -35,7 +37,7 @@ Se você está procurando por algum conteúdo específico, pode estar filtrando 
 >}}
 
 {{< badge 
-  text="Programação"
+  text="Dev"
   color="red"
   logo="go"
   logoColor="white"

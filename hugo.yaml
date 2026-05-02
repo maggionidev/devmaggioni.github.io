@@ -66,6 +66,8 @@ languages:
         Content: Bem vindo ao meu blog!
 
   en:
+  # DESABILITADO TEMPORARIAMENTE
+    disabled: true
     locale: en
     label: English
     weight: 2
@@ -74,7 +76,7 @@ languages:
 
     params:
       profileMode:
-        enabled: true
+        enabled: false
         title: Gabriel Maggioni
 
         subtitle: |
@@ -103,7 +105,10 @@ languages:
 
       homeInfoParams:
         Title: "Hi there 👋"
-        Content: Welcome to my blog!
+        Content: |
+         For now i haven't translated anything into english... 
+
+         you can take a look at the [pt-br content](/pt-br/posts)!
 
 caches:
   images:

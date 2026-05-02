@@ -1,0 +1,36 @@
+<div class="gallery">
+  {{ range .Params }}
+    <img src="{{ . }}" loading="lazy" onclick="openLightbox(this)" />
+  {{ end }}
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" />
+</div>
+
+<script>
+  function openLightbox(img) {
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightbox-img");
+  
+    lbImg.src = img.src;
+    lb.classList.add("active");
+  
+    document.body.style.overflow = "hidden";
+  }
+  
+  function closeLightbox(event) {
+    if (event && event.target !== event.currentTarget && event.type !== "keydown") return;
+  
+    const lb = document.getElementById("lightbox");
+    lb.classList.remove("active");
+  
+    document.getElementById("lightbox-img").src = "";
+    document.body.style.overflow = "";
+  }
+  
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeLightbox();
+  });
+  </script>
