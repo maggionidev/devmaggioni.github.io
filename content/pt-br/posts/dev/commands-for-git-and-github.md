@@ -1,16 +1,27 @@
-+++
-title = 'Tudo oque você precisa saber sobre Git e Github'
-description = "Aprenda os comandos necessários de git e github"
-summary = "Aprenda os comandos necessários de git e github"
-author = "Gabriel Maggioni"
-draft = false
-date = '2026-04-15T20:23:12-03:00'
-tags = ["git", "github", "dev"]
-keywords = ["git", "github", "controle de versão", "ssh", "programação"]
-categories = ["dev"]
-showToc = true
-TocOpen = false
-+++
+---
+title: Tudo oque você precisa saber sobre Git e Github
+slug: ''
+description: Aprenda os comandos necessários de git e github
+summary: Aprenda os comandos necessários de git e github
+tags:
+  - git
+  - github
+  - dev
+categories:
+  - dev
+keywords:
+  - git
+  - github
+  - controle de versão
+  - ssh
+  - programação
+author: Gabriel Maggioni
+date: 2026-04-15T20:23:00
+lastmod: ''
+showToc: true
+TocOpen: false
+draft: false
+---
 
 # Git e Github — Guia Prático para Iniciantes
 
@@ -21,7 +32,7 @@ Nesse post, iremos abordar os seguintes temas:
 - Comandos úteis
 - Workflow com Git e Github
 
----
+***
 
 ## O que é Git e por que usar?
 
@@ -31,14 +42,15 @@ Nesse post, iremos abordar os seguintes temas:
 
 > 💡 Pense no Git como uma "máquina do tempo" para o seu código, e no Github como a "nuvem" onde você guarda essas versões.
 
----
+***
 
 ## Instalação
 
 ### Linux (Debian/Ubuntu)
+
 ```bash
 sudo apt update && sudo apt install git -y
-````
+```
 
 ### macOS
 
@@ -57,7 +69,7 @@ git config --global user.name "Seu Nome"
 git config --global user.email "seu@email.com"
 ```
 
----
+***
 
 ## Como conectar via SSH no Github
 
@@ -100,11 +112,11 @@ ssh -T git@github.com
 
 Se tudo estiver correto, você verá:
 
-```
+```plain
 Hi seu-usuario! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
----
+***
 
 ## Como enviar um repositório local para o remoto
 
@@ -131,6 +143,8 @@ git branch -M main
 
 # 7. Conecte ao repositório remoto (crie o repo no Github antes)
 git remote add origin git@github.com:seu-usuario/meu-projeto.git
+# se já tem uma origin não ssh, pode substituir com:
+# git remote set-url origin git@github.com:seu-usuario/meu-projeto.git
 
 # 8. Envie para o Github
 git push -u origin main
@@ -145,19 +159,19 @@ git clone git@github.com:usuario/repositorio.git
 cd repositorio
 ```
 
----
+***
 
 ## Comandos Úteis
 
 ### Informação e status
 
-|Comando|O que faz|
-|---|---|
-|`git status`|Mostra o estado atual dos arquivos|
-|`git log`|Exibe o histórico de commits|
-|`git log --oneline`|Histórico resumido em uma linha por commit|
-|`git diff`|Mostra as diferenças ainda não staged|
-|`git diff --staged`|Mostra as diferenças já no stage|
+| Comando | O que faz |
+| --- | --- |
+| `git status` | Mostra o estado atual dos arquivos |
+| `git log` | Exibe o histórico de commits |
+| `git log --oneline` | Histórico resumido em uma linha por commit |
+| `git diff` | Mostra as diferenças ainda não staged |
+| `git diff --staged` | Mostra as diferenças já no stage |
 
 ### Stage e commits
 
@@ -208,7 +222,7 @@ git stash list      # Lista todos os stashes
 git stash drop      # Remove o stash mais recente
 ```
 
----
+***
 
 ## Workflow com Git e Github
 
@@ -216,7 +230,7 @@ Um bom workflow evita conflitos e mantém o histórico organizado. O mais comum 
 
 ### Passo a passo
 
-```
+```plain
 main ──────────────────────────────────●─────────
                                       /
 feature/login ──●──●──●──────────────●
@@ -261,13 +275,13 @@ git branch -d feature/nome-da-feature
 git push origin --delete feature/nome-da-feature
 ```
 
----
+***
 
 ### Boas práticas para mensagens de commit
 
 Use o padrão **Conventional Commits**:
 
-```
+```plain
 feat: adiciona funcionalidade de login
 fix: corrige bug no formulário de cadastro
 docs: atualiza README com instruções de instalação
@@ -277,7 +291,7 @@ test: adiciona testes para o módulo de auth
 chore: atualiza dependências
 ```
 
----
+***
 
 ## Resumo rápido
 
@@ -292,6 +306,6 @@ git push origin minha-feature     # Envia para o Github
 # Abre Pull Request no Github
 ```
 
----
+***
 
 Com esses conceitos e comandos você já consegue trabalhar de forma profissional com Git e Github no dia a dia. Bons commits! 🚀
