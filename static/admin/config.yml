@@ -3,6 +3,7 @@ backend:
   repo: maggionidev/maggionidev.github.io
   branch: main
   usePKCE: true
+  client_id: Ov23lirRj4ZJ4xNPBZyC
 
 site_url: https://maggioni.dev
 media_folder: static/images
