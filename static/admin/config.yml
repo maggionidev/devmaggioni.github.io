@@ -6,6 +6,8 @@ backend:
 
 site_url: https://maggioni.dev
 
+auth_scope: repo
+
 media_folder: static/images
 public_folder: /images
 
