@@ -15,7 +15,7 @@ date: 2026-05-02T20:00:00
 lastmod: ''
 showToc: true
 TocOpen: false
-draft: false
+draft: true
 ---
 
 ## Introdução
@@ -34,7 +34,7 @@ E quando essa virada de mentalidade acontece, o Linux deixa de parecer estranho 
 
 O linux geralmente é composto por essa estrutura de pastas básicas:
 
-```
+```plain
 /
 ├── bin
 ├── boot
