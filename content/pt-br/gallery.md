@@ -1,28 +1,89 @@
-+++
+---
 
-author = "Gabriel Maggioni"
-#lastmod = '{{ .Date }}'
-#publishDate = '{{ .Date }}'
-#expiryDate = '{{ .Date }}'
+author: Gabriel Maggioni
+showToc: false
+TocOpen: false
+draft: false
+comments: true
+ShowReadingTime: false
+ShowWordCount: false
+hidemeta: true
 
-showToc = false
-TocOpen = false
-
-draft = false
-comments = false
-ShowReadingTime = false
-ShowWordCount = false
-
-+++
+---
 
 {{< gallery
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
-"https://assets.maggioni.dev/hello-world.png"
+"https://assets.maggioni.dev/gallery/1i0dtd.jpg"
+"https://assets.maggioni.dev/gallery/20250202_193658.jpg"
+"https://assets.maggioni.dev/gallery/20250316_152307.jpg"
+"https://assets.maggioni.dev/gallery/20250316_152310.jpg"
+"https://assets.maggioni.dev/gallery/20250316_152318.jpg"
+"https://assets.maggioni.dev/gallery/20250316_152425.jpg"
+"https://assets.maggioni.dev/gallery/20250614_194537.jpg"
+"https://assets.maggioni.dev/gallery/20250614_194557.jpg"
+"https://assets.maggioni.dev/gallery/20250627_202700-00.00.00.000-00.00.19.399%20%281%29%20%281%29.mp4"
+"https://assets.maggioni.dev/gallery/20250719_160604.jpg"
+"https://assets.maggioni.dev/gallery/20250719_160615.jpg"
+"https://assets.maggioni.dev/gallery/20250719_160636.jpg"
+"https://assets.maggioni.dev/gallery/20250904_182602.jpg"
+"https://assets.maggioni.dev/gallery/20250904_182604.jpg"
+"https://assets.maggioni.dev/gallery/20250906_103602.jpg"
+"https://assets.maggioni.dev/gallery/20250912_124300.jpg"
+"https://assets.maggioni.dev/gallery/20250912_124304.jpg"
+"https://assets.maggioni.dev/gallery/20250912_124308.jpg"
+"https://assets.maggioni.dev/gallery/20250912_124314.jpg"
+"https://assets.maggioni.dev/gallery/20250912_124348.jpg"
+"https://assets.maggioni.dev/gallery/20250912_124514.jpg"
+"https://assets.maggioni.dev/gallery/20250919_175424.jpg"
+"https://assets.maggioni.dev/gallery/20250919_175428.jpg"
+"https://assets.maggioni.dev/gallery/20250919_175436.jpg"
+"https://assets.maggioni.dev/gallery/20250919_175447.jpg"
+"https://assets.maggioni.dev/gallery/20250919_175456.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163212.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163220.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163231.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163327.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163332.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163337.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163410.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163432.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163736.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163737.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163739.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163744.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163748.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163752.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163756.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163759.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163817.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163828.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163840.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163939.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163940.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163946.jpg"
+"https://assets.maggioni.dev/gallery/20251004_163958.jpg"
+"https://assets.maggioni.dev/gallery/20251005_072923-00.00.05.078-00.01.02.262%20%281%29%20%281%29.mp4"
+"https://assets.maggioni.dev/gallery/20251026_111359.jpg"
+"https://assets.maggioni.dev/gallery/20251026_111403.jpg"
+"https://assets.maggioni.dev/gallery/20251026_111429.jpg"
+"https://assets.maggioni.dev/gallery/20251026_111437.jpg"
+"https://assets.maggioni.dev/gallery/20251109_154953.jpg"
+"https://assets.maggioni.dev/gallery/20251109_155002.jpg"
+"https://assets.maggioni.dev/gallery/20251109_155011.jpg"
+"https://assets.maggioni.dev/gallery/20251221_144551.jpg"
+"https://assets.maggioni.dev/gallery/20251221_144555.jpg"
+"https://assets.maggioni.dev/gallery/20251221_144600.jpg"
+"https://assets.maggioni.dev/gallery/20260221_123011.jpg"
+"https://assets.maggioni.dev/gallery/20260221_123018.jpg"
+"https://assets.maggioni.dev/gallery/20260221_123020.jpg"
+"https://assets.maggioni.dev/gallery/20260221_123029.jpg"
+"https://assets.maggioni.dev/gallery/20260221_123047.jpg"
+"https://assets.maggioni.dev/gallery/20260301_140805.jpg"
+"https://assets.maggioni.dev/gallery/20260316_155611.jpg"
+"https://assets.maggioni.dev/gallery/20260316_155620.jpg"
+"https://assets.maggioni.dev/gallery/IMG-20260105-WA0044.jpg"
+"https://assets.maggioni.dev/gallery/IMG-20260214-WA0003.jpg"
+"https://assets.maggioni.dev/gallery/Screenshot_20251022_171303_Instagram~2.jpg"
+"https://assets.maggioni.dev/gallery/Screenshot_20260327_085308_Photos%281%29.jpg"
+"https://assets.maggioni.dev/gallery/VID-20260503-WA0001%20%281%29.mp4"
+"https://assets.maggioni.dev/gallery/VID-20260503-WA0002%20%281%29.mp4"
 >}}
