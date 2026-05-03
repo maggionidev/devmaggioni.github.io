@@ -7,8 +7,11 @@ draft: false
 comments: true
 ShowReadingTime: false
 ShowWordCount: false
-hidemeta: true
-
+description: "Galeria de imagens de gatinhos 🫪"
+cover:
+    image: "https://assets.maggioni.dev/gallery/20251221_144600.jpg"
+    alt: "gatinhos"
+    caption: "Mimi"
 ---
 
 {{< gallery
