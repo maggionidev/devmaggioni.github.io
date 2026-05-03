@@ -1,36 +1,77 @@
 <div class="gallery">
   {{ range .Params }}
-    <img src="{{ . }}" loading="lazy" onclick="openLightbox(this)" />
+    {{ $isVideo := or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
+    {{ if $isVideo }}
+      <div class="gallery-item video-item" onclick="openLightbox(this)" data-src="{{ . }}" data-type="video">
+        <video muted preload="metadata" tabindex="-1">
+          <source src="{{ . }}#t=0.1" />
+        </video>
+        <div class="play-btn" aria-label="Reproduzir vídeo">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+        <div class="gallery-overlay"><span>Vídeo</span></div>
+      </div>
+    {{ else }}
+      <div class="gallery-item" onclick="openLightbox(this)" data-src="{{ . }}" data-type="image">
+        <img src="{{ . }}" loading="lazy" alt="" />
+        <div class="gallery-overlay"><span>Ver imagem</span></div>
+      </div>
+    {{ end }}
   {{ end }}
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <span class="close" onclick="closeLightbox()">×</span>
-  <img id="lightbox-img" />
+  <div class="lightbox-content" id="lightbox-content"></div>
 </div>
 
 <script>
-  function openLightbox(img) {
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightbox-img");
-  
-    lbImg.src = img.src;
-    lb.classList.add("active");
-  
-    document.body.style.overflow = "hidden";
+  function openLightbox(el) {
+  const lb = document.getElementById("lightbox");
+  const content = document.getElementById("lightbox-content");
+  const src = el.dataset.src;
+  const type = el.dataset.type;
+
+  content.innerHTML = "";
+
+  if (type === "video") {
+    const video = document.createElement("video");
+    video.src = src;
+    video.controls = true;
+    video.autoplay = true;
+    video.style.maxWidth = "92vw";
+    video.style.maxHeight = "92vh";
+    video.style.borderRadius = "3px";
+    content.appendChild(video);
+  } else {
+    const img = document.createElement("img");
+    img.src = src;
+    content.appendChild(img);
   }
-  
-  function closeLightbox(event) {
-    if (event && event.target !== event.currentTarget && event.type !== "keydown") return;
-  
-    const lb = document.getElementById("lightbox");
-    lb.classList.remove("active");
-  
-    document.getElementById("lightbox-img").src = "";
-    document.body.style.overflow = "";
-  }
-  
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") closeLightbox();
-  });
-  </script>
+
+  lb.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox(event) {
+  if (event && event.target !== event.currentTarget && event.type !== "keydown") return;
+
+  const lb = document.getElementById("lightbox");
+  const content = document.getElementById("lightbox-content");
+
+  lb.classList.remove("active");
+
+  // Pausa o vídeo ao fechar
+  const video = content.querySelector("video");
+  if (video) video.pause();
+
+  content.innerHTML = "";
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeLightbox();
+});
+</script>
