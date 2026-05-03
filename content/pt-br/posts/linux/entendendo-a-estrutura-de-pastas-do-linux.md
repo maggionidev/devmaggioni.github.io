@@ -7,6 +7,9 @@ tags:
   - linux
   - aprendendo
   - sistema de arquivos
+  - fstab
+  - lost+found
+  - trash
 categories:
   - linux
 keywords: []
@@ -34,7 +37,8 @@ Aí você abre o Linux pela primeira vez e… nada de C:, D:, E:. Em vez disso, 
 No Linux, tudo faz parte do mesmo sistema de arquivos. Discos, pendrives, pastas do sistema, configurações, usuários, tudo vive dentro dessa estrutura hierárquica. Entender isso não é só um detalhe técnico, é praticamente a chave para começar a se sentir confortável dentro do sistema.
 
 E quando essa virada de mentalidade acontece, o Linux deixa de parecer estranho e começa a fazer sentido de um jeito bem mais profundo do que parece à primeira vista.
-  \*\*\*
+
+***
 
 ## O sistema de arquivos do Linux
 
@@ -63,7 +67,8 @@ O linux geralmente é composto por essa estrutura de pastas básicas:
 ```
 
 vamos entender como cada pasta funciona e suas responsabilidades:
-  \*\*\*
+
+***
 
 ## A pasta `ROOT` (ou `/`)
 
@@ -91,7 +96,7 @@ Note que, essas pastas são protegidas por um motivo: assegurar que você não v
 
 ![pasta admin](https://assets.maggioni.dev/posts/linux/Captura_de_tela_20260502_203527.png)
 
-  \*\*\*
+***
 
 ## Entendo as pastas 
 
@@ -285,7 +290,8 @@ O nome var vem de "variable". É uma pasta onde ficam arquivos que mudam com o t
 Aqui entram coisas como logs do sistema, cache, arquivos temporários mais persistentes e dados gerados por serviços enquanto estão rodando. Por exemplo, logs costumam ficar em /var/log, e alguns serviços armazenam estado ou dados em /var/lib.
 
 Diferente de outras partes mais "estáticas" do sistema, o /var está sempre sendo atualizado. 
-  \*\*\*
+
+***
 
 ## - extra #1: `LOST+FOUND`
 
@@ -298,7 +304,8 @@ A função dela é bem específica: armazenar arquivos que foram recuperados ap�
 Na prática, o que vai parar ali geralmente são fragmentos de arquivos ou arquivos sem nome original, já que o sistema não conseguiu reconstruir completamente sua estrutura. Por isso ela costuma parecer vazia ou confusa quando acessada.
 
 Em muitas distribuições ela fica oculta por padrão e aparece apenas com permissões elevadas, justamente porque não é um diretório para uso manual no dia a dia.
-  \*\*\*
+
+***
 
 ## - extra #2: Como funciona a `Lixeira`
 
@@ -344,12 +351,6 @@ id -u
  > 1000
 
 Se o root apagar algo de um pendrive, a lixeira se chamará .Trash-0 — porque o UID do root é sempre 0.
-
-***
-
-Ficou bem sólido já. Dá pra lapidar alguns pontos, acrescentar uns detalhes que normalmente só aparecem quando algo quebra 😅 e deixar mais “pé no chão” pra quem vai realmente editar isso pela primeira vez.
-
-Vou continuar no mesmo tom:
 
 ***
 
@@ -532,7 +533,7 @@ Se acontecer, você pode corrigir via modo recovery ou live USB. Mas é melhor n
 
 ### Opções mais usadas
 
-```plain
+```markdown
 defaults            → rw, suid, dev, exec, auto, nouser, async
 noauto              → não monta no boot
 ro                  → somente leitura
