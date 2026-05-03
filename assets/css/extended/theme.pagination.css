@@ -1,10 +1,4 @@
 
-/*
- ========================
-PAGINATION
- ========================
-*/
-
 .pagination .next,
 .pagination .prev {
   all: unset;
@@ -53,34 +47,4 @@ PAGINATION
   align-items: center;
 
   width: 100%;
-}
-
-/*
- ========================
-MENU
- ========================
-*/
-
-/* Ajuste de estilo dos itens do menu no mobile */
-@media (max-width: 768px) {
-  .header-nav {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .logo,
-  .menu {
-    margin: 0 auto;
-    justify-content: center;
-  }
-
-  .menu {
-    width: 100%;
-  }
-
-  .logo {
-    justify-content: center;
-    transform: scale(0.8);
-  
-  }
 }
