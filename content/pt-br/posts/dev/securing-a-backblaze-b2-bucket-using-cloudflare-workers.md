@@ -8,9 +8,9 @@ tags:
   - cloudflare
   - dns
   - domain configuration
+  - cdn
 categories:
   - dev
-  - cdn
 keywords:
   - backblaze b2
   - cloudflare workers

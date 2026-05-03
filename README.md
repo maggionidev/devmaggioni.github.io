@@ -31,7 +31,7 @@ Documentação do meu blog pessoal feito com Hugo e usando o tema PaperMod.
 ```bash
 git clone https://github.com/maggionidev/maggionidev.github.io.git maggionidev-blog
 cd maggionidev-blog
-git submodule update --init --recursive --remote --merge
+git submodule update --init --recursive 
 
 hugo server -D
 ```

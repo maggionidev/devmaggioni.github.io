@@ -50,7 +50,9 @@ languages:
         imageTitle: my image
 
         buttons:
-          - name: Ver Posts
+          - name: Archives
+            url: archives
+          - name: Posts mais recentes 👉
             url: posts
 
       description: 'Programação, Blender, Unity e DevLogs...'
