@@ -9,7 +9,7 @@ ShowReadingTime: false
 ShowWordCount: false
 description: "Galeria de imagens de gatinhos 🫪"
 cover:
-    image: "https://assets.maggioni.dev/gallery/20251221_144600.jpg"
+    image: "https://assets.maggioni.dev/gallery/20251221_144600.webp"
     alt: "gatinhos"
     caption: "Mimi"
 ---
