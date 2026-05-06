@@ -10,9 +10,10 @@ tags:
   - llm
   - docker
   - ia offline
+  - dev
 categories:
-  - linux
   - llms
+  - dev
 keywords: []
 author: Gabriel Maggioni
 date: 2026-05-05T21:02:00
@@ -58,7 +59,6 @@ Dá mais trabalho? Dá. Mas nesse tipo de contexto… é o tipo de controle que 
 
 ***
 
-
 ## Para qual sistema esse post é destinado
 
 Esse tutorial é pra distros Linux baseadas em Arch (CachyOS recomendado).
@@ -69,7 +69,7 @@ Esse tutorial é pra distros Linux baseadas em Arch (CachyOS recomendado).
 
 Bom, não precisa ser gênio pra saber que isso não vai rodar em qualquer batata. Não precisa ser um PC top, mas alguns requisitos mínimos são necessários pra funcionar bem:
 
-```
+```plain
 - RAM: 16GB é o ideal. Menos que isso e você vai sofrer.
 - CPU: AMD Ryzen série 3000 ou superior, ou Intel Core i5 10ª geração pra cima. Nada muito antigo.
 - SSD: obrigatório.
@@ -78,7 +78,7 @@ Bom, não precisa ser gênio pra saber que isso não vai rodar em qualquer batat
 
 Pra referência, esse é o PC que usei pra escrever esse tutorial:
 
-```
+```plain
 - RAM: 32GB
 - CPU: Ryzen 7 5600x
 - SSD: 500GB (tá caro essa parada, queria 1TB 🫠)
@@ -149,7 +149,7 @@ sudo systemctl edit ollama
 
 Vai abrir o editor no terminal pra editar o arquivo de configuração do Ollama. Cola isso ali:
 
-```
+```plain
 [Service]
 Environment="OLLAMA_VULKAN=1"
 Environment="GGML_VK_VISIBLE_DEVICES=0"
@@ -214,7 +214,7 @@ Se retornar a mensagem de boas-vindas do Docker, tudo certo.
 
 ## Troubleshooting: Docker se recusando a funcionar
 
-O Docker não estava subindo aqui. Dava erro quando tentava iniciar. *Se funcionou de primeira pra você, pode pular essa sessão tranquilamente.*
+O Docker não estava subindo aqui. Dava erro quando tentava iniciar. _Se funcionou de primeira pra você, pode pular essa sessão tranquilamente._
 
 O CachyOS atualiza kernels com frequência. Se você instalou uma atualização de kernel mas não reiniciou, o sistema está rodando um kernel enquanto os módulos instalados são de outro. O Docker depende de módulos do kernel pra networking e namespacing - se os módulos não batem com o kernel em execução, ele simplesmente não sobe.
 
