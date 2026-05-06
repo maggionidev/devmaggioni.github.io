@@ -7,12 +7,12 @@ tags:
   - linux
   - cachyos
   - ollama
-  - llm
+  - LLMs
   - docker
   - ia offline
   - dev
 categories:
-  - llms
+  - LLMs
   - dev
 keywords: []
 author: Gabriel Maggioni
