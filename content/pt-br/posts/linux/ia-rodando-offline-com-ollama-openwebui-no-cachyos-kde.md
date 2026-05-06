@@ -58,11 +58,17 @@ Dá mais trabalho? Dá. Mas nesse tipo de contexto… é o tipo de controle que 
 
 ***
 
+## Pra qual sistema é esse post
+
+Esse tutorial é pra distros Linux baseado em Arch (CachyOS recomendado)
+
+***
+
 ## Requisitos
 
 Bom, não precisa ser um gênio para saber que isso não vai rodar em qualquer batata. Não precisa ser um PC top, mas precisa de alguns requisitos mínimos pra funcionar bem: 
 
-``` 
+```plain
 - RAM: 16GB de RAM é interessante.
 - CPU: AMD Ryzen série 3000 ou superior, ou um Intel Core i5 de 10ª geração pra cima, nada muito antigo.
 - SSD: obrigatório.
@@ -71,20 +77,46 @@ Bom, não precisa ser um gênio para saber que isso não vai rodar em qualquer b
 
 Para comparação, esse é o PC que estou rodando esse tutorial:
 
-```
+```plain
 - RAM: 32GB
 - CPU: Ryzen 7 5600x
 - SSD: 500GB (Tá caro essa parada, queria 1TB 🫠)
 - GPU: RX 6600
 ```
 
-> minha config é AMD, não é tão bom pra IA. Mas dá de rodar umas coisas mais leves.
-> Eu tava rodando a LLM toda na CPU, tava tankando. Mas eu mechi pra poder usar a GPU que fica mais rapidinho;
+### Sessão bônus: configurar Ollama pra rodar na GPU
+
+Pra mim o Ollama venho rodando direto no CPU. Oque não é tão ruim, mas fica mais lento que se fosse na GPU. Pra rodar o Ollama na sua GPU, execute os comandos abaixo (depois de instalar o Ollama né!):
+
+```bash
+sudo systemctl stop ollama # se tiver rodando o ollama para ele
+sudo systemctl edit ollama
+```
+
+vai abrir no terminal pra editar o arquivo de configuração do Ollama. Cola ali:
+
+```
+[Service]
+Environment="OLLAMA_VULKAN=1"
+Environment="GGML_VK_VISIBLE_DEVICES=0"
+Environment="OLLAMA_MAX_VRAM=5871947673"
+``` 
+
+Pra salvar:
+CTRL + O > Enter > CTRL + X > Enter.
+
+> Isso vai fazer com que Ollama use a sua GPU. (isso vai usar bastante VRAM, precisa parar o Ollama - `sudo systemctl stop ollama` - se for jogar ou fazer outra coisa pesada pra GPU);
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart ollama
+``` 
+
+A partir de agora os modelos vão rodar direto na GPU! Vai ficar mais rápido, mas cuidado pra não instalar modelo muito pesado pra não ficar lento. 
+
+Para verificar o uso da gpu use o comando `radeontop`.
 
 ***
-
-
-
 
 ## Instalando o Ollama
 
@@ -158,7 +190,13 @@ Adicionar seu usuário ao grupo `docker` para não precisar de `sudo` a cada com
 sudo usermod -aG docker $USER
 ```
 
-Esse comando só tem efeito na próxima sessão. Faça logout e login novamente, ou use `newgrp docker` para aplicar imediatamente na sessão atual.
+Você vai precisar reiniciar o computador! É sério!
+
+```bash
+sudo reboot
+```
+
+***
 
 Teste básico para confirmar que o Docker está funcionando:
 
@@ -166,15 +204,13 @@ Teste básico para confirmar que o Docker está funcionando:
 docker run hello-world
 ```
 
-Se retornar a mensagem de boas-vindas do Docker, está tudo certo. Se der erro, é aqui que a diversão começa.
+Se retornar a mensagem de boas-vindas do Docker, está tudo certo.
 
 ***
 
-## Troubleshooting: quando o Docker se recusa a funcionar
+## Troubleshooting: Docker se recusando a funcionar
 
-Esse é o ponto onde a maioria das pessoas trava, especialmente no CachyOS com kernel customizado. Dois problemas distintos aparecem com frequência, às vezes juntos.
-
-### O problema do kernel inconsistente
+O docker não tava instalando pra mim. Dava erro quando tentava iniciar. *Se funcionou de primeira pra você, nem  precisa perder tempo lendo essa sessão.*
 
 O CachyOS atualiza kernels com frequência. Se você instalou uma atualização de kernel mas não reiniciou, o sistema está rodando um kernel enquanto os módulos instalados são de outro. O Docker depende de módulos do kernel para networking e namespacing — se os módulos não batem com o kernel em execução, ele simplesmente não sobe.
 
@@ -194,55 +230,11 @@ uname -r
 
 Compare com o que está instalado. Se agora baterem, tente subir o Docker novamente.
 
-### O conflito entre iptables e nftables
-
-O Docker usa iptables para criar regras de NAT e bridge networking — é assim que containers conseguem acessar a rede e como portas são mapeadas. O problema é que distribuições modernas usam nftables por padrão, e o Docker ainda não se deu bem com essa transição em todos os cenários.
-
-No CachyOS, o iptables instalado pode estar apontando para o backend nftables, e o Docker pode não lidar bem com isso dependendo da versão. A solução é forçar o uso do backend legado do iptables:
-
-```bash
-sudo ln -sf iptables-legacy /usr/bin/iptables
-sudo ln -sf ip6tables-legacy /usr/bin/ip6tables
-```
-
-Verifique se funcionou:
-
-```bash
-iptables --version
-```
-
-A saída deve mencionar `legacy` na versão. Se mencionar `nf_tables`, o symlink não funcionou como esperado.
-
-Além disso, crie o arquivo de configuração do Docker em `/etc/docker/daemon.json` para declarar explicitamente que ele deve usar iptables:
-
-```json
-{
-  "iptables": true,
-  "ip6tables": true
-}
-```
-
-Com isso feito, reinicie novamente:
-
-```bash
-sudo reboot
-```
-
-Parece excessivo reiniciar duas vezes, mas é o caminho mais confiável. O Docker tem estado de rede que persiste entre restarts do serviço, e um reboot limpo evita conflitos com regras de iptables que podem ter ficado em estado parcial.
-
-Se mesmo assim o networking dos containers não funcionar, existe um workaround direto: usar `--network=host` ao rodar os containers. Isso faz o container compartilhar a rede do host diretamente, sem bridge, sem NAT, sem iptables no caminho. É menos isolado, mas funciona, e para uso pessoal local é perfeitamente aceitável — e é exatamente o que vamos usar na próxima seção.
-
 ***
 
 ## Rodando o Open WebUI
 
-Se você já tentou rodar o Open WebUI antes de resolver os problemas acima, provavelmente tem um container quebrado parado. Remova ele primeiro:
-
-```bash
-docker rm -f open-webui
-```
-
-Agora suba o container corretamente, com `--network=host`:
+Suba o container da open-webui (isso vai baixar mais alguns GBs)
 
 ```bash
 docker run -d \
@@ -267,9 +259,73 @@ Com tudo rodando:
 - **Open WebUI**: http://localhost:8080
 - **Ollama API**: http://localhost:11434
 
-Na primeira vez que acessar o WebUI, ele vai pedir para criar uma conta local — é apenas para organizar conversas, não tem nenhuma sincronização externa.
+Na primeira vez que acessar o WebUI, ele vai pedir para criar uma conta local — é apenas para organizar conversas, não tem nenhuma sincronização externa até onde eu vi.
 
 ***
+
+## Comandos básicos Docker e Ollama
+
+Você vai precisar de alguns comandos básicos para gerenciar uma LLM com o Open WebUi:
+
+### Ollama
+
+1. Ver as LLMs em execução
+
+```bash
+ollama ps
+```
+
+Se aparecer coisa é por que tá rodando.
+
+2. Parar uma LLM (liberar memória)
+
+```bash
+ollama stop nome-do-modelo
+```
+
+### Docker
+
+1. Ver os containers que tu pussui
+
+Isso mostra oque tá rodando *agora*:
+```bash
+docker ps
+```
+
+Isso mostra tudo oque você tem, mesmo parado:
+```bash
+docker ps -a
+```
+
+2. Ver as images instaladas:
+```bash
+docker images
+```
+
+3. Ver logs dentro de um container em tempo real
+
+```bash
+docker logs -f nome_ou_id_do_container
+```
+
+4. Rodar uma imagem
+```bash
+docker run -d nome-da-imagem
+docker logs -f nome-da-imagem # <- ver os logs em tempo real
+```
+
+no nosso caso pra rodar o open-webui use sempre esse comando:
+
+```bash
+docker run -d \
+  --network=host \
+  -v open-webui:/app/backend/data \
+  --name open-webui \
+  ghcr.io/open-webui/open-webui:main
+```
+
+***
+
 
 ## Conectando o Open WebUI ao Ollama
 
