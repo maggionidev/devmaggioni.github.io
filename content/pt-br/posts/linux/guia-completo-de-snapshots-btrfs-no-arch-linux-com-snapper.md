@@ -125,7 +125,7 @@ sudo btrfs subvolume snapshot -r /home /home/.snapshots/home-snap-$(date +%Y-%m-
 Snapshot fica no mesmo SSD.
 
 | Problema                 | Snapshot resolve? |
-| ************************ | ***************-- |
+| ------------------------ | ----------------- |
 | Update quebrou o sistema | ✓                 |
 | Arquivo apagado          | ✓                 |
 | SSD morreu               | ✗                 |
