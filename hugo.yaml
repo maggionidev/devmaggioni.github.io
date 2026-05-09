@@ -226,24 +226,19 @@ menu:
       weight: 10
 
     - identifier: search
-      name: search
+      name: 🔎 search...
       url: /search/
       weight: 20
 
     - identifier: categories
-      name: categories
+      name: 🔖 Tags
       url: /categories/
       weight: 30
 
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 40
-
     - identifier: about
-      name: about me
+      name: 👋 About Me
       url: /about/
-      weight: 50
+      weight: 40
 
 markup:
   highlight:

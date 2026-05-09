@@ -1,4 +1,19 @@
 ---
 title: "#CATEGORIAS"
-description: "Nem sempre você sabe exatamente o que quer ler, mas às vezes já tem uma ideia do assunto.  As categorias organizam os posts por tema."
+description: "Encontre Posts através de categorias relevantes."
 ---
+
+---
+
+{{<rawhtml>}}<br/>{{</rawhtml>}}
+
+{{<rawhtml>}}
+Veja também: <a style="text-decoration: underline; color: cyan" href="/pt-br/tags">tags</a>
+</br>
+{{</rawhtml>}}
+
+{{<rawhtml>}}<br/>{{</rawhtml>}}
+
+---
+
+{{<rawhtml>}}<br/>{{</rawhtml>}}
