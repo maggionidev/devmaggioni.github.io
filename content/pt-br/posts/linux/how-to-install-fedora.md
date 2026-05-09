@@ -1,5 +1,5 @@
 ---
-title: Como instalar uma distro Linux (Fedora KDE)
+title: Como instalar a distro Linux Fedora + KDE Plasma
 slug: ''
 description: 'Guia completo para instalar o Fedora Linux: aprenda a criar um pendrive bootável com suporte a múltiplas ISOs usando o Ventoy, configurar a BIOS/UEFI e realizar a instalação passo a passo até a primeira inicialização.'
 summary: 'Guia para instalar o Fedora Linux: aprenda a criar um pendrive bootável com suporte a múltiplas ISOs usando o Ventoy, configurar a BIOS/UEFI e realizar a instalação passo a passo até a primeira inicialização.'
@@ -11,7 +11,7 @@ categories:
   - linux
 author: Gabriel Maggioni
 date: 2026-04-26T12:03:00
-lastmod: ''
+lastmod: 2026-05-08T21:04:00
 showToc: true
 TocOpen: false
 draft: false
