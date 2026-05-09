@@ -1,5 +1,5 @@
 ---
-title: IA rodando offline com Ollama + OpenWebUI no CachyOS (KDE)
+title: IA rodando offline com Ollama + OpenWebUI no Arch OS
 slug: ai-running-offline-with-ollama-and-openwebui
 description: Tenha sua própria IA rodando localmente na sua máquina, offline e grátis!
 summary: Tenha sua própria IA rodando localmente na sua máquina, offline e grátis!
@@ -17,7 +17,7 @@ categories:
 keywords: []
 author: Gabriel Maggioni
 date: 2026-05-05T21:02:00
-lastmod: ''
+lastmod: 2026-05-08T21:05:00
 showToc: true
 TocOpen: false
 draft: false
