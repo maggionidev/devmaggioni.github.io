@@ -226,7 +226,7 @@ menu:
       weight: 10
 
     - identifier: search
-      name: 🔎 search...
+      name: 🔎 ...search
       url: /search/
       weight: 20
 
