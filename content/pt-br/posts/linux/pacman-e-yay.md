@@ -132,7 +132,7 @@ O `pacman` é o gerenciador de pacotes nativo do Arch Linux e por extensão do C
 
 ### Sintaxe geral
 
-```plain
+```bash
 pacman <operação> [opções] [pacotes]
 ```
 
@@ -149,7 +149,7 @@ As principais operações são:
 
 ### 📦 Instalar pacotes
 
-```plain
+```bash
 # Instalar um pacote
 sudo pacman -S nome-do-pacote
 
@@ -173,7 +173,7 @@ sudo pacman -U https://exemplo.com/pacote.pkg.tar.zst
 
 ### 🔄 Atualizar o sistema
 
-```plain
+```bash
 # Sincronizar repositórios e atualizar tudo (USE ISSO REGULARMENTE)
 sudo pacman -Syu
 
@@ -197,7 +197,7 @@ sudo pacman -Syu --ignore pacote1,pacote2
 
 ### 🗑️ Remover pacotes
 
-```plain
+```bash
 # Remover um pacote (mantém dependências)
 sudo pacman -R nome-do-pacote
 
@@ -218,7 +218,7 @@ sudo pacman -Rns $(pacman -Qtdq)
 
 ### 🔍 Buscar e consultar pacotes
 
-```plain
+```bash
 # Buscar pacote nos repositórios (por nome ou descrição)
 pacman -Ss nome-ou-termo
 
@@ -264,7 +264,7 @@ pacman -Sl extra
 
 ### 🧹 Limpeza e manutenção
 
-```plain
+```bash
 # Limpar cache de pacotes baixados (mantém versões atuais)
 sudo pacman -Sc
 
@@ -282,7 +282,7 @@ sudo pacman -Rns $(pacman -Qtdq)
 
 ### 🔒 Downgrade de pacotes
 
-```plain
+```bash
 # Instalar versão específica do cache local
 sudo pacman -U /var/cache/pacman/pkg/nome-do-pacote-versao-x86_64.pkg.tar.zst
 
@@ -299,13 +299,13 @@ sudo downgrade nome-do-pacote
 
 O arquivo de configuração fica em `/etc/pacman.conf`:
 
-```plain
+```bash
 sudo nano /etc/pacman.conf
 ```
 
 **Opções úteis para ativar:**
 
-```plain
+```bash
 # Habilitar downloads paralelos (muito mais rápido)
 ParallelDownloads = 5
 
@@ -323,7 +323,7 @@ ILoveCandy
 
 ### Mirrorlist - escolhendo os espelhos mais rápidos
 
-```plain
+```bash
 # Ver mirrors atuais
 cat /etc/pacman.d/mirrorlist
 
@@ -347,7 +347,7 @@ O `yay` (Yet Another Yogurt) é um AUR helper escrito em Go que se comporta exat
 
 ### Instalando o yay (já vem no CachyOS)
 
-```plain
+```bash
 # Se por algum motivo não estiver instalado:
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -359,7 +359,7 @@ makepkg -si
 
 ### 📦 Instalar pacotes com yay
 
-```plain
+```bash
 # Instalar do AUR ou dos repositórios (yay busca nos dois)
 yay -S nome-do-pacote
 
@@ -380,7 +380,7 @@ yay -S --aur=false nome-do-pacote
 
 ### 🔄 Atualizar com yay
 
-```plain
+```bash
 # Atualizar tudo: repositórios oficiais + AUR
 yay -Syu
 
@@ -401,7 +401,7 @@ yay -Syu --ignore nome-do-pacote
 
 ### 🔍 Buscar com yay
 
-```plain
+```bash
 # Buscar nos repositórios e no AUR
 yay -Ss nome-ou-termo
 
@@ -421,7 +421,7 @@ yay -Qi nome-do-pacote
 
 O yay usa a mesma sintaxe do pacman para remoção:
 
-```plain
+```bash
 # Remover pacote + dependências não usadas
 yay -Rns nome-do-pacote
 
@@ -438,7 +438,7 @@ yay -Qdt
 
 Isso é uma boa prática de segurança:
 
-```plain
+```bash
 # Ao instalar, yay perguntará se deseja revisar o PKGBUILD
 yay -S nome-do-pacote
 # → Aparecerá: "View PKGBUILD? [Y/n]" - pressione Y e revise!
@@ -454,7 +454,7 @@ yay --save --editmenu
 
 ### ⚙️ Configuração do yay
 
-```plain
+```bash
 # Ver configurações atuais
 yay --show --config
 
@@ -475,7 +475,7 @@ yay -Ps
 
 ### 🔐 Verificar pacotes AUR manualmente
 
-```plain
+```bash
 # Clonar e revisar manualmente antes de instalar
 git clone https://aur.archlinux.org/nome-do-pacote.git
 cd nome-do-pacote
@@ -489,7 +489,7 @@ makepkg -si      # Compila e instala
 
 ### Rotina semanal recomendada
 
-```plain
+```bash
 # 1. Sincronizar repositórios e atualizar tudo
 yay -Syu
 
@@ -505,7 +505,7 @@ sudo pacman -Dk  # Verifica dependências
 
 ### Fluxo completo de instalação responsável
 
-```plain
+```bash
 # 1. Buscar o pacote
 yay -Ss firefox
 
@@ -530,7 +530,7 @@ yay -Ql firefox
 
 **Sintoma:** `sudo pacman -Syu` retorna erro de conflito de arquivos ou dependências
 
-```plain
+```bash
 # Ver o erro completo
 sudo pacman -Syu 2>&1 | tee /tmp/pacman-update.log
 
@@ -548,7 +548,7 @@ sudo pacman -S dependencia-faltante
 
 ### Banco de dados corrompido
 
-```plain
+```bash
 # Sintoma: "could not open file /var/lib/pacman/sync/*.db"
 
 # Remover e re-sincronizar
@@ -560,7 +560,7 @@ sudo pacman -Syyu
 
 ### Lock do pacman (outro processo usando)
 
-```plain
+```bash
 # Sintoma: "error: could not lock database"
 
 # Verificar se pacman ou yay está rodando
@@ -574,7 +574,7 @@ sudo rm /var/lib/pacman/db.lck
 
 ### Sistema não inicializa após atualização de kernel
 
-```plain
+```bash
 # Na tela do GRUB, selecione uma entrada mais antiga
 # Depois de inicializar:
 
@@ -592,7 +592,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ### Reverter uma atualização problemática
 
-```plain
+```bash
 # Ver histórico de operações do pacman
 less /var/log/pacman.log
 
@@ -612,7 +612,7 @@ sudo downgrade nome-do-pacote
 
 ### Pacote corrompido ou incompleto
 
-```plain
+```bash
 # Verificar integridade de todos os pacotes instalados
 sudo pacman -Qkk 2>&1 | grep -v " 0 altered"
 
@@ -627,7 +627,7 @@ sudo pacman -Qkk 2>&1 | grep " altered" | awk '{print $1}' | xargs sudo pacman -
 
 ### Pacote AUR falhou ao compilar
 
-```plain
+```bash
 # Ver o erro completo de compilação
 yay -S nome-do-pacote 2>&1 | tee /tmp/yay-build.log
 
@@ -644,7 +644,7 @@ makepkg -si --noconfirm
 
 ### Resolver conflitos de chaves GPG
 
-```plain
+```bash
 # Erro: "invalid or corrupted package (PGP signature)"
 
 # Atualizar chaveiro
@@ -669,7 +669,7 @@ Esta é uma das habilidades mais importantes para um usuário de rolling release
 
 ### Ver pacotes que serão atualizados
 
-```plain
+```bash
 # Listar atualizações disponíveis sem instalar
 checkupdates
 
@@ -689,7 +689,7 @@ pacman -Syu --print-format "%n: %v -> %l"
 
 **Este é o passo mais importante para evitar problemas!**
 
-```plain
+```bash
 # Instalar arch-news (exibe news do Arch direto no terminal)
 yay -S arch-news
 
@@ -706,7 +706,7 @@ arch-news
 
 ### CachyOS Changelog e anúncios
 
-```plain
+```bash
 # Ver o repositório do CachyOS no GitHub
 # https://github.com/CachyOS
 
@@ -721,7 +721,7 @@ arch-news
 
 ### Simular uma atualização completa
 
-```plain
+```bash
 # Ver tudo que seria instalado, atualizado ou removido - sem executar
 sudo pacman -Syu --print
 
@@ -736,7 +736,7 @@ sudo pacman -S nome-do-pacote --print
 
 ### Antes de atualizar - checklist
 
-```plain
+```bash
 ✅ 1. Ler https://archlinux.org/news/ - avisos de ações manuais
 ✅ 2. Rodar `checkupdates` - ver o que vai mudar
 ✅ 3. Ter um snapshot/backup (Timeshift, Btrfs snapshot, etc.)
@@ -752,7 +752,7 @@ sudo pacman -S nome-do-pacote --print
 
 A ArchWiki é válida para o CachyOS em praticamente tudo que não é específico do CachyOS:
 
-```plain
+```bash
 https://wiki.archlinux.org/
 ```
 
@@ -768,7 +768,7 @@ https://wiki.archlinux.org/
 
 ### Wiki do CachyOS
 
-```plain
+```bash
 https://wiki.cachyos.org/
 ```
 
@@ -783,7 +783,7 @@ https://wiki.cachyos.org/
 
 ### Man pages - documentação offline
 
-```plain
+```bash
 # Ver manual do pacman
 man pacman
 
@@ -800,7 +800,7 @@ man pacman
 
 ### Verificar logs do sistema para diagnóstico
 
-```plain
+```bash
 # Ver log completo do sistema (systemd journal)
 journalctl -xe
 
@@ -832,7 +832,7 @@ grep "2024-05" /var/log/pacman.log
 
 O CachyOS é famoso por seus kernels otimizados. Você pode trocar facilmente:
 
-```plain
+```bash
 # Ver kernels disponíveis
 pacman -Ss linux-cachyos
 
@@ -858,7 +858,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 Se você instalou com Btrfs (padrão no CachyOS), você pode configurar snapshots automáticos:
 
-```plain
+```bash
 # Instalar snapper e snap-pac (snapshots automáticos no pacman)
 sudo pacman -S snapper snap-pac
 
@@ -881,7 +881,7 @@ sudo btrfs subvolume list /
 
 ### Timeshift - backup e restauração simplificada
 
-```plain
+```bash
 # Instalar
 sudo pacman -S timeshift
 
@@ -899,7 +899,7 @@ sudo timeshift --restore
 
 ### paccache - limpeza inteligente de cache
 
-```plain
+```bash
 # Instalar pacman-contrib (vem com paccache)
 sudo pacman -S pacman-contrib
 
@@ -922,7 +922,7 @@ sudo systemctl enable --now paccache.timer
 
 Adicione ao seu `~/.bashrc` ou `~/.zshrc`:
 
-```plain
+```bash
 # Atualização completa
 alias update='yay -Syu'
 
@@ -949,7 +949,7 @@ alias orphans='sudo pacman -Rns $(pacman -Qtdq) 2>/dev/null || echo "Nenhum orf�
 
 ### Gerenciar serviços com systemctl
 
-```plain
+```bash
 # Ver status de um serviço
 systemctl status nome-do-servico
 
@@ -976,7 +976,7 @@ systemctl --failed
 
 ### Verificar o hardware detectado
 
-```plain
+```bash
 # Informações de CPU
 lscpu
 cat /proc/cpuinfo | grep "model name" | head -1
@@ -1020,7 +1020,7 @@ sensors  # requer lm_sensors: sudo pacman -S lm_sensors
 
 ## 🧠 Resumo rápido - Cheatsheet
 
-```plain
+```bash
 # ATUALIZAR
 yay -Syu                        # Atualizar tudo
 checkupdates                    # Ver o que vai atualizar (sem instalar)
