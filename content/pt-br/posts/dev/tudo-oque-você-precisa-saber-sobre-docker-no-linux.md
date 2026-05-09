@@ -14,7 +14,8 @@ tags:
   - devops
   - virtualização
   - containerização
-categories: []
+categories:
+  - dev
 keywords:
   - docker
   - cachyos
