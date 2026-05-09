@@ -100,10 +100,12 @@
     {{- partial "post_meta.html" . -}}
   
     <span class="post-comments">
-      <a href="{{ .Permalink }}#disqus_thread">
-        0 comments
-      </a>
-    </span>
+        <a href="{{ .RelPermalink }}#disqus_thread"
+           class="disqus-comment-count"
+           data-disqus-url="{{ .Permalink }}">
+          0 comentários
+        </a>
+      </span>
   </footer>
 
   {{- end }}
