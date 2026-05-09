@@ -124,11 +124,11 @@ sudo btrfs subvolume snapshot -r /home /home/.snapshots/home-snap-$(date +%Y-%m-
 
 Snapshot fica no mesmo SSD.
 
-| Problema                 | Snapshot resolve? |
-| ------------------------ | ----------------- |
-| Update quebrou o sistema | ✓                 |
-| Arquivo apagado          | ✓                 |
-| SSD morreu               | ✗                 |
+| Problema | Snapshot resolve? |
+| --- | --- |
+| Update quebrou o sistema | ✓ |
+| Arquivo apagado | ✓ |
+| SSD morreu | ✗ |
 
 Se o disco morrer, os snapshots morrem junto.
 
@@ -163,6 +163,15 @@ Depois disso:
 * snapshots automáticos são criados
 * antes de cada `pacman -Syu` ele salva um PRE
 * depois cria um POST
+
+***
+
+## Snapshot manual
+
+```bash
+# Criar snapshot manual antes de uma atualização arriscada
+sudo snapper -c root create --description "antes-de-atualizar"
+```
 
 ***
 
@@ -243,7 +252,7 @@ sudo nano /etc/snapper/configs/root
 
 Se você também usa snapshots do `/home`:
 
-```bash 
+```bash
 sudo nano /etc/snapper/configs/home
 ```
 
@@ -253,7 +262,7 @@ sudo nano /etc/snapper/configs/home
 
 Procure estas linhas:
 
-```ini 
+```ini
 TIMELINE_LIMIT_HOURLY="5"
 TIMELINE_LIMIT_DAILY="7"
 TIMELINE_LIMIT_WEEKLY="4"
@@ -277,7 +286,7 @@ Quando o limite é atingido, os snapshots mais antigos são apagados automaticam
 
 Os snapshots PRE e POST feitos antes/depois de updates usam estas opções:
 
-```ini 
+```ini
 NUMBER_LIMIT="10"
 NUMBER_LIMIT_IMPORTANT="5"
 ```
@@ -293,7 +302,7 @@ Exemplo:
 
 Depois de alterar as configs, você pode forçar a limpeza:
 
-```bash 
+```bash
 sudo snapper cleanup number
 sudo snapper cleanup timeline
 ```
@@ -304,7 +313,7 @@ sudo snapper cleanup timeline
 
 Uso geral do Btrfs:
 
-```bash 
+```bash
 sudo btrfs filesystem usage /
 ```
 
