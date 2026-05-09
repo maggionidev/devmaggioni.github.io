@@ -14,8 +14,6 @@ keywords:
 
      Posts mais recentes! 🚀
 
-> Categorias relevantes: [dev](/pt-br/categories/dev/) | [linux](/pt-br/categories/linux/) | [windows](/pt-br/categories/windows/) | [blender](/building/) | [unity](/building/).
-
 > Visão Completa: [archives](/pt-br/archives)
 
 ---
