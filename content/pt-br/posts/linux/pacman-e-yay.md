@@ -45,8 +45,8 @@ keywords:
   - Pacman Cache Cleanup
   - ArchWiki
 author: Gabriel Maggioni
-date: 2026-05-06T22:59:00
-lastmod: 2026-05-08T21:21:00
+date: 2026-05-08T21:29:00
+lastmod: 2026-05-08T21:29:00
 showToc: true
 TocOpen: false
 draft: false
