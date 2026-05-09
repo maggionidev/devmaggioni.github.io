@@ -1,0 +1,75 @@
+.entry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+
+    margin-top: 0.8rem;
+    margin-bottom: 0.9rem;
+}
+
+.entry-tag {
+    display: inline-flex;
+    align-items: center;
+
+    padding:
+        0.22rem
+        0.55rem;
+
+    border-radius: 7px;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    color: var(--secondary);
+
+    font-size: 0.72rem;
+    font-weight: 500;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background 0.16s ease,
+        border-color 0.16s ease,
+        transform 0.16s ease,
+        color 0.16s ease;
+}
+
+.entry-tag:hover {
+    transform: translateY(-1px);
+
+    color: var(--primary);
+
+    border-color: rgba(120,170,255,0.25);
+
+    background: rgba(120,170,255,0.06);
+}
+
+.entry-tag::before {
+    content: "#";
+
+    margin-right: 0.18rem;
+
+    opacity: 0.45;
+
+    font-size: 0.68rem;
+}
+
+.post-comments {
+    margin-left: 0.6rem;
+
+    opacity: 0.75;
+
+    font-size: 0.82rem;
+}
+
+.post-comments a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.post-comments a:hover {
+    color: var(--primary);
+}
