@@ -537,7 +537,8 @@ docker system df               # Ver uso de espaço
 lazydocker                     # Abrir TUI
 ```
 
-  ---
+---
 
 > 💡 **Dica final:** Para uso cotidiano no desenvolvimento, o Compose + Lazydocker é a combinação perfeita. Você define sua stack em YAML uma vez e gerencia tudo visualmente pelo lazydocker sem decorar comandos.
->   ---
+
+---
