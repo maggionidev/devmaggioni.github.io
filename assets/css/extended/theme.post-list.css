@@ -56,20 +56,3 @@
 
     font-size: 0.68rem;
 }
-
-.post-comments {
-    margin-left: 0.6rem;
-
-    opacity: 0.75;
-
-    font-size: 0.82rem;
-}
-
-.post-comments a {
-    color: var(--secondary);
-    text-decoration: none;
-}
-
-.post-comments a:hover {
-    color: var(--primary);
-}
