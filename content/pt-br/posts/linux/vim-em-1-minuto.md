@@ -15,23 +15,32 @@ categories:
   - 1minute
 author: Gabriel Maggioni
 date: 2026-05-09T22:40:00
-lastmod: 2026-05-10T12:42:00
+lastmod: 2026-05-10T16:25:00
 showToc: true
 TocOpen: false
 draft: false
 ---
 
-⚡Neovim em 1 minuto!
-Cola prática pra instalar, configurar e usar o Neovim no dia a dia!
+Guia rápido pra instalar, configurar e usar Neovim no dia a dia.
 
 ***
 
-🧩 **O que é o Neovim?**
-O Neovim é uma versão moderna do Vim — mais rápido, com suporte a plugins, LSP nativo (autocomplete igual a uma IDE) e configuração em Lua. É o editor favorito de quem vive no terminal.
+## 🧠 O que é o Neovim?
+
+O Neovim é uma versão moderna do Vim.
+
+Ele é:
+
+* mais rápido
+* extensível com plugins
+* suporta LSP nativo (autocomplete estilo IDE)
+* configurado em Lua
+
+Perfeito pra quem vive no terminal.
 
 ***
 
-📦 **Instalação**
+## 📦 Instalação
 
 | Distro | Comando |
 | --- | --- |
@@ -40,203 +49,212 @@ O Neovim é uma versão moderna do Vim — mais rápido, com suporte a plugins, 
 | Ubuntu / Debian | `sudo apt install neovim` |
 | Mac (brew) | `brew install neovim` |
 
-> 💡 Verifique a versão com `nvim --version`. Prefira sempre **0.9+**.
+💡 Confira com:
+
+```bash
+nvim --version
+```
+
+Ideal: versão 0.9 ou superior.
 
 ***
 
-🚪 **Abrir Arquivos**
+## 🚪 Abrir arquivos
 
 | Comando | Função |
 | --- | --- |
-| `nvim arquivo.txt` | abrir arquivo |
-| `nvim .` | abrir explorador de arquivos |
-| `nvim` | abrir vazio |
+| `nvim arquivo.txt` | abre um arquivo |
+| `nvim .` | abre diretório |
+| `nvim` | abre vazio |
 
 ***
 
-🗂️ **Os 3 Modos que Você Precisa Entender**
+## 🧭 Modos principais
 
-| Modo | Como entrar | Pra que serve |
+| Modo | Como entrar | Uso |
 | --- | --- | --- |
-| **Normal** | `Esc` | navegar, copiar, apagar |
-| **Insert** | `i` | escrever texto |
-| **Command** | `:` | salvar, sair, configurar |
+| Normal | `Esc` | navegar e editar |
+| Insert | `i` | escrever texto |
+| Command | `:` | comandos |
 
-> 💡 Você **sempre começa** no modo Normal. Esse é o mais importante.
+💡 Você sempre começa no modo Normal.
 
 ***
 
-✍️ **Entrar no Modo Insert**
+## ✍️ Modo Insert
 
-| Tecla | Função |
+| Tecla | Ação |
 | --- | --- |
-| `i` | inserir antes do cursor |
-| `a` | inserir após o cursor |
-| `A` | inserir no fim da linha |
+| `i` | antes do cursor |
+| `a` | depois do cursor |
+| `A` | fim da linha |
 | `o` | nova linha abaixo |
 | `O` | nova linha acima |
-| `Esc` | voltar ao modo Normal |
+| `Esc` | voltar ao Normal |
 
 ***
 
-💾 **Salvar e Sair**
+## 💾 Salvar e sair
 
-| Comando | Função |
+| Comando | Ação |
 | --- | --- |
 | `:w` | salvar |
 | `:q` | sair |
 | `:wq` | salvar e sair |
 | `:q!` | sair sem salvar |
-| `:wqa` | salvar e fechar todos os buffers |
+| `:wqa` | salvar e fechar tudo |
 
 ***
 
-🧭 **Navegação**
+## 🧭 Navegação
 
-| Tecla | Movimento |
+| Tecla | Ação |
 | --- | --- |
-| `h j k l` | ← ↓ ↑ → |
+| `h j k l` | mover cursor |
 | `w` | próxima palavra |
 | `b` | palavra anterior |
 | `0` | início da linha |
 | `$` | fim da linha |
 | `gg` | início do arquivo |
 | `G` | fim do arquivo |
-| `:10` | ir para linha 10 |
-| `Ctrl + d` | descer meia tela |
-| `Ctrl + u` | subir meia tela |
+| `:10` | ir pra linha 10 |
+| `Ctrl+d` | descer |
+| `Ctrl+u` | subir |
 
 ***
 
-✂️ **Edição**
+## ✂️ Edição
 
-| Comando | Função |
+| Comando | Ação |
 | --- | --- |
-| `dd` | apagar linha inteira |
+| `dd` | apagar linha |
 | `yy` | copiar linha |
 | `p` | colar abaixo |
 | `P` | colar acima |
 | `u` | desfazer |
-| `Ctrl + r` | refazer |
+| `Ctrl+r` | refazer |
 | `x` | apagar caractere |
-| `ciw` | apagar e editar palavra |
-| `cc` | apagar e editar linha inteira |
-| `D` | apagar do cursor até o fim da linha |
+| `ciw` | editar palavra |
+| `cc` | editar linha |
+| `D` | apagar até o fim |
 
 ***
 
-🔍 **Pesquisa e Substituição**
+## 🔍 Busca e substituição
 
-| Comando | Função |
+| Comando | Ação |
 | --- | --- |
-| `/texto` | buscar no arquivo |
-| `n` | próximo resultado |
-| `N` | resultado anterior |
-| `*` | buscar palavra sob o cursor |
-| `:%s/velho/novo/g` | substituir em todo o arquivo |
+| `/texto` | buscar |
+| `n` | próximo |
+| `N` | anterior |
+| `*` | buscar palavra atual |
+| `:%s/velho/novo/g` | substituir tudo |
 | `:%s/velho/novo/gc` | substituir com confirmação |
 
 ***
 
-🪟 **Janelas e Buffers**
+## 🪟 Janelas e buffers
 
-| Comando | Função |
+| Comando | Ação |
 | --- | --- |
-| `:split` | dividir horizontalmente |
-| `:vsplit` | dividir verticalmente |
-| `Ctrl + w + w` | alternar entre janelas |
-| `Ctrl + w + h/j/k/l` | mover entre janelas |
+| `:split` | horizontal |
+| `:vsplit` | vertical |
+| `Ctrl+w w` | trocar janela |
+| `Ctrl+w h/j/k/l` | navegar |
 | `:bn` | próximo buffer |
 | `:bp` | buffer anterior |
 | `:bd` | fechar buffer |
 
 ***
 
-⚙️ **Configuração Básica**
-O arquivo de config fica em `~/.config/nvim/init.lua` (Lua) ou `init.vim` (VimScript).
+## ⚙️ Configuração básica
+
+Arquivo principal:
+
+```bash
+~/.config/nvim/init.lua
+```
+
+Criar:
 
 ```bash
 mkdir -p ~/.config/nvim
 nvim ~/.config/nvim/init.lua
 ```
 
-Config mínima pra começar bem:
+Config mínima:
 
 ```lua
--- Números de linha
 vim.opt.number = true
 vim.opt.relativenumber = true
--- Indentação
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
--- Busca
+
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
--- Visual
+
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 ```
 
 ***
 
-## 🚀 **Comandos mais usados no dia a dia - SALVE ESTA LISTA!**
+## 🚀 Atalhos essenciais
 
+### Salvar e sair
 
-| SALVAR E SAIR |  |
-| --- | --- |
 | Ação | Comando |
-| Salvar | `:w` |
-| Sair | `:q` |
-| Salvar e sair | `:wq` |
-| Sair sem salvar | `:q!` |
-
-
-| INSERÇÃO DE TEXTO |  |
 | --- | --- |
-| Ação | Comando |
-| Inserir antes do cursor | `i` |
-| Inserir no fim da linha | `A` |
-| Inserir no início da linha | `I` |
-| Nova linha abaixo | `o` |
-| Nova linha acima | `O` |
-
-
-| EDIÇÃO BÁSICA |  |
-| --- | --- |
-| Ação | Comando |
-| Apagar palavra | `dw` |
-| Apagar linha | `dd` |
-| Desfazer | `u` |
-| Refazer | `Ctrl + r` |
-
-
-| SUBSTITUIÇÃO |  |
-| --- | --- |
-| Ação | Comando |
-| Substituir na linha | `:s/antigo/novo/g` |
-| Substituir no arquivo | `:%s/antigo/novo/g` |
-
-
-| COPIAR E COLAR |  |
-| --- | --- |
-| Ação | Comando |
-| Copiar linha | `yy` |
-| Copiar palavra | `yw` |
-| Colar depois | `p` |
-| Colar antes | `P` |
-
-
-| SELEÇÃO |  |
-| --- | --- |
-| Ação | Comando |
-| Selecionar texto | `v` |
-| Selecionar linha | `V` |
-| Selecionar bloco | `Ctrl + v` |
-| Sair da seleção | `Esc` |
+| salvar | `:w` |
+| sair | `:q` |
+| salvar e sair | `:wq` |
+| sair sem salvar | `:q!` |
 
 ***
 
-Com isso você já usa o Neovim de verdade — e quando pegar o jeito, nunca mais vai querer voltar 😄
+### Inserção
+
+| Ação | Comando |
+| --- | --- |
+| antes do cursor | `i` |
+| fim da linha | `A` |
+| início da linha | `I` |
+| nova linha abaixo | `o` |
+| nova linha acima | `O` |
+
+***
+
+### Edição rápida
+
+| Ação | Comando |
+| --- | --- |
+| apagar palavra | `dw` |
+| apagar linha | `dd` |
+| desfazer | `u` |
+| refazer | `Ctrl+r` |
+
+***
+
+### Copiar e colar
+
+| Ação | Comando |
+| --- | --- |
+| copiar linha | `yy` |
+| copiar palavra | `yw` |
+| colar depois | `p` |
+| colar antes | `P` |
+
+***
+
+### Seleção
+
+| Ação | Comando |
+| --- | --- |
+| selecionar | `v` |
+| linha inteira | `V` |
+| bloco | `Ctrl+v` |
+| sair | `Esc` |
 
 ***
