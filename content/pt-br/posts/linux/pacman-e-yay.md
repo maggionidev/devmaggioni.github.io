@@ -920,7 +920,8 @@ sudo systemctl enable --now paccache.timer
 
 ### Aliases úteis para o .bashrc ou .zshrc
 
-Adicione ao seu `~/.bashrc` ou `~/.zshrc`:
+Adicione ao seu `~/.bashrc`, `~/.zshrc` ou `/.config/fish/config.fish`:
+(use `echo $SHELL` caso não souber qual o seu shell);
 
 ```bash
 # Atualização completa
@@ -944,6 +945,8 @@ alias info='yay -Si'
 # Remover orfãos
 alias orphans='sudo pacman -Rns $(pacman -Qtdq) 2>/dev/null || echo "Nenhum orfão."'
 ```
+
+> não esqueça de recarregar as settings do shell com `source /.config/fish/config.fish` ou equivalente.
 
 ***
 
