@@ -1,153 +1,85 @@
 ---
-title: Vim em 1 minuto!
-slug: 1-minute-vim
-description: Resumo dos principais comandos e casos de uso do vim!
-summary: Resumo dos principais comandos e casos de uso do vim!
+title: NeoVim em 1 minuto!
+slug: 1-minute-nvim
+description: Resumo dos principais comandos e casos de uso do nvim!
+summary: Resumo dos principais comandos e casos de uso do nvim!
 tags:
   - vim
+  - nvim
+  - neovim
   - linux
   - cachyos
   - linux
 categories:
   - linux
   - 1minute
-keywords:
-  - '# ⚡ Vim em 1 minuto!'
-  - '> Cola prática pra consultar enquanto aprende 😄'
-  - ---
-  - '# 🚪 Abrir Arquivos'
-  - '| Comando           | Função          |'
-  - '| ----------------- | --------------- |'
-  - '| `vim arquivo.txt` | abrir arquivo   |'
-  - '| `vim`             | abrir Vim vazio |'
-  - ---
-  - '# ✍️ Entrar no Modo de Escrita'
-  - '| Tecla | Função                  |'
-  - '| ----- | ----------------------- |'
-  - '| `i`   | inserir texto           |'
-  - '| `a`   | inserir após cursor     |'
-  - '| `A`   | inserir no fim da linha |'
-  - '| `o`   | nova linha abaixo       |'
-  - '| `O`   | nova linha acima        |'
-  - ---
-  - '# ⛔ Voltar ao Modo Normal'
-  - '| Tecla | Função              |'
-  - '| ----- | ------------------- |'
-  - '| `Esc` | sair do modo INSERT |'
-  - ---
-  - '# 💾 Salvar e Sair'
-  - '| Comando | Função          |'
-  - '| ------- | --------------- |'
-  - '| `:w`    | salvar          |'
-  - '| `:q`    | sair            |'
-  - '| `:wq`   | salvar e sair   |'
-  - '| `:q!`   | sair sem salvar |'
-  - ---
-  - '# 🧭 Navegação'
-  - '| Tecla | Movimento |'
-  - '| ----- | --------- |'
-  - '| `h`   | esquerda  |'
-  - '| `j`   | baixo     |'
-  - '| `k`   | cima      |'
-  - '| `l`   | direita   |'
-  - ---
-  - '# ✂️ Edição'
-  - '| Comando    | Função       |'
-  - '| ---------- | ------------ |'
-  - '| `dd`       | apagar linha |'
-  - '| `yy`       | copiar linha |'
-  - '| `p`        | colar        |'
-  - '| `u`        | desfazer     |'
-  - '| `Ctrl + r` | refazer      |'
-  - ---
-  - '# 🔍 Pesquisa'
-  - '| Comando     | Função             |'
-  - '| ----------- | ------------------ |'
-  - '| `/texto`    | procurar texto     |'
-  - '| `n`         | próximo resultado  |'
-  - '| `Shift + n` | resultado anterior |'
-  - ---
-  - '# 📄 Navegação em Arquivo'
-  - '| Comando | Função            |'
-  - '| ------- | ----------------- |'
-  - '| `gg`    | início do arquivo |'
-  - '| `G`     | fim do arquivo    |'
-  - '| `:10`   | ir para linha 10  |'
-  - ---
-  - '# 🔥 Comandos Úteis no Dia a Dia'
-  - '| Comando            | Função           |'
-  - '| ------------------ | ---------------- |'
-  - '| `:%s/velho/novo/g` | substituir texto |'
-  - '| `:set number`      | mostrar linhas   |'
-  - '| `:syntax on`       | ativar cores     |'
-  - ---
-  - '# 🧠 Fluxo Básico Que Você Vai Fazer Sempre'
-  - '```text id="vflow1"'
-  - vim arquivo.txt
-  - i
-  - (escreve)
-  - Esc
-  - :wq
-  - '```'
-  - ---
-  - '# 🎯 Os 10 Que Vale Decorar Primeiro'
-  - '```text id="vimtop10"'
-  - i
-  - Esc
-  - :w
-  - :q
-  - :wq
-  - :q!
-  - dd
-  - yy
-  - p
-  - u
-  - '```'
-  - Com isso sozinho você já consegue sobreviver tranquilamente no Vim 😄
 author: Gabriel Maggioni
 date: 2026-05-09T22:40:00
-lastmod: ''
+lastmod: 2026-05-10T12:42:00
 showToc: true
 TocOpen: false
 draft: false
 ---
 
-# ⚡Vim em 1 minuto!
-
-> Cola prática pra consultar enquanto aprende!
+⚡Neovim em 1 minuto!
+Cola prática pra instalar, configurar e usar o Neovim no dia a dia!
 
 ***
 
-# 🚪 Abrir Arquivos
+🧩 **O que é o Neovim?**
+O Neovim é uma versão moderna do Vim — mais rápido, com suporte a plugins, LSP nativo (autocomplete igual a uma IDE) e configuração em Lua. É o editor favorito de quem vive no terminal.
+
+***
+
+📦 **Instalação**
+
+| Distro | Comando |
+| --- | --- |
+| Arch / CachyOS | `sudo pacman -S neovim` |
+| Fedora | `sudo dnf install neovim` |
+| Ubuntu / Debian | `sudo apt install neovim` |
+| Mac (brew) | `brew install neovim` |
+
+> 💡 Verifique a versão com `nvim --version`. Prefira sempre **0.9+**.
+
+***
+
+🚪 **Abrir Arquivos**
 
 | Comando | Função |
 | --- | --- |
-| `vim arquivo.txt` | abrir arquivo |
-| `vim` | abrir Vim vazio |
+| `nvim arquivo.txt` | abrir arquivo |
+| `nvim .` | abrir explorador de arquivos |
+| `nvim` | abrir vazio |
 
 ***
 
-# ✍️ Entrar no Modo de Escrita
+🗂️ **Os 3 Modos que Você Precisa Entender**
+
+| Modo | Como entrar | Pra que serve |
+| --- | --- | --- |
+| **Normal** | `Esc` | navegar, copiar, apagar |
+| **Insert** | `i` | escrever texto |
+| **Command** | `:` | salvar, sair, configurar |
+
+> 💡 Você **sempre começa** no modo Normal. Esse é o mais importante.
+
+***
+
+✍️ **Entrar no Modo Insert**
 
 | Tecla | Função |
 | --- | --- |
-| `i` | inserir texto |
-| `a` | inserir após cursor |
+| `i` | inserir antes do cursor |
+| `a` | inserir após o cursor |
 | `A` | inserir no fim da linha |
 | `o` | nova linha abaixo |
 | `O` | nova linha acima |
+| `Esc` | voltar ao modo Normal |
 
 ***
 
-# ⛔ Voltar ao Modo Normal
-
-| Tecla | Função |
-| --- | --- |
-| `Esc` | sair do modo INSERT |
-
-***
-
-# 💾 Salvar e Sair
+💾 **Salvar e Sair**
 
 | Comando | Função |
 | --- | --- |
@@ -155,89 +87,139 @@ draft: false
 | `:q` | sair |
 | `:wq` | salvar e sair |
 | `:q!` | sair sem salvar |
+| `:wqa` | salvar e fechar todos os buffers |
 
 ***
 
-# 🧭 Navegação
+🧭 **Navegação**
 
 | Tecla | Movimento |
 | --- | --- |
-| `h` | esquerda |
-| `j` | baixo |
-| `k` | cima |
-| `l` | direita |
-
-***
-
-# ✂️ Edição
-
-| Comando | Função |
-| --- | --- |
-| `dd` | apagar linha |
-| `yy` | copiar linha |
-| `p` | colar |
-| `u` | desfazer |
-| `Ctrl + r` | refazer |
-
-***
-
-# 🔍 Pesquisa
-
-| Comando | Função |
-| --- | --- |
-| `/texto` | procurar texto |
-| `n` | próximo resultado |
-| `Shift + n` | resultado anterior |
-
-***
-
-# 📄 Navegação em Arquivo
-
-| Comando | Função |
-| --- | --- |
+| `h j k l` | ← ↓ ↑ → |
+| `w` | próxima palavra |
+| `b` | palavra anterior |
+| `0` | início da linha |
+| `$` | fim da linha |
 | `gg` | início do arquivo |
 | `G` | fim do arquivo |
 | `:10` | ir para linha 10 |
+| `Ctrl + d` | descer meia tela |
+| `Ctrl + u` | subir meia tela |
 
 ***
 
-# 🔥 Comandos Úteis no Dia a Dia
+✂️ **Edição**
 
 | Comando | Função |
 | --- | --- |
-| `:%s/velho/novo/g` | substituir texto |
-| `:set number` | mostrar linhas |
-| `:syntax on` | ativar cores |
+| `dd` | apagar linha inteira |
+| `yy` | copiar linha |
+| `p` | colar abaixo |
+| `P` | colar acima |
+| `u` | desfazer |
+| `Ctrl + r` | refazer |
+| `x` | apagar caractere |
+| `ciw` | apagar e editar palavra |
+| `cc` | apagar e editar linha inteira |
+| `D` | apagar do cursor até o fim da linha |
 
 ***
 
-# 🧠 Fluxo Básico Que Você Vai Fazer Sempre
+🔍 **Pesquisa e Substituição**
+
+| Comando | Função |
+| --- | --- |
+| `/texto` | buscar no arquivo |
+| `n` | próximo resultado |
+| `N` | resultado anterior |
+| `*` | buscar palavra sob o cursor |
+| `:%s/velho/novo/g` | substituir em todo o arquivo |
+| `:%s/velho/novo/gc` | substituir com confirmação |
+
+***
+
+🪟 **Janelas e Buffers**
+
+| Comando | Função |
+| --- | --- |
+| `:split` | dividir horizontalmente |
+| `:vsplit` | dividir verticalmente |
+| `Ctrl + w + w` | alternar entre janelas |
+| `Ctrl + w + h/j/k/l` | mover entre janelas |
+| `:bn` | próximo buffer |
+| `:bp` | buffer anterior |
+| `:bd` | fechar buffer |
+
+***
+
+⚙️ **Configuração Básica**
+O arquivo de config fica em `~/.config/nvim/init.lua` (Lua) ou `init.vim` (VimScript).
+
+```bash
+mkdir -p ~/.config/nvim
+nvim ~/.config/nvim/init.lua
+```
+
+Config mínima pra começar bem:
+
+```lua
+-- Números de linha
+vim.opt.number = true
+vim.opt.relativenumber = true
+-- Indentação
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+-- Busca
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+-- Visual
+vim.opt.termguicolors = true
+vim.opt.wrap = false
+```
+
+***
+
+🚀 **Quer ir além? Use uma distro de config pronta**
+
+| Projeto | O que é |
+| --- | --- |
+| [LazyVim](https://lazyvim.org) | config completa, moderna, fácil de customizar |
+| [AstroNvim](https://astronvim.com) | parecido com uma IDE, muito popular |
+| [NvChad](https://nvchad.com) | leve e bonito, foco em performance |
+
+```bash
+# Backup da config atual (se tiver)
+mv ~/.config/nvim ~/.config/nvim.bak
+# Instalar o LazyVim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+nvim  # abre e instala tudo automaticamente
+```
+
+***
+
+🧠 **Fluxo Básico Que Você Vai Fazer Sempre**
 
 ```plain
-vim arquivo.txt
+nvim arquivo.txt
 i
-(escreve)
+(escreve o que precisa)
 Esc
 :wq
 ```
 
 ***
 
-# 🎯 Os 10 Que Vale Decorar Primeiro
+🎯 **Os 10 Que Vale Decorar Primeiro**
 
-```plain
-i
-Esc
-:w
-:q
-:wq
-:q!
-dd
-yy
-p
-u
-```
-
-Com isso sozinho você já consegue sobreviver tranquilamente no Vim 😄
-
-***
+1. `i` — entrar no Insert
+2. `Esc` — voltar ao Normal
+3. `:w` — salvar
+4. `:wq` — salvar e sair
+5. `:q!` — sair sem salvar
+6. `dd` — apagar linha
+7. `yy` + `p` — copiar e colar
+8. `u` — desfazer
+9. `/texto` — buscar
+10. `gg` / `G` — início / fim do arquivo
+Com isso você já usa o Neovim de verdade — e quando pegar o jeito, nunca mais vai querer voltar 😄
