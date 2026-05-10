@@ -10,7 +10,7 @@ tags:
   - linux
 categories:
   - linux
-  - produtividade
+  - 1minute
 keywords:
   - '# ⚡ Vim em 1 minuto!'
   - '> Cola prática pra consultar enquanto aprende 😄'
