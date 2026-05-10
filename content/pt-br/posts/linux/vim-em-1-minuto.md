@@ -180,46 +180,63 @@ vim.opt.wrap = false
 
 ***
 
-🚀 **Quer ir além? Use uma distro de config pronta**
+## 🚀 **Comandos mais usados no dia a dia - SALVE ESTA LISTA!**
 
-| Projeto | O que é |
+
+| SALVAR E SAIR |  |
 | --- | --- |
-| [LazyVim](https://lazyvim.org) | config completa, moderna, fácil de customizar |
-| [AstroNvim](https://astronvim.com) | parecido com uma IDE, muito popular |
-| [NvChad](https://nvchad.com) | leve e bonito, foco em performance |
+| Ação | Comando |
+| Salvar | `:w` |
+| Sair | `:q` |
+| Salvar e sair | `:wq` |
+| Sair sem salvar | `:q!` |
 
-```bash
-# Backup da config atual (se tiver)
-mv ~/.config/nvim ~/.config/nvim.bak
-# Instalar o LazyVim
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-nvim  # abre e instala tudo automaticamente
-```
+
+| INSERÇÃO DE TEXTO |  |
+| --- | --- |
+| Ação | Comando |
+| Inserir antes do cursor | `i` |
+| Inserir no fim da linha | `A` |
+| Inserir no início da linha | `I` |
+| Nova linha abaixo | `o` |
+| Nova linha acima | `O` |
+
+
+| EDIÇÃO BÁSICA |  |
+| --- | --- |
+| Ação | Comando |
+| Apagar palavra | `dw` |
+| Apagar linha | `dd` |
+| Desfazer | `u` |
+| Refazer | `Ctrl + r` |
+
+
+| SUBSTITUIÇÃO |  |
+| --- | --- |
+| Ação | Comando |
+| Substituir na linha | `:s/antigo/novo/g` |
+| Substituir no arquivo | `:%s/antigo/novo/g` |
+
+
+| COPIAR E COLAR |  |
+| --- | --- |
+| Ação | Comando |
+| Copiar linha | `yy` |
+| Copiar palavra | `yw` |
+| Colar depois | `p` |
+| Colar antes | `P` |
+
+
+| SELEÇÃO |  |
+| --- | --- |
+| Ação | Comando |
+| Selecionar texto | `v` |
+| Selecionar linha | `V` |
+| Selecionar bloco | `Ctrl + v` |
+| Sair da seleção | `Esc` |
 
 ***
 
-🧠 **Fluxo Básico Que Você Vai Fazer Sempre**
-
-```plain
-nvim arquivo.txt
-i
-(escreve o que precisa)
-Esc
-:wq
-```
-
-***
-
-🎯 **Os 10 Que Vale Decorar Primeiro**
-
-1. `i` — entrar no Insert
-2. `Esc` — voltar ao Normal
-3. `:w` — salvar
-4. `:wq` — salvar e sair
-5. `:q!` — sair sem salvar
-6. `dd` — apagar linha
-7. `yy` + `p` — copiar e colar
-8. `u` — desfazer
-9. `/texto` — buscar
-10. `gg` / `G` — início / fim do arquivo
 Com isso você já usa o Neovim de verdade — e quando pegar o jeito, nunca mais vai querer voltar 😄
+
+***
