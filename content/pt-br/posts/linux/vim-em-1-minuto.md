@@ -15,115 +15,39 @@ categories:
   - 1minute
 author: Gabriel Maggioni
 date: 2026-05-09T22:40:00
-lastmod: 2026-05-10T16:25:00
+lastmod: 2026-05-10T18:06:00
 showToc: true
 TocOpen: false
 draft: false
 ---
 
-## 🚀 Resumão completo dos comandos do NeoVim:
+# 🚀 Resumão NeoVim
 
-***
+| 📦 Instalação | Comando |
+| --- | --- |
+| Arch / CachyOS | `sudo pacman -S neovim` |
+| Fedora | `sudo dnf install neovim` |
+| Ubuntu / Debian | `sudo apt install neovim` |
+| Mac (brew) | `brew install neovim` |
 
-## 💾 Salvar e sair
-
-| Ação | Comando |
+| 💾 Salvar e sair | Comando |
 | --- | --- |
 | salvar | `:w` |
 | sair | `:q` |
 | salvar e sair | `:wq` |
 | sair sem salvar | `:q!` |
-| salvar sem sair | `:w` |
+| salvar tudo e sair | `:wqa` |
 
-***
-
-## ✍️ Inserção
-
-| Ação | Comando |
+| ✍️ Inserção | Comando |
 | --- | --- |
 | antes do cursor | `i` |
+| depois do cursor | `a` |
 | fim da linha | `A` |
 | início da linha | `I` |
 | nova linha abaixo | `o` |
 | nova linha acima | `O` |
 
-***
-
-## ⚡ Edição rápida
-
-| Ação | Comando |
-| --- | --- |
-| apagar palavra | `dw` |
-| apagar até fim da linha | `d$` |
-| apagar linha | `dd` |
-| desfazer | `u` |
-| refazer | `Ctrl+r` |
-| substituir caractere | `r<char>` |
-| substituir modo livre | `R` |
-
-***
-
-## 📋 Copiar e colar
-
-| Ação | Comando |
-| --- | --- |
-| copiar linha | `yy` |
-| copiar palavra | `yw` |
-| colar depois | `p` |
-| colar antes | `P` |
-| copiar até fim da linha | `y$` |
-| cortar linha | `dd` (e depois `p` se quiser mover) |
-
-***
-
-## 🧠 Seleção (Visual Mode)
-
-| Ação | Comando |
-| --- | --- |
-| selecionar texto | `v` |
-| selecionar linha inteira | `V` |
-| seleção em bloco | `Ctrl+v` |
-| sair da seleção | `Esc` |
-
-***
-
-## 🧨 Operação em massa (nível ninja)
-
-| Ação | Comando |
-| --- | --- |
-| selecionar tudo | `ggVG` |
-| copiar tudo | `ggVG"+y` |
-| cortar tudo | `ggVG"+d` |
-| colar do sistema | `"+p` |
-
-***
-
-## 📁 Navegação e arquivo
-
-| Ação | Comando |
-| --- | --- |
-| explorer de arquivos | `:Ex` |
-| abrir arquivo | `:e nome` |
-| salvar como | `:w nome` |
-| ir para início | `gg` |
-| ir para fim | `G` |
-
-***
-
-## 🔍 Busca
-
-| Ação | Comando |
-| --- | --- |
-| buscar | `/texto` |
-| próximo resultado | `n` |
-| anterior | `N` |
-| buscar palavra sob cursor | `*` |
-
-***
-
-## 🧭 Movimento essencial
-
-| Ação | Comando |
+| 🧭 Movimento | Comando |
 | --- | --- |
 | esquerda | `h` |
 | baixo | `j` |
@@ -132,163 +56,68 @@ draft: false
 | início da linha | `0` |
 | fim da linha | `$` |
 | próxima palavra | `w` |
-| fim da palavra | `e` |
+| palavra anterior | `b` |
+| início do arquivo | `gg` |
+| fim do arquivo | `G` |
+| ir para linha | `:10` |
+| descer página | `Ctrl+d` |
+| subir página | `Ctrl+u` |
 
-***
-
-## 🧷 Extras úteis que ninguém te conta cedo
-
-| Ação | Comando |
+| ✂️ Edição | Comando |
 | --- | --- |
-| repetir último comando | `.` |
-| pular entre erros | `:cnext` / `:cprev` |
-| fechar split | `:q` |
-| dividir horizontal | `:split` |
-| dividir vertical | `:vsplit` |
+| apagar linha | `dd` |
+| copiar linha | `yy` |
+| colar abaixo | `p` |
+| colar acima | `P` |
+| desfazer | `u` |
+| refazer | `Ctrl+r` |
+| apagar caractere | `x` |
+| apagar até fim da linha | `D` |
+| editar palavra | `ciw` |
+| editar linha | `cc` |
 
-***
-
-***
-
-***
-
-## 🧠 O que é o Neovim?
-
-O Neovim é uma versão moderna do Vim.
-
-Ele é:
-
-* mais rápido
-* extensível com plugins
-* suporta LSP nativo (autocomplete estilo IDE)
-* configurado em Lua
-
-Perfeito pra quem vive no terminal.
-
-***
-
-## 📦 Instalação
-
-| Distro | Comando |
+| 📋 Copiar e mover | Comando |
 | --- | --- |
-| Arch / CachyOS | `sudo pacman -S neovim` |
-| Fedora | `sudo dnf install neovim` |
-| Ubuntu / Debian | `sudo apt install neovim` |
-| Mac (brew) | `brew install neovim` |
+| copiar palavra | `yw` |
+| copiar até fim da linha | `y$` |
+| cortar linha | `dd` |
+| colar | `p` |
+| colar antes | `P` |
 
-💡 Confira com:
-
-```bash
-nvim --version
-```
-
-***
-
-## 🚪 Abrir arquivos
-
-| Comando | Função |
+| 🧠 Seleção | Comando |
 | --- | --- |
-| `nvim arquivo.txt` | abre um arquivo |
-| `nvim .` | abre diretório |
-| `nvim` | abre vazio |
+| seleção livre | `v` |
+| linha inteira | `V` |
+| bloco visual | `Ctrl+v` |
+| sair seleção | `Esc` |
+| selecionar tudo | `ggVG` |
+| copiar tudo | `ggVG"+y` |
+| cortar tudo | `ggVG"+d` |
 
-***
-
-## 🧭 Modos principais
-
-| Modo | Como entrar | Uso |
-| --- | --- | --- |
-| Normal | `Esc` | navegar e editar |
-| Insert | `i` | escrever texto |
-| Command | `:` | comandos |
-
-💡 Você sempre começa no modo Normal.
-
-***
-
-## ✍️ Modo Insert
-
-| Tecla | Ação |
+| 🔍 Busca | Comando |
 | --- | --- |
-| `i` | antes do cursor |
-| `a` | depois do cursor |
-| `A` | fim da linha |
-| `o` | nova linha abaixo |
-| `O` | nova linha acima |
-| `Esc` | voltar ao Normal |
+| buscar texto | `/texto` |
+| próximo resultado | `n` |
+| anterior | `N` |
+| palavra atual | `*` |
+| substituir tudo | `:%s/velho/novo/g` |
+| substituir com confirmação | `:%s/velho/novo/gc` |
 
-***
-
-## 💾 Salvar e sair
-
-| Comando | Ação |
+| 📁 Arquivos | Comando |
 | --- | --- |
-| `:w` | salvar |
-| `:q` | sair |
-| `:wq` | salvar e sair |
-| `:q!` | sair sem salvar |
-| `:wqa` | salvar e fechar tudo |
+| abrir arquivo | `:e nome` |
+| abrir diretório | `:Ex` |
+| salvar como | `:w nome` |
 
-***
-
-## 🧭 Navegação
-
-| Tecla | Ação |
+| 🪟 Janelas e buffers | Comando |
 | --- | --- |
-| `h j k l` | mover cursor |
-| `w` | próxima palavra |
-| `b` | palavra anterior |
-| `0` | início da linha |
-| `$` | fim da linha |
-| `gg` | início do arquivo |
-| `G` | fim do arquivo |
-| `:10` | ir pra linha 10 |
-| `Ctrl+d` | descer |
-| `Ctrl+u` | subir |
-
-***
-
-## ✂️ Edição
-
-| Comando | Ação |
-| --- | --- |
-| `dd` | apagar linha |
-| `yy` | copiar linha |
-| `p` | colar abaixo |
-| `P` | colar acima |
-| `u` | desfazer |
-| `Ctrl+r` | refazer |
-| `x` | apagar caractere |
-| `ciw` | editar palavra |
-| `cc` | editar linha |
-| `D` | apagar até o fim |
-
-***
-
-## 🔍 Busca e substituição
-
-| Comando | Ação |
-| --- | --- |
-| `/texto` | buscar |
-| `n` | próximo |
-| `N` | anterior |
-| `*` | buscar palavra atual |
-| `:%s/velho/novo/g` | substituir tudo |
-| `:%s/velho/novo/gc` | substituir com confirmação |
-
-***
-
-## 🪟 Janelas e buffers
-
-| Comando | Ação |
-| --- | --- |
-| `:split` | horizontal |
-| `:vsplit` | vertical |
-| `Ctrl+w w` | trocar janela |
-| `Ctrl+w h/j/k/l` | navegar |
-| `:bn` | próximo buffer |
-| `:bp` | buffer anterior |
-| `:bd` | fechar buffer |
+| split horizontal | `:split` |
+| split vertical | `:vsplit` |
+| trocar janela | `Ctrl+w w` |
+| mover entre janelas | `Ctrl+w h/j/k/l` |
+| próximo buffer | `:bn` |
+| buffer anterior | `:bp` |
+| fechar buffer | `:bd` |
 
 ***
 
