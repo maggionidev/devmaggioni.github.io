@@ -21,11 +21,11 @@ TocOpen: false
 draft: false
 ---
 
+## 🚀 Resumão completo dos comandos do NeoVim:
+
 ***
 
-## 🚀 _Resumão completo: Comandos ESSENCIAIS:_
-
-### Salvar e sair
+## 💾 Salvar e sair
 
 | Ação | Comando |
 | --- | --- |
@@ -33,10 +33,11 @@ draft: false
 | sair | `:q` |
 | salvar e sair | `:wq` |
 | sair sem salvar | `:q!` |
+| salvar sem sair | `:w` |
 
 ***
 
-### Inserção
+## ✍️ Inserção
 
 | Ação | Comando |
 | --- | --- |
@@ -48,18 +49,21 @@ draft: false
 
 ***
 
-### Edição rápida
+## ⚡ Edição rápida
 
 | Ação | Comando |
 | --- | --- |
 | apagar palavra | `dw` |
+| apagar até fim da linha | `d$` |
 | apagar linha | `dd` |
 | desfazer | `u` |
 | refazer | `Ctrl+r` |
+| substituir caractere | `r<char>` |
+| substituir modo livre | `R` |
 
 ***
 
-### Copiar e colar
+## 📋 Copiar e colar
 
 | Ação | Comando |
 | --- | --- |
@@ -67,22 +71,84 @@ draft: false
 | copiar palavra | `yw` |
 | colar depois | `p` |
 | colar antes | `P` |
-
-| selecionar tudo + copiar | `ggVG"+y` |
-| selecionar tudo + cortar | `ggVG"+d` |
-
-| ver EXPLORER | `:Ex` |
+| copiar até fim da linha | `y$` |
+| cortar linha | `dd` (e depois `p` se quiser mover) |
 
 ***
 
-### Seleção
+## 🧠 Seleção (Visual Mode)
 
 | Ação | Comando |
 | --- | --- |
-| selecionar | `v` |
-| linha inteira | `V` |
-| bloco | `Ctrl+v` |
-| sair | `Esc` |
+| selecionar texto | `v` |
+| selecionar linha inteira | `V` |
+| seleção em bloco | `Ctrl+v` |
+| sair da seleção | `Esc` |
+
+***
+
+## 🧨 Operação em massa (nível ninja)
+
+| Ação | Comando |
+| --- | --- |
+| selecionar tudo | `ggVG` |
+| copiar tudo | `ggVG"+y` |
+| cortar tudo | `ggVG"+d` |
+| colar do sistema | `"+p` |
+
+***
+
+## 📁 Navegação e arquivo
+
+| Ação | Comando |
+| --- | --- |
+| explorer de arquivos | `:Ex` |
+| abrir arquivo | `:e nome` |
+| salvar como | `:w nome` |
+| ir para início | `gg` |
+| ir para fim | `G` |
+
+***
+
+## 🔍 Busca
+
+| Ação | Comando |
+| --- | --- |
+| buscar | `/texto` |
+| próximo resultado | `n` |
+| anterior | `N` |
+| buscar palavra sob cursor | `*` |
+
+***
+
+## 🧭 Movimento essencial
+
+| Ação | Comando |
+| --- | --- |
+| esquerda | `h` |
+| baixo | `j` |
+| cima | `k` |
+| direita | `l` |
+| início da linha | `0` |
+| fim da linha | `$` |
+| próxima palavra | `w` |
+| fim da palavra | `e` |
+
+***
+
+## 🧷 Extras úteis que ninguém te conta cedo
+
+| Ação | Comando |
+| --- | --- |
+| repetir último comando | `.` |
+| pular entre erros | `:cnext` / `:cprev` |
+| fechar split | `:q` |
+| dividir horizontal | `:split` |
+| dividir vertical | `:vsplit` |
+
+***
+
+***
 
 ***
 
