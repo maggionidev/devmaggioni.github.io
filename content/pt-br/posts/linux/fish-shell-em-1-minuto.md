@@ -11,7 +11,7 @@ tags:
   - arch
 categories:
   - linux
-  - produtividade
+  - 1minute
 keywords: []
 author: Gabriel Maggioni
 date: 2026-05-09T22:45:00
