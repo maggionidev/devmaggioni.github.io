@@ -11,7 +11,7 @@ tags:
   - cachyos
 categories:
   - linux
-  - produtividade
+  - 1minute
 keywords: []
 author: Gabriel Maggioni
 date: 2026-05-09T22:47:00
