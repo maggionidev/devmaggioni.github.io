@@ -21,7 +21,68 @@ TocOpen: false
 draft: false
 ---
 
-Guia rápido pra instalar, configurar e usar Neovim no dia a dia.
+***
+
+## 🚀 _Resumão completo: Comandos ESSENCIAIS:_
+
+### Salvar e sair
+
+| Ação | Comando |
+| --- | --- |
+| salvar | `:w` |
+| sair | `:q` |
+| salvar e sair | `:wq` |
+| sair sem salvar | `:q!` |
+
+***
+
+### Inserção
+
+| Ação | Comando |
+| --- | --- |
+| antes do cursor | `i` |
+| fim da linha | `A` |
+| início da linha | `I` |
+| nova linha abaixo | `o` |
+| nova linha acima | `O` |
+
+***
+
+### Edição rápida
+
+| Ação | Comando |
+| --- | --- |
+| apagar palavra | `dw` |
+| apagar linha | `dd` |
+| desfazer | `u` |
+| refazer | `Ctrl+r` |
+
+***
+
+### Copiar e colar
+
+| Ação | Comando |
+| --- | --- |
+| copiar linha | `yy` |
+| copiar palavra | `yw` |
+| colar depois | `p` |
+| colar antes | `P` |
+
+| selecionar tudo + copiar | `ggVG"+y` |
+| selecionar tudo + cortar | `ggVG"+d` |
+
+| ver EXPLORER | `:Ex` |
+
+***
+
+### Seleção
+
+| Ação | Comando |
+| --- | --- |
+| selecionar | `v` |
+| linha inteira | `V` |
+| bloco | `Ctrl+v` |
+| sair | `Esc` |
 
 ***
 
@@ -54,8 +115,6 @@ Perfeito pra quem vive no terminal.
 ```bash
 nvim --version
 ```
-
-Ideal: versão 0.9 ou superior.
 
 ***
 
@@ -198,63 +257,5 @@ vim.opt.smartcase = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 ```
-
-***
-
-## 🚀 Atalhos essenciais
-
-### Salvar e sair
-
-| Ação | Comando |
-| --- | --- |
-| salvar | `:w` |
-| sair | `:q` |
-| salvar e sair | `:wq` |
-| sair sem salvar | `:q!` |
-
-***
-
-### Inserção
-
-| Ação | Comando |
-| --- | --- |
-| antes do cursor | `i` |
-| fim da linha | `A` |
-| início da linha | `I` |
-| nova linha abaixo | `o` |
-| nova linha acima | `O` |
-
-***
-
-### Edição rápida
-
-| Ação | Comando |
-| --- | --- |
-| apagar palavra | `dw` |
-| apagar linha | `dd` |
-| desfazer | `u` |
-| refazer | `Ctrl+r` |
-
-***
-
-### Copiar e colar
-
-| Ação | Comando |
-| --- | --- |
-| copiar linha | `yy` |
-| copiar palavra | `yw` |
-| colar depois | `p` |
-| colar antes | `P` |
-
-***
-
-### Seleção
-
-| Ação | Comando |
-| --- | --- |
-| selecionar | `v` |
-| linha inteira | `V` |
-| bloco | `Ctrl+v` |
-| sair | `Esc` |
 
 ***
