@@ -5,10 +5,9 @@ description: Usando o rclone para integrar o Google Drive ao Linux como se fosse
 summary: Aprenda como usar o rclone para integrar o Google Drive ao Linux como se fosse uma unidade local, direto no sistema de arquivos
 tags:
   - linux
-  - fedora
-  - kde plasma
   - wayland
   - rclone
+  - google drive
 categories:
   - linux
 keywords:
@@ -20,7 +19,7 @@ keywords:
   - rclone
 author: Gabriel Maggioni
 date: 2026-04-26T11:08:00
-lastmod: ''
+lastmod: 2026-05-11T21:43:00
 showToc: true
 TocOpen: false
 draft: false
@@ -30,7 +29,7 @@ draft: false
 
 Se você vinha do Windows, provavelmente conhece aquele comportamento do Google Drive aparecendo como um “disco” no gerenciador de arquivos. Era bem prático: acesso rápido aos arquivos e ainda dava pra usar como backup automático de pastas inteiras do sistema.
 
-Nesse post a ideia é reproduzir isso no Linux, mais especificamente no Fedora 43 rodando Wayland com KDE Plasma, de um jeito simples e funcional usando rclone.
+Nesse post a ideia é reproduzir isso no Linux, de um jeito simples e funcional usando rclone.
 
 ***
 
@@ -40,6 +39,12 @@ Nesse post a ideia é reproduzir isso no Linux, mais especificamente no Fedora 4
 
 ```bash
 sudo dnf install rclone fuse3
+```
+
+Se seu sistema é arch:
+
+```bash
+sudo pacman -S rclone fuse3
 ```
 
 ***
@@ -120,6 +125,54 @@ systemctl --user start rclone-gdrive
 
 ```bash
 loginctl enable-linger $USER
+```
+
+***
+
+## Troubleshooting
+
+### 1. O Google Drive não apareceu no gerenciador de arquivos
+
+Primeiro veja se o serviço realmente iniciou:
+
+```bash
+systemctl --user status rclone-gdrive
+```
+
+Se aparecer failed, veja o log completo:
+
+```bash
+journalctl --user -u rclone-gdrive -b
+```
+
+### 2. Testar o mount manualmente
+
+Antes de culpar o systemd, teste o comando direto no terminal:
+
+```bash
+rclone mount gdrive: ~/gdrive --vfs-cache-mode writes
+```
+
+Isso normalmente mostra o erro real imediatamente.
+
+### 3. Verificar se o remote existe
+
+```bash
+rclone listremotes
+```
+
+Precisa aparecer algo assim:
+
+```plain
+gdrive:
+```
+
+Se não aparecer, o remote não foi configurado corretamente no rclone config.
+
+### 4. Verificar se a pasta de montagem existe
+
+```bash
+mkdir -p ~/gdrive
 ```
 
 ***
