@@ -1,0 +1,32 @@
+<div class="film-card">
+  <div class="film-rank">#{{ .Get "rank" }}</div>
+
+  <img
+    class="film-image"
+    src="{{ .Get "image" }}"
+    alt="{{ .Get "title" }}"
+    loading="lazy"
+  >
+
+  <div class="film-body">
+    <h3 class="film-title">
+      {{ .Get "title" }}
+    </h3>
+
+    {{ with .Get "category" }}
+      <div class="film-category">
+        🎬 {{ . }}
+      </div>
+    {{ end }}
+
+    {{ with .Get "rating" }}
+      <div class="film-rating">
+        ⭐ {{ . }}
+      </div>
+    {{ end }}
+
+    <p class="film-description">
+      {{ .Get "description" | markdownify }}
+    </p>
+  </div>
+</div>

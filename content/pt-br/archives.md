@@ -4,4 +4,8 @@ description: "Essa página serve como um índice de tudo oque foi publicado ness
 layout: archives
 ---
 
-kkk
+---
+
+> Visão Resumida: [posts](/pt-br/posts)
+
+---
