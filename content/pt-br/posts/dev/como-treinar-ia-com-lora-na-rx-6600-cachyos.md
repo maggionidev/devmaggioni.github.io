@@ -11,7 +11,7 @@ date: 2026-05-19T08:39:00
 lastmod: ''
 showToc: true
 TocOpen: false
-draft: false
+draft: true
 ---
 
 # Treino Local de IA com LoRA + Exportação GGUF
@@ -55,7 +55,6 @@ A variável de ambiente necessária é:
 
 ```plain
 HSA_OVERRIDE_GFX_VERSION=10.3.0
-
 ```
 
 Isso instrui o ROCm a tratar a sua GPU como `gfx1030`, que é suportada oficialmente.
@@ -70,14 +69,12 @@ A AMD só oferece suporte oficial para Ubuntu/RHEL. No Arch/CachyOS, os pacotes 
 
 ```plain
 sudo pacman -Syu
-
 ```
 
 Reinicie se houver atualização de kernel:
 
 ```plain
 sudo reboot
-
 ```
 
 ***
@@ -96,7 +93,6 @@ sudo pacman -S --needed \
   rocm-smi-lib \
   hip-runtime-amd \
   rocm-llvm
-
 ```
 
 > **Nota:** No CachyOS o `paru` já vem disponível. Se não estiver, instale com:sudo pacman -S paru
@@ -106,7 +102,6 @@ sudo pacman -S --needed \
 
 ```plain
 sudo usermod -aG render,video $USER
-
 ```
 
 **Faça logout e login novamente** (ou reinicie) para que as mudanças de grupo entrem em vigor:
@@ -115,7 +110,6 @@ sudo usermod -aG render,video $USER
 # Verificar se os grupos foram aplicados
 groups $USER
 # Deve aparecer "render" e "video" na lista
-
 ```
 
 ***
@@ -135,14 +129,12 @@ export PYTORCH_HIP_ALLOC_CONF=max_split_size_mb:512
 export ROCM_PATH=/opt/rocm
 export PATH="$ROCM_PATH/bin:$PATH"
 export LD_LIBRARY_PATH="$ROCM_PATH/lib:$ROCM_PATH/lib64:$LD_LIBRARY_PATH"
-
 ```
 
 Recarregue o shell:
 
 ```plain
 source ~/.bashrc   # ou source ~/.zshrc
-
 ```
 
 ***
@@ -162,7 +154,6 @@ rocm-smi
 
 # Testar acesso ao dispositivo
 ls -la /dev/kfd /dev/dri/renderD128
-
 ```
 
 Se a GPU aparecer na saída do `rocminfo`, o ambiente está configurado corretamente.
@@ -183,7 +174,6 @@ source ~/lora-env/bin/activate
 
 # Atualizar pip
 pip install --upgrade pip wheel setuptools
-
 ```
 
 > **Importante:** Sempre ative o ambiente antes de trabalhar:source \~/lora-env/bin/activate
@@ -198,7 +188,6 @@ Use o wheel **ROCm 6.4**, que é a versão estável mais recente com suporte par
 ```plain
 pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 \
   --index-url https://download.pytorch.org/whl/rocm6.4
-
 ```
 
 > **Versões verificadas em maio de 2026** via pytorch.org/get-started/previous-versions/. O PyTorch 2.9.x com ROCm 6.4 é o mais recente suporte estável disponível para `gfx1030/gfx1032`.
@@ -214,7 +203,6 @@ if torch.cuda.is_available():
     print('GPU:', torch.cuda.get_device_name(0))
     print('VRAM total:', round(torch.cuda.get_device_properties(0).total_memory / 1e9, 1), 'GB')
 "
-
 ```
 
 **Saída esperada:**
@@ -224,7 +212,6 @@ PyTorch: 2.9.1+rocm6.4
 GPU disponível: True
 GPU: AMD Radeon RX 6600
 VRAM total: 8.0 GB
-
 ```
 
 Se `GPU disponível` retornar `False`, confirme que `HSA_OVERRIDE_GFX_VERSION=10.3.0` está exportado na sessão atual.
@@ -243,7 +230,6 @@ pip install \
   safetensors \
   sentencepiece \
   protobuf
-
 ```
 
 > **Sobre `bitsandbytes`:** O suporte ROCm do `bitsandbytes` (necessário para quantização int4/int8 durante o treino) é instável na RX 6600. **Não o instale.** Use `fp16` como dtype de treino — funciona perfeitamente dentro dos 8 GB de VRAM.
@@ -349,7 +335,6 @@ print(f"Salvando adapter em: {ADAPTER_DIR}")
 trainer.model.save_pretrained(ADAPTER_DIR)
 tokenizer.save_pretrained(ADAPTER_DIR)
 print("Treino concluído!")
-
 ```
 
 ### 9.3 Executar o treino
@@ -359,14 +344,12 @@ print("Treino concluído!")
 ```plain
 export HSA_OVERRIDE_GFX_VERSION=10.3.0
 python train_lora.py
-
 ```
 
 Ou na mesma linha:
 
 ```plain
 HSA_OVERRIDE_GFX_VERSION=10.3.0 python train_lora.py
-
 ```
 
 ### 9.4 Monitorar uso de GPU durante o treino
@@ -375,7 +358,6 @@ Em outro terminal:
 
 ```plain
 watch -n 1 rocm-smi
-
 ```
 
 ***
@@ -420,14 +402,12 @@ print("Merge concluído! Estrutura salva:")
 import os
 for f in os.listdir(MERGED_DIR):
     print(f"  {MERGED_DIR}/{f}")
-
 ```
 
 Executar:
 
 ```plain
 python merge_lora.py
-
 ```
 
 A pasta `./modelo-merged/` deve conter os arquivos `config.json`, `tokenizer.json`, `tokenizer_config.json` e os pesos (`.safetensors` ou `.bin`).
@@ -442,7 +422,6 @@ O llama.cpp é necessário tanto para converter o modelo para GGUF quanto para r
 
 ```plain
 sudo pacman -S --needed cmake git base-devel curl libcurl-devel
-
 ```
 
 ### 11.2 Clonar o repositório
@@ -450,7 +429,6 @@ sudo pacman -S --needed cmake git base-devel curl libcurl-devel
 ```plain
 git clone https://github.com/ggml-org/llama.cpp ~/llama.cpp
 cd ~/llama.cpp
-
 ```
 
 ### 11.3 Compilar com suporte HIP/ROCm para gfx1032
@@ -471,10 +449,9 @@ cmake -S . -B build \
   -DCMAKE_BUILD_TYPE=Release
 
 cmake --build build --config Release -j$(nproc)
-
 ```
 
-> **Se der erro de "ROCm device library not found"**, tente:HIP_DEVICE_LIB_PATH=$(find "$HIP_PATH" -name "oclc_abi_version_400.bc" -exec dirname {} \; | head -n 1)
+> **Se der erro de "ROCm device library not found"**, tente:HIP_DEVICE_LIB_PATH=$(find "$HIP_PATH" -name "oclc_abi_version_400.bc" -exec dirname {} ; | head -n 1)
 > export HIP_DEVICE_LIB_PATH
 > # Depois rode o cmake novamente
 > 
@@ -486,7 +463,6 @@ Se a compilação com ROCm falhar, compile somente para CPU — ainda funciona p
 ```plain
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release -j$(nproc)
-
 ```
 
 ### 11.5 Instalar dependências Python do llama.cpp
@@ -494,7 +470,6 @@ cmake --build build --config Release -j$(nproc)
 ```plain
 source ~/lora-env/bin/activate
 pip install -r ~/llama.cpp/requirements.txt
-
 ```
 
 Verifique que os binários foram criados:
@@ -502,7 +477,6 @@ Verifique que os binários foram criados:
 ```plain
 ls ~/llama.cpp/build/bin/
 # Deve listar: llama-cli, llama-quantize, llama-server, etc.
-
 ```
 
 ***
@@ -518,10 +492,9 @@ python convert_hf_to_gguf.py \
   ~/modelo-merged \
   --outfile ~/modelo-merged/modelo-f16.gguf \
   --outtype f16
-
 ```
 
-> **Parâmetros `--outtype`:**ValorPrecisãoTamanhoRecomendação`f32`100%Muito grandeNão recomendado`f16`\~100%Grande✅ **Use para converter primeiro**`bf16`\~100%GrandeAlternativa ao f16`q8_0`AltaMédioBom se não quiser quantizar depois
+> \*\*Parâmetros `--outtype`:\*\*ValorPrecisãoTamanhoRecomendação`f32`100%Muito grandeNão recomendado`f16`\~100%Grande✅ **Use para converter primeiro**`bf16`\~100%GrandeAlternativa ao f16`q8_0`AltaMédioBom se não quiser quantizar depois
 
 **Recomendação:** Sempre converta primeiro para `f16` e depois quantize com `llama-quantize` — isso dá mais controle e flexibilidade.
 
@@ -529,7 +502,6 @@ Confirme que o arquivo foi criado:
 
 ```plain
 ls -lh ~/modelo-merged/modelo-f16.gguf
-
 ```
 
 ***
@@ -545,7 +517,6 @@ cd ~/llama.cpp
   ~/modelo-merged/modelo-f16.gguf \
   ~/modelo-merged/modelo-q4km.gguf \
   Q4_K_M
-
 ```
 
 ### Tabela de quantizações disponíveis
@@ -573,7 +544,6 @@ Você pode criar múltiplos formatos:
 ./build/bin/llama-quantize \
   ~/modelo-merged/modelo-f16.gguf \
   ~/modelo-merged/modelo-q5km.gguf Q5_K_M
-
 ```
 
 ***
@@ -591,7 +561,6 @@ HSA_OVERRIDE_GFX_VERSION=10.3.0 \
   -p "Explique o que é LoRA em machine learning:" \
   -n 300 \
   --gpu-layers 32   # número de camadas na GPU; aumente até encher a VRAM
-
 ```
 
 > **Ajuste `--gpu-layers`:** Comece com 20, aumente gradualmente enquanto `rocm-smi` mostrar VRAM disponível. Para modelos de \~3B com Q4_K_M, você provavelmente consegue offlodar todas as camadas.
@@ -605,7 +574,6 @@ HSA_OVERRIDE_GFX_VERSION=10.3.0 \
   --host 0.0.0.0 \
   --port 8080 \
   --gpu-layers 32
-
 ```
 
 Acesse `http://localhost:8080` no navegador para a interface web, ou use a API:
@@ -617,14 +585,12 @@ curl http://localhost:8080/v1/chat/completions \
     "model": "meu-modelo",
     "messages": [{"role": "user", "content": "Olá! O que você sabe sobre LoRA?"}]
   }'
-
 ```
 
 ### 14.3 Usar o GGUF em Python (via llama-cpp-python)
 
 ```plain
 pip install llama-cpp-python
-
 ```
 
 ```plain
@@ -642,7 +608,6 @@ output = llm(
     echo=True
 )
 print(output["choices"][0]["text"])
-
 ```
 
 ***
@@ -656,7 +621,6 @@ O Ollama oferece uma interface mais amigável para gerenciar e rodar modelos GGU
 ```plain
 # Via AUR
 paru -S ollama-rocm
-
 ```
 
 ### 15.2 Configurar o serviço com o override
@@ -665,7 +629,6 @@ Edite o serviço systemd do Ollama:
 
 ```plain
 sudo systemctl edit ollama.service
-
 ```
 
 Adicione:
@@ -674,7 +637,6 @@ Adicione:
 [Service]
 Environment="HSA_OVERRIDE_GFX_VERSION=10.3.0"
 Environment="ROCR_VISIBLE_DEVICES=0"
-
 ```
 
 Reinicie:
@@ -682,7 +644,6 @@ Reinicie:
 ```plain
 sudo systemctl daemon-reload
 sudo systemctl restart ollama
-
 ```
 
 ### 15.3 Registrar o modelo GGUF no Ollama
@@ -699,7 +660,6 @@ PARAMETER num_gpu 32
 
 SYSTEM """Você é um assistente útil e preciso."""
 EOF
-
 ```
 
 Registrar e rodar:
@@ -707,7 +667,6 @@ Registrar e rodar:
 ```plain
 ollama create meu-modelo-lora -f ~/Modelfile
 ollama run meu-modelo-lora
-
 ```
 
 ***
@@ -723,7 +682,6 @@ watch -n 1 rocm-smi
 # Opção 2: amdgpu_top (mais detalhado)
 paru -S amdgpu_top
 amdgpu_top
-
 ```
 
 ### Dicas para economizar VRAM (8 GB)
@@ -762,7 +720,6 @@ groups
 
 # Verificar dispositivos
 ls -la /dev/kfd /dev/dri/renderD*
-
 ```
 
 ### Erro "hipErrorNoBinaryForGpu"
@@ -782,7 +739,6 @@ export HIP_DEVICE_LIB_PATH=/caminho/encontrado/acima
 cmake -S . -B build -DGGML_HIP=ON -DAMDGPU_TARGETS="gfx1030,gfx1032" \
   -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release -j$(nproc)
-
 ```
 
 ### Erro na conversão GGUF — "Model architecture not supported"
@@ -799,7 +755,6 @@ print(torch.cuda.is_available())
 x = torch.tensor([1.0]).cuda()
 print(x.device)  # Deve retornar: cuda:0
 "
-
 ```
 
 ***
@@ -844,7 +799,6 @@ print(x.device)  # Deve retornar: cuda:0
       ├── llama-server (API HTTP)
       ├── ollama run (interface amigável)
       └── llama-cpp-python (código Python)
-
 ```
 
 ***
